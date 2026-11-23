@@ -1,0 +1,1495 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="color-scheme" content="light"/>
+<title>داشبورد عملکرد مدیران | آبان ۱۴۰۵</title>
+<style>
+:root{--ink:#10233b;--ink2:#44566e;--muted:#8390a1;--line:#e7edf2;--bg:#f4f7fa;--paper:#fff;--navy:#101f38;--teal:#008f91;--mint:#e4f5f1;--gold:#dba94f;--rose:#d26179;--radius:20px;--shadow:0 14px 38px rgba(20,45,72,.055)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.8 'Vazirmatn','Segoe UI',Tahoma,Arial,sans-serif;font-variant-numeric:tabular-nums}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #74bdc1;outline-offset:2px}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.4}a{color:inherit}.shell{max-width:1600px;margin:auto;padding:28px 34px 55px}.top{background:linear-gradient(115deg,#10253e 0%,#153b50 68%,#155d63 100%);color:white;border-radius:26px;min-height:184px;position:relative;overflow:hidden;padding:28px 35px 32px;box-shadow:0 16px 40px rgba(9,33,55,.16)}.top:before,.top:after{content:'';position:absolute;pointer-events:none;border-radius:50%;border:1px solid rgba(255,255,255,.13)}.top:before{width:340px;height:340px;left:-65px;top:-220px}.top:after{width:460px;height:460px;left:0;top:-260px}.brand{display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}.brandline{display:flex;align-items:center;gap:14px}.brandmark{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:#ffffff22;border:1px solid #ffffff35;flex:none}.brandmark svg{width:27px;height:27px}.eyebrow{color:#bedbdc;font-size:12px;font-weight:500;letter-spacing:.1px}h1{font-size:clamp(22px,2.4vw,33px);letter-spacing:-.9px;font-weight:800}.topnote{color:#d7e8ec;font-size:13px;margin-top:6px}.tagrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.pill{padding:6px 12px;border-radius:50px;border:1px solid #ffffff45;font-size:11px;color:#e5f2ef;background:#ffffff14;white-space:nowrap}.topbottom{position:relative;display:flex;justify-content:space-between;align-items:end;gap:15px;margin-top:28px}.source{display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:#d7e9ea;font-size:12px}.status-dot{display:inline-block;background:#e2b758;width:8px;height:8px;border-radius:100%;box-shadow:0 0 0 4px #e2b75823}.status-dot.live{background:#5fdbb1;box-shadow:0 0 0 4px #5fdbb12a}.actions{display:flex;flex-wrap:wrap;gap:9px}.topbtn{border:1px solid #ffffff42;color:#fff;background:#ffffff16;border-radius:11px;padding:8px 13px;font-size:12px;display:inline-flex;align-items:center;gap:7px;transition:background .2s}.topbtn:hover{background:#ffffff30}.topbtn svg,.button svg{width:16px;height:16px;vertical-align:middle}.sectiontop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:28px 0 14px}.sectiontop h2{font-size:17px;font-weight:800;letter-spacing:-.35px}.sectionhint{font-size:12px;color:#8b9bb0}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.stat{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px;padding:20px 21px;min-height:122px;position:relative;overflow:hidden}.stat:before{content:'';position:absolute;right:0;top:20px;height:34px;width:4px;background:var(--accent,#0b9596);border-radius:5px 0 0 5px}.statlabel{font-size:12px;color:#708399;display:flex;align-items:center;justify-content:space-between}.statval{font-size:28px;letter-spacing:-.8px;font-weight:800;line-height:1.5;margin-top:7px}.statnote{font-size:11px;color:#9ba9b8}.nav{display:flex;gap:5px;margin-top:25px;margin-bottom:17px;border-bottom:1px solid #dce4eb;overflow-x:auto}.nav button{border:0;background:transparent;white-space:nowrap;color:#697d93;padding:12px 22px 14px;position:relative;font-weight:700;font-size:13px}.nav button.active{color:var(--teal)}.nav button.active:after{content:'';height:3px;background:var(--teal);border-radius:3px 3px 0 0;position:absolute;bottom:0;left:12px;right:12px}.panel{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:20px;padding:23px;min-width:0}.panelhead{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:19px}.panelhead h3{font-size:16px;font-weight:800}.panelhead p{font-size:11px;color:#8a9bae;margin-top:4px}.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.95fr);gap:17px}.subtle{color:var(--muted);font-size:11px}.select,.search{padding:10px 12px;border:1px solid #dde7eb;background:#f9fbfc;border-radius:10px;color:var(--ink);min-height:41px;min-width:0}.search{width:min(100%,230px)}.controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.leaderlist{display:grid;gap:4px}.leadrow{display:grid;grid-template-columns:26px minmax(100px,150px) minmax(100px,1fr) 58px;align-items:center;gap:12px;width:100%;text-align:right;border:1px solid transparent;background:transparent;border-radius:10px;padding:10px 8px;transition:.18s}.leadrow:hover{background:#f4f8fa;border-color:#e8eff3;transform:translateX(-2px)}.leadrow:focus-visible{outline-offset:-3px}.rankbubble{width:26px;height:26px;display:grid;place-items:center;font-weight:800;font-size:12px;color:#75879a;background:#f2f5f7;border-radius:8px}.rankbubble.first{background:#fff1d7;color:#b17b21}.rankbubble.second{background:#eff2f6;color:#6d7d91}.rankbubble.third{background:#f8e8df;color:#a06b49}.leadname{font-weight:600;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track{background:#edf2f6;border-radius:100px;height:10px;overflow:hidden;direction:ltr;display:flex;justify-content:flex-start}.fill{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,#80c8c2,#119a9a)}.leadrow:nth-child(n+5) .fill{background:linear-gradient(90deg,#8eb5c0,#527f99)}.leadval{text-align:left;color:#1a4561;font-size:12px;font-weight:800}.podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:end;margin-bottom:20px}.pod{min-width:0;border-radius:13px;background:#f5f8fa;border:1px solid #eaf0f3;padding:15px 8px 13px;text-align:center;position:relative}.pod:nth-child(2){background:linear-gradient(180deg,#fffcf5,#fff6e4);border-color:#f6e5c2;padding-top:26px;padding-bottom:20px}.pod .place{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#d9e4e8;color:#607484;font-weight:800;margin:auto auto 10px}.pod:nth-child(2) .place{background:#e1b965;color:#fff}.pod:nth-child(3) .place{background:#e6c4b4;color:#9c6749}.podname{font-size:11px;font-weight:800;overflow-wrap:anywhere;line-height:1.65;min-height:38px}.podscore{color:#0f6970;font-weight:900;font-size:19px;margin-top:6px}.detail-btn{border:1px solid #dce8ec;border-radius:9px;background:#fff;color:#426678;font-size:11px;padding:7px 9px;margin-top:10px}.metricchips{display:flex;flex-wrap:wrap;gap:7px}.chip{border-radius:10px;background:#f3f7f9;border:1px solid #e5eef1;padding:7px 10px;font-size:11px;color:#4e6579}.chip strong{color:#153e56}.legend{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}.legend .item{display:flex;align-items:center;gap:5px;color:#8896a8;font-size:11px}.swatch{width:11px;height:11px;display:inline-block;border-radius:3px}.matrixscroll{overflow:auto;max-width:100%;border:1px solid #e5edf2;border-radius:14px}table{border-collapse:separate;border-spacing:0;font-size:12px;min-width:1200px;width:100%;white-space:nowrap}th,td{padding:12px 13px;border-bottom:1px solid #ecf1f4;text-align:center}th{background:#f4f8fa;font-weight:700;color:#577085;position:sticky;top:0;z-index:2}td:first-child,th:first-child{position:sticky;right:0;z-index:3;background:#fff;text-align:right;min-width:144px;box-shadow:-4px 0 12px #eef2f577}th:first-child{background:#eef4f7;z-index:4}tbody tr:hover td:first-child{background:#f7fafb}tbody tr:last-child td{border-bottom:0}td.managercell{cursor:pointer;font-weight:700}td .rank-inline{font-weight:600;color:#97a7b5;margin-left:8px}.heat{font-weight:700;border-radius:7px;padding:5px 8px;display:inline-block;min-width:47px}.heat-high{background:#dcf4ea;color:#10715c}.heat-mid{background:#e6f0fc;color:#34688e}.heat-low{background:#ffeed8;color:#a86f2c}.heat-vlow{background:#fce8ec;color:#a94961}.heat-empty{background:#f1f3f5;color:#99a3ad}.scenariobox{display:none;border:1px solid #f4dba9;background:#fffaee;color:#8a611c;border-radius:12px;padding:11px 16px;margin:2px 0 12px;font-size:12px}.scenariobox.show{display:block}.weights-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.75fr);gap:17px}.weightrow{display:grid;grid-template-columns:minmax(100px,1fr) minmax(110px,1.2fr) 66px;gap:16px;align-items:center;padding:13px 0;border-bottom:1px solid #f0f3f6}.weightrow:last-child{border:0}.weightrow label{font-size:12px;font-weight:650}.weightrow input[type=range]{accent-color:var(--teal);width:100%}.weightrow input[type=number]{width:65px;border:1px solid #dbe6e9;border-radius:8px;padding:6px 7px;text-align:center;direction:ltr}.button{display:inline-flex;align-items:center;gap:8px;border:1px solid #d9e5ea;border-radius:10px;background:#fff;color:#254459;padding:9px 13px;font-size:12px;font-weight:700}.button:hover{background:#f3f8fa}.button.primary{background:#0c878d;color:white;border-color:#0c878d}.button.primary:hover{background:#076e76}.notice{border-radius:12px;background:#eaf5f4;padding:14px 16px;font-size:12px;color:#246d6d;line-height:2}.smalltable{width:100%;min-width:0;border-collapse:collapse;font-size:12px}.smalltable td,.smalltable th{position:static;box-shadow:none;background:transparent;text-align:right;padding:9px 7px}.smalltable td:last-child{text-align:left}.smalltable th{text-align:right}.empty{padding:32px;color:#8a9cab;text-align:center}.drawerback{position:fixed;inset:0;background:#101a2d88;z-index:20;display:none}.drawerback.open{display:block}.drawer{position:absolute;top:0;right:0;bottom:0;width:min(480px,100vw);background:#fff;box-shadow:-20px 0 40px #0002;overflow:auto;padding:28px 27px}.close{border:0;background:#edf3f5;border-radius:10px;width:37px;height:37px;display:grid;place-items:center;font-size:22px;color:#526a80;line-height:1}.drawername{font-size:23px;font-weight:800;margin-top:24px}.drawerdesc{color:#8091a3;font-size:12px}.drawer-score{display:flex;gap:18px;align-items:center;margin-top:25px;background:linear-gradient(110deg,#e9f7f5,#f4faf8);padding:19px;border-radius:15px}.drawer-score strong{font-size:33px;color:#087f7c}.drawer-score span{display:block;color:#67888a;font-size:11px}.detailmetric{border-bottom:1px solid #edf1f4;padding:13px 0}.detailmetric:last-child{border:0}.detailmetric-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;font-weight:650}.detailmetric-bottom{display:flex;justify-content:space-between;color:#8796a5;font-size:11px;margin-top:7px}.microtrack{height:6px;background:#edf2f4;border-radius:6px;overflow:hidden;direction:ltr}.microtrack>span{display:block;height:100%;background:#16a3a0;border-radius:6px}.footer{color:#8d9eac;text-align:center;font-size:11px;margin:26px 0 0}.warningline{font-size:12px;color:#b17328;margin-top:10px}.presentation .shell{max-width:1880px;padding:12px 24px 35px}.presentation .top{min-height:auto;padding:20px 28px}.presentation .nav,.presentation .private-tools,.presentation .sectionhint,.presentation .no-present,.presentation .footer{display:none!important}.presentation .stats{margin-top:18px}.presentation .sectiontop{margin:15px 0 12px}.presentation .leadrow{padding:11px 8px}.presentation .leadname,.presentation .leadval{font-size:15px}.presentation .panel{padding:20px}.presentation .layout{grid-template-columns:1.65fr .8fr}.presentation .stat{min-height:105px}.presentation .statval{font-size:32px}
+@media(max-width:1000px){.shell{padding:16px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.layout,.weights-layout{grid-template-columns:1fr}.top{padding:20px 22px}.topbottom{align-items:start;flex-direction:column}.brand{align-items:start}.tagrow{justify-content:flex-end}.presentation .layout{grid-template-columns:1fr}}
+@media(max-width:620px){.shell{padding:8px}.top{border-radius:18px}.brand{flex-direction:column;gap:12px}.tagrow{justify-content:flex-start}.stat{padding:13px;min-height:104px}.statval{font-size:24px}.panel{padding:14px}.leadrow{grid-template-columns:24px minmax(105px,1fr) minmax(65px,1fr) 47px;gap:5px;padding:10px 2px}.leadname{font-size:11px}.podscore{font-size:15px}.podname{font-size:10px}.sectiontop{align-items:start;flex-direction:column}.controls{width:100%}.controls .search{width:100%}.weightrow{grid-template-columns:1fr 1fr 58px;gap:8px}.weightrow label{font-size:10px}.nav button{padding:11px 13px}.topnote{font-size:11px}}
+@media print{body{background:white}.shell{max-width:none;padding:0}.top{border-radius:0;box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}.no-print,.topbtn,.nav,.drawerback,.private-tools,.footer{display:none!important}.stats{grid-template-columns:repeat(4,1fr)}.panel,.stat{box-shadow:none;break-inside:avoid}.layout{grid-template-columns:1fr 1fr}.leadrow{padding:6px}.matrixscroll{overflow:visible}table{min-width:0;font-size:9px}th,td{padding:4px}.pod{break-inside:avoid}}
+
+/* v1.1 — projection-friendly readable typography; no external font downloads */
+body{font-size:16px;line-height:1.7}
+h1{font-size:clamp(28px,2.6vw,39px)}
+.eyebrow,.topnote,.source,.pill,.sectionhint,.statnote,.subtle,.panelhead p,.chip,.legend .item,.scenariobox,.notice,.drawerdesc,.detailmetric-bottom,.footer{font-size:14px}
+.topbtn,.nav button,.button,.detail-btn,.select,.search{font-size:16px}
+.sectiontop h2{font-size:24px}
+.statlabel{font-size:16px}.statval{font-size:36px}
+.panelhead h3{font-size:23px}
+.leadrow{grid-template-columns:36px minmax(160px,1fr) minmax(110px,1.5fr) 78px;gap:12px;padding:10px 7px}
+.rankbubble{font-size:16px;width:34px;height:34px}
+.leadname{font-size:18px}.leadval{font-size:18px}
+.podname{font-size:17px;min-height:50px}.podscore{font-size:23px}
+.track{height:13px}.pod .place{font-size:18px;width:42px;height:42px}
+.weightrow label{font-size:16px}
+.chip,.detailmetric-top{font-size:16px}
+.detailmetric-bottom{font-size:14px}
+.drawer{width:min(560px,100vw)}.drawername{font-size:30px}
+.drawer-score strong{font-size:40px}.drawer-score span{font-size:14px}
+.heat{font-size:16px}table,.smalltable{font-size:16px}
+th,td{padding:13px 12px}
+.heat-count{background:#edf3fb;color:#3e638d}
+.reveal-btn{background:#e4bb6d;color:#142a3c;font-weight:800;border-color:#e4bb6d;font-size:18px;padding:9px 20px}
+.reveal-btn:hover{background:#f2d49e}
+.reveal-btn:disabled{opacity:.5}
+.unrevealed-note{display:flex;gap:9px;flex-direction:column;border:1px solid #e5ecf5;border-radius:14px;background:#f5f8fc;padding:18px 20px;margin-bottom:17px;color:#2b4c62;font-size:17px}
+.unrevealed-note span,.result-placeholder span{font-size:15px;color:#657b8b}
+.before-results{grid-template-columns:36px minmax(130px,1fr) minmax(105px,1.5fr) 60px}
+.pending-text{font-size:15px;color:#527b89;font-weight:600}
+.result-placeholder{min-height:220px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:14px;border-radius:17px;background:#f6f8fb;color:#244354;padding:26px;font-size:22px}
+.trophy-icon{font-size:46px!important;color:#b18e53!important}
+body:not(.results-revealed) #sortMetric,body:not(.results-revealed) #csvBtn{display:none}
+.results-revealed .pod{animation:revealEntry .45s ease both}
+.results-revealed .pod:nth-child(2){animation-delay:.17s}
+.results-revealed .pod:nth-child(3){animation-delay:.28s}
+@keyframes revealEntry{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.presentation .leadname,.presentation .leadval{font-size:21px}
+.presentation .panelhead h3{font-size:27px}
+.presentation .statval{font-size:42px}
+.presentation .leadrow{padding:14px 9px}
+@media(max-width:620px){
+ body{font-size:15px}.sectiontop h2{font-size:20px}.panelhead h3{font-size:19px}
+ .leadrow{grid-template-columns:28px minmax(106px,1fr) minmax(45px,.8fr) 58px;gap:6px;padding:11px 3px}
+ .before-results{grid-template-columns:28px minmax(106px,1fr) minmax(50px,.8fr) 36px}
+ .leadname{font-size:15px}.leadval{font-size:15px}.pending-text{font-size:13px}
+ .podname{font-size:14px;min-height:40px}.podscore{font-size:19px}
+ .statval{font-size:30px}.statlabel{font-size:14px}.statnote{font-size:13px}
+ .nav button{font-size:15px;padding:11px 13px}
+ .weightrow label{font-size:14px}
+ .unrevealed-note{font-size:15px}.unrevealed-note span{font-size:13px}
+ .sectionhint,.subtle{font-size:13px}
+ .topbtn{font-size:14px}.reveal-btn{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){.results-revealed .pod{animation:none}}
+
+/* v1.2 | presentation-first layout + optional local B Titr headings */
+:root{--display-face:'B Titr','B Titr 2','BTitr','Vazir','Vazirmatn',Tahoma,sans-serif}
+h1,h2,h3,.ceremony-rank,.ceremony-person{font-family:var(--display-face);font-weight:850}
+body{font-family:'Vazir','Vazirmatn','Segoe UI',Tahoma,Arial,sans-serif}
+.shell{max-width:1700px;padding-top:16px}
+.top{min-height:0;padding:20px 28px;border-radius:21px}.topbottom{margin-top:14px}.brandmark{width:44px;height:44px}
+.topnote{font-size:14px}.nav{margin-top:17px;margin-bottom:15px}
+.layout{grid-template-columns:minmax(0,1.85fr) minmax(300px,.75fr)}
+.leadrow{grid-template-columns:40px minmax(180px,1fr) minmax(115px,.8fr) 90px;min-height:66px}
+.leadname{font-size:clamp(20px,1.55vw,25px);font-weight:750}.panelhead h3{font-size:25px}
+.before-results .leadval{visibility:hidden}.before-results{grid-template-columns:40px minmax(180px,1fr) minmax(130px,.7fr) 12px}
+.summary-bottom{margin-top:30px;padding-top:8px;border-top:1px solid #dfe7ee}.summary-bottom .sectiontop{margin-top:16px}
+.metric-type-note{font-size:13px;color:#5d798d;padding:7px 0}
+.consistency-banner,.update-banner{border-radius:13px;padding:13px 17px;margin:15px 0 3px;line-height:1.65;font-size:16px}
+.consistency-banner{background:#fff5de;border:1px solid #efdcad;color:#825917}
+.consistency-banner.status-scenario{background:#eff6fc;border-color:#d5e6f3;color:#356080}
+.update-banner{background:#e8f3fb;border:1px solid #bcd8e9;color:#194d67;display:flex;gap:20px;justify-content:space-between;align-items:center}
+.update-banner button{background:#176c81;border:0;border-radius:10px;color:white;padding:9px 17px;font-weight:800;font-size:16px}
+[hidden]{display:none!important}
+.reveal-btn{font-size:19px;padding:10px 22px;background:linear-gradient(125deg,#f2d18a,#dfad55);border:0;color:#1b2a36;box-shadow:0 4px 16px #0f223322}
+.reveal-btn:disabled{opacity:.48;cursor:not-allowed;box-shadow:none}
+.ceremony-back{position:fixed;inset:0;z-index:9999;background:rgba(7,19,30,.94);padding:14px;display:flex;align-items:center;justify-content:center;overflow:auto}
+.ceremony-open{overflow:hidden}
+.ceremony{background:radial-gradient(circle at 50% -8%,#2e5470 0%,#10263c 55%,#081b30 100%);color:#f4f8ff;border:1px solid #547b91;border-radius:26px;box-shadow:0 20px 80px #0008;width:min(1550px,100%);max-height:calc(100vh - 28px);overflow:auto;padding:clamp(18px,2.4vw,33px);position:relative;overscroll-behavior:contain}
+.ceremony-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:1px solid #ffffff26;padding-bottom:13px}
+.ceremony-head h2{font-size:clamp(27px,2.6vw,43px);line-height:1.45;color:#fff}
+.ceremony-eyebrow{font-size:15px;color:#a7d5db}.ceremony-head p{font-size:15px;color:#c1d8e1;margin-top:3px}
+.ceremony-close,.ceremony-control{border:1px solid #b4d6e480;border-radius:10px;color:#f4fbff;background:#ffffff20;padding:10px 15px;font-size:16px;font-weight:700;white-space:nowrap}
+.ceremony-close:hover,.ceremony-control:hover{background:#ffffff38}
+.ceremony-control{background:#dfb262;color:#102a3e;border:none}
+.ceremony-control.secondary{background:#ffffff20;color:#fff;border:1px solid #a2b5c88a}
+.ceremony-info{text-align:center;font-size:20px;color:#d7e8e9;margin:15px auto}
+.ceremony-podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;gap:16px;min-height:250px}
+.ceremony-pod{min-width:0;text-align:center;border-radius:20px;border:1px solid #ffffff35;background:#ffffff13;padding:18px 10px;display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:198px;gap:8px}
+.ceremony-pod.gold{background:linear-gradient(145deg,#765c31bb,#413a3bc4);border:2px solid #f2ce85;min-height:232px;box-shadow:0 0 30px #ecbd5540}
+.ceremony-place{font-size:18px;color:#f7d18d}.ceremony-rank{font-size:clamp(48px,5.3vw,84px);line-height:1;color:#fff}.ceremony-pod.gold .ceremony-rank{color:#ffdd89}
+.ceremony-person{font-size:clamp(20px,2vw,31px);line-height:1.4;color:#fff;min-height:38px;overflow-wrap:anywhere}
+.ceremony-score{font-size:clamp(21px,1.7vw,29px);font-weight:800;color:#c7e8e5}
+.ceremony-pod.is-hidden{border-style:dashed;opacity:.5}.ceremony-pod.is-hidden .ceremony-person{font-size:18px}
+.ceremony-pod.is-visible{animation:arrive .65s ease both}
+@keyframes arrive{from{opacity:.2;transform:translateY(18px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.ceremony-others{margin-top:18px;padding-top:12px;border-top:1px solid #ffffff36}.ceremony-others h3{font-size:22px;margin:0 0 10px;color:#d2e6eb}
+.ceremony-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 18px}
+.ceremony-result{border:1px solid #ffffff24;background:#ffffff0c;border-radius:10px;display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:8px;padding:7px 11px;font-size:clamp(17px,1.35vw,23px)}
+.ceremony-pos{background:#ffffff20;border-radius:8px;text-align:center;font-weight:800;color:#f4d594}.ceremony-result strong{font-weight:650;overflow-wrap:anywhere}.ceremony-result>span:last-child{color:#bde1e1;font-weight:700}
+.ceremony-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:16px}
+@media(min-width:1250px) and (min-height:740px){.ceremony{padding:20px 31px}.ceremony-info{margin:10px auto}.ceremony-podium{min-height:215px}.ceremony-pod{min-height:175px}.ceremony-pod.gold{min-height:214px}.ceremony-others{margin-top:13px}}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}.ceremony-results{grid-template-columns:1fr 1fr}.ceremony-pod{min-height:175px}.ceremony-pod.gold{min-height:190px}}
+@media(max-width:620px){.top{padding:18px}.ceremony-head{flex-direction:column}.ceremony-head h2{font-size:26px}.ceremony-podium{gap:6px;min-height:195px}.ceremony-pod{padding:12px 4px;min-height:165px}.ceremony-pod.gold{min-height:178px}.ceremony-place{font-size:12px}.ceremony-rank{font-size:43px}.ceremony-person{font-size:15px}.ceremony-score{font-size:14px}.ceremony-results{grid-template-columns:1fr}.ceremony-result{font-size:17px}.ceremony-head p{font-size:13px}.ceremony-info{font-size:16px}.update-banner{flex-direction:column;align-items:stretch}.before-results{grid-template-columns:28px minmax(100px,1fr) minmax(85px,.8fr) 8px}.leadname{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.ceremony-pod.is-visible{animation:none}}
+/* Print rules deliberately follow ALL screen typography rules to avoid v1.1 regression. */
+@page{size:A4 landscape;margin:10mm}
+@media print{
+ body{background:#fff;font-size:10px;line-height:1.3}
+ .shell{max-width:none;padding:0}
+ .top{padding:8px 12px;border-radius:0;box-shadow:none;min-height:0}
+ .top h1{font-size:18px}.topnote{font-size:9px}.eyebrow{font-size:9px}
+ .no-print,.nav,.ceremony-back,.drawerback,.update-banner,.consistency-banner,.scenariobox,.summary-bottom{display:none!important}
+ .panel{padding:8px;border-radius:4px;box-shadow:none;break-inside:auto}
+ .panelhead h3{font-size:14px}.panelhead p{font-size:10px}
+ .layout{display:block}.layout aside{display:none}
+ .matrixscroll{overflow:visible;border:0;max-width:none}
+ table{font-size:9px;min-width:0;width:100%;table-layout:auto;white-space:normal}
+ th,td{padding:4px 3px!important;font-size:9px!important;line-height:1.2;word-break:break-word}
+ .smalltable{font-size:9px}.smalltable td,.smalltable th{padding:4px!important}
+ .heat{font-size:9px;min-width:0;padding:3px}
+ .footer{display:none!important}
+ .leadname,.leadval,.rankbubble{font-size:10px}
+ .leadrow{min-height:auto;padding:4px;grid-template-columns:24px minmax(130px,1fr) minmax(80px,1fr) 52px}
+ .sectiontop h2{font-size:13px}
+}
+
+/* v1.3: one selected typeface across every component, including fullscreen and forms. */
+:root{--ui-font:'Vazir','Vazirmatn',Tahoma,Arial,sans-serif}
+html[data-font="titr"]{--ui-font:'B Titr','B Titr 2','BTitr',Tahoma,Arial,sans-serif}
+html,body,body *,body *::before,body *::after{font-family:var(--ui-font)!important}
+.font-picker{display:inline-flex;align-items:center;gap:9px;color:#eaf5f5;font-size:15px;white-space:nowrap}
+.font-picker select{background:#e8f5f7;color:#163247;border:1px solid #b8d5dc;border-radius:10px;padding:8px 10px;min-width:145px;font-weight:700}
+.drawerback{z-index:1200;background:#0a1a2ab3;backdrop-filter:blur(4px)}
+.drawer{width:min(82vw,1920px);height:auto;min-height:0;max-height:92vh;right:auto;bottom:auto;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:24px;padding:28px 34px 34px;box-shadow:0 30px 100px #06162666;overscroll-behavior:contain}
+.drawername{font-size:clamp(30px,2.8vw,42px);margin-top:8px;padding-left:44px}
+.drawerdesc{font-size:17px}.drawer>.close{position:sticky;top:0;float:left;z-index:4;width:45px;height:45px}
+.drawer-score{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:20px 0;padding:23px;gap:12px}
+.drawer-score>div{border-left:1px solid #c9e1df;padding-inline-start:10px}
+.drawer-score>div:last-child{border-left:0}.drawer-score strong{font-size:clamp(33px,3vw,43px)}
+.drawer-score span{font-size:15px}.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:17px}
+.detailmetric{border:1px solid #e5edf1;border-radius:14px;background:#fbfdfe;padding:15px 18px;min-width:0}
+.detailmetric-top{font-size:clamp(17px,1.35vw,20px);align-items:start;line-height:1.6}
+.detailmetric-top span{overflow-wrap:anywhere}.detailmetric-top strong{font-size:21px;white-space:nowrap;color:#166d80}
+.detailmetric-bottom{font-size:14px;flex-wrap:wrap;gap:8px}.microtrack{height:9px;margin-top:10px}
+.metric-admin{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(350px,.75fr);gap:18px;align-items:start}
+.metric-summary{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.metric-summary span{background:#edf6f7;border:1px solid #d6ebec;border-radius:12px;padding:8px 12px;color:#176475;font-size:15px;font-weight:700}
+.criterion-list{display:grid;gap:9px;margin:16px 0}.criterion-row{display:grid;grid-template-columns:minmax(180px,1fr) 115px auto;align-items:center;gap:12px;border:1px solid #e4ebf2;border-radius:13px;padding:13px 15px}
+.criterion-row>div>strong{font-size:17px}.criterion-meta{font-size:13px;color:#70879b;margin-top:2px}
+.criterion-excluded{opacity:.65;background:#f7f7f7}.criterion-excluded>div>strong{text-decoration:line-through}
+.criterion-weight{font-size:14px;color:#53677a;display:flex;align-items:center;gap:7px}
+.criterion-weight input{width:73px;font-size:17px;border:1px solid #dce8ed;border-radius:9px;padding:6px;text-align:center;direction:ltr}
+.button.muted-danger{color:#914a59;border-color:#ecd4da}.button.muted-danger:hover{background:#fff2f4}
+.metric-form{display:grid;gap:15px}.metric-form>label,.metric-form-grid label{display:grid;gap:6px;font-size:16px;font-weight:700}
+.metric-form input,.metric-form select{width:100%;min-width:0}.metric-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.entry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:13px 0 20px}
+.entry-card{display:flex;flex-direction:column;gap:9px;border:1px solid #e2ecf1;border-radius:13px;padding:14px;background:#fafdff;font-size:17px;font-weight:700}
+.entry-card input{border:1px solid #d5e3e9;border-radius:9px;padding:10px 11px;font-size:19px;width:100%;min-width:0;direction:ltr;text-align:center}
+.consistency-banner.status-local{background:#edf6fb;border-color:#c6e3f1;color:#245b78}
+@media(max-width:1100px){.metric-admin{grid-template-columns:1fr}.entry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.drawer{width:96vw;max-height:96vh;padding:18px;border-radius:15px}.drawer-score{grid-template-columns:1fr;padding:15px;gap:4px}.drawer-score>div{border-left:0;border-bottom:1px solid #c9e1df;padding:8px}.drawer-score>div:last-child{border-bottom:0}.detail-grid{grid-template-columns:1fr}.entry-grid{grid-template-columns:1fr}.criterion-row{grid-template-columns:minmax(0,1fr) auto}.criterion-weight{grid-column:1}.metric-form-grid{grid-template-columns:1fr}.font-picker{width:100%;justify-content:space-between}.font-picker select{flex:1}.criterion-row button{grid-column:2;grid-row:1 / span 2}.drawername{font-size:29px}}
+@media print{.font-picker{display:none!important}.drawer{display:none!important}.criterion-list{display:none!important}}
+/* Entry must be visible first during a meeting; editing 9 people should not require scrolling past 13 criterion cards. */
+#mainContent:has(.entry-panel){display:flex;flex-direction:column;gap:18px}
+#mainContent:has(.entry-panel) .entry-panel{order:-1}
+#mainContent:has(.entry-panel) .metric-admin{order:1}
+.entry-edit .entry-status{font-size:16px;min-height:43px;max-width:100%}
+.entry-edit .entry-origin{font-size:13px;color:#637b8b;font-weight:500}
+.entry-edit strong{font-size:18px}
+.entry-edit{background:linear-gradient(180deg,#fff,#f5fafb)}
+/* Tie-safe ceremony: grouped names never receive invented 2nd/3rd places. */
+.tie-ceremony,.tie-podium{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));align-items:stretch}
+.tie-ceremony .tie-names{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:5px 11px;max-height:36vh;overflow:auto}
+.tie-names>span{padding:3px 8px;border-radius:9px;background:#ffffff12}
+.tie-podium .podmembers{display:flex;flex-direction:column;gap:3px;max-height:260px;overflow:auto}
+.tie-podium .pod:nth-child(2){padding:15px 8px 13px;background:#f5f8fa;border-color:#eaf0f3}
+.tie-podium .pod:has(.place:first-child){min-height:130px}
+
+/* Visible reason for disabled reveal, including direct navigation to each missing cell. */
+.readiness-panel{margin-top:14px;padding:17px 20px;background:#fff;border:1px solid #e6d9ac;border-right:5px solid #cb9d41;border-radius:15px;box-shadow:0 8px 25px #172e4210}
+.readiness-panel.is-ready{border-color:#c8e3d8;border-right-color:#278a70}
+.readiness-head{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.readiness-head strong{font-size:19px;color:#263d54;line-height:1.7}
+.readiness-head p{font-size:15px;line-height:1.8;color:#52677d;margin-top:3px}
+.readiness-list{display:grid;gap:13px;margin-top:15px}
+.readiness-panel details{margin-top:12px;border-top:1px solid #eaeef2;padding-top:12px}
+.readiness-panel summary{font-size:16px;color:#305b70;font-weight:700;cursor:pointer}
+.readiness-group{border-radius:10px;background:#f7fafb;border:1px solid #e5edf1;padding:12px 14px}
+.readiness-group strong{font-size:16px;color:#1a4059}
+.readiness-people{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.readiness-people button{border:1px solid #d5e4e8;border-radius:9px;background:white;padding:8px 10px;color:#27465c;font-size:14px;font-weight:650}
+.readiness-people button:hover{background:#e9f4f5}
+.readiness-pill{display:inline-block;font-weight:650;border-radius:8px;padding:3px 7px;background:#eaf0f3;font-size:13px;margin-inline-start:8px;color:#567084}
+.entry-card.entry-target{outline:3px solid #d2a244;outline-offset:2px;background:#fffcf1}
+@media(max-width:700px){.readiness-head strong{font-size:17px}.readiness-head p{font-size:14px}.readiness-panel{padding:13px}}
+@media print{#readinessPanel{display:none!important}}
+
+/* v1.6.0: accessible projector-oriented tokens; no scoring or font-size change in overview/ceremony. */
+:root{--ink:#102538;--ink2:#29475c;--muted:#4a6576;--line:#c4d3dd;--bg:#ecf2f6;--navy:#0b263b;--teal:#096974;--mint:#daf1eb;--gold:#a87520;--rose:#9d4054;--focus:#145baf}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.sectionhint,.panelhead p,.statnote,.statlabel,.criterion-meta,.entry-edit .entry-origin,.subtle,.legend .item,.nav button,.empty{color:var(--muted)}
+.nav button.active{color:#075a65}.nav button.active:after{background:#075a65}
+.button.primary{background:#096974;border-color:#096974;color:#fff}.button.primary:hover{background:#07525c}
+.heat-high{background:#d2eee1;color:#075f49}.heat-mid{background:#d7e9fa;color:#184f7b}.heat-low{background:#ffe4bd;color:#744209}.heat-vlow{background:#f8dce3;color:#89334b}
+.heat-count{background:#dce9f5;color:#244d74}.heat-empty{background:#e8ebef;color:#394e61}.heat-na{background:#e2dff1;color:#50456c}
+.legend .swatch{height:15px;width:15px;border:1px solid #60788b}
+.rankbubble.first,.pod .place{border:2px solid #9a6b14}.rankbubble.second{border:2px solid #64758b}.rankbubble.third{border:2px solid #96654f}
+.ceremony-pod.is-hidden{opacity:.85}.ceremony-eyebrow,.ceremony-head p{color:#d8ecf2}.ceremony-place{color:#ffe2ab}
+.status-saved{background:#e2f2ed;border:1px solid #8ac8b3;color:#135d48}
+#saveActions{margin-top:9px;gap:10px}#saveActions .button{border-color:#536c7f}
+.entry-edit{color:var(--ink);font-size:16px;line-height:1.55}
+.entry-edit .entry-number{width:100%;max-width:170px;min-width:85px;padding:7px;font-size:19px;border:1px solid #607e90;color:var(--ink);background:#fff}
+.entry-edit .entry-status{font-size:15px;min-height:42px;width:100%;max-width:280px;color:var(--ink);background:#fff;border-color:#607e90}
+.entry-edit .entry-provenance{display:grid;gap:3px;color:#314e60;font-size:13px;font-weight:500}
+.entry-edit .entry-effective{color:#163e56;font-weight:700}
+.entry-edit .cell-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.entry-edit .restore-cell{font-size:13px;padding:8px 10px;border-color:#607e90}
+.entry-edit .restore-cell:disabled{cursor:not-allowed;opacity:.65}
+.entry-edit .entry-number[aria-invalid="true"]{outline:3px solid #a72f46;outline-offset:2px}
+/* Compact means a single horizontal data row per manager, not stacked controls. */
+.entry-table-scroll{max-width:100%;overflow-x:auto;overflow-y:visible;border:1px solid #bdcdd8;border-radius:12px;margin:12px 0 20px}
+.entry-table{width:100%;min-width:1070px;table-layout:fixed;font-size:15px;white-space:normal;border-collapse:collapse}
+.entry-table th,.entry-table td{padding:4px 10px;text-align:right;border-bottom:1px solid #cfdae2;vertical-align:middle}
+.entry-table thead th{background:#dbe9ef;color:#193d54;position:static;font-weight:750;font-size:14px}
+.entry-table thead th:nth-child(1){width:16%}
+.entry-table thead th:nth-child(2){width:19%}
+.entry-table thead th:nth-child(3){width:12%}
+.entry-table thead th:nth-child(4){width:36%}
+.entry-table thead th:nth-child(5){width:17%}
+.entry-table tbody th{position:static;box-shadow:none;background:#f0f6f8;color:#183c53;font-size:16px;font-weight:750;overflow-wrap:anywhere}
+.entry-table tbody td{background:#fff}
+.entry-table .entry-status,.entry-table .entry-number{width:100%;min-width:0;max-width:100%;min-height:40px;padding:5px 8px;font-size:16px}
+.entry-table .entry-provenance{display:flex;flex-direction:column;gap:1px;margin:0;font-size:13px;line-height:1.55}
+.entry-table .entry-origin,.entry-table .entry-effective{font-size:13px;line-height:1.55;overflow-wrap:anywhere}
+.entry-table .restore-cell{width:100%;padding:7px 5px;min-height:40px;font-size:13px;justify-content:center;white-space:normal;line-height:1.45}
+.entry-table tr:focus-within th,.entry-table tr:focus-within td{background:#eaf5fb}
+@media(prefers-reduced-motion:reduce){.leadrow:hover{transform:none}}
+
+
+/* Explicit rank styling follows actual competition ranks; absent ranks get no podium. */
+.tie-podium .pod.rank-1{background:#fff2d3;border:2px solid #ba8b2b}
+.tie-podium .pod.rank-2{background:#edf2f6;border:2px solid #748699}
+.tie-podium .pod.rank-3{background:#f8ebe1;border:2px solid #a8785b}
+.tie-podium .pod.rank-1 .place{background:#8f6417;color:#fff;border-color:#8f6417}
+.tie-podium .pod.rank-2 .place{background:#52677c;color:#fff;border-color:#52677c}
+.tie-podium .pod.rank-3 .place{background:#8c5940;color:#fff;border-color:#8c5940}
+.ceremony-pod.rank-2{border-color:#aac0d1;background:#ffffff1a}
+.ceremony-pod.rank-3{border-color:#d9a988;background:#ffffff17}
+/* Strong nontext differentiation for projected charts; visual widths remain data-derived. */
+.track{background:#deebf1}
+.leadrow .fill{background:#096974}
+.leadrow:nth-child(n+5) .fill{background:#245d7b}
+.microtrack{background:#deebf1}
+.microtrack>span{background:#096974}
+/* Staged announcement remains, but each revealed group is immediately legible. */
+.ceremony-pod.is-visible{animation:none;opacity:1}
+
+body.projector-open{overflow:hidden}
+body.projector-open .shell{display:none}
+/* v1.6.0 projector-only stage: operator layout, scoring, and ceremony are untouched. */
+.projector-stage{position:fixed;inset:0;z-index:7000;display:flex;flex-direction:column;gap:10px;padding:14px 20px 12px;background:#eef3f7;color:#142c42;overflow:auto;font-family:inherit}
+.projector-stage[hidden]{display:none!important}
+.projector-head{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#15354b;color:#fff;border-radius:15px;padding:10px 20px;min-height:64px}
+.projector-head h2{font:inherit;font-size:clamp(22px,2.15vw,32px);font-weight:850;line-height:1.3;margin:0}
+.projector-head .projector-eyebrow{font-size:15px;color:#c8e8ed}
+.projector-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.projector-stage button{font-family:inherit;font-size:17px;font-weight:750;border:2px solid #b5cad6;color:#163d53;background:#fff;border-radius:10px;padding:6px 14px;min-height:42px}
+.projector-stage button:hover{background:#e1eef4}
+.projector-stage button:focus-visible{outline:3px solid #d1aa50;outline-offset:2px}
+.projector-stage button[disabled]{opacity:.5;cursor:not-allowed}
+.projector-stage .projector-tab[aria-current="page"]{border-color:#74d8cf;background:#d7f3ed;color:#124d50}
+.projector-stage #projectExit{background:#fff2e0;border-color:#e6bf7e}
+.projector-message{padding:6px 16px;min-height:39px;display:flex;align-items:center;gap:12px;justify-content:space-between;background:#fff;border:1px solid #d3e0e8;border-right:5px solid #327487;border-radius:12px;font-size:17px;font-weight:650}
+.projector-message.is-warning{border-right-color:#ad6830;background:#fff9eb}
+.projector-message.is-success{border-right-color:#267762;background:#eef9f4}
+.projector-view{flex:1 1 0;min-height:0;display:flex;flex-direction:column;gap:8px}
+.projector-overview{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:14px;min-height:0;height:100%}
+.projector-surface{background:#fff;border:1px solid #d3e0e8;border-radius:15px;padding:12px 16px;min-width:0;overflow:hidden}
+.projector-surface h3{font:inherit;font-weight:850;font-size:23px;line-height:1.45;margin:0 0 6px}
+.projector-manager-list{list-style:none;margin:0;padding:0;display:grid;grid-template-rows:repeat(9,minmax(0,1fr));height:calc(100% - 42px)}
+.projector-manager-list li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;border-bottom:1px solid #e2ebef;min-height:0;padding:2px 7px;font-size:clamp(17px,1.2vw,21px);font-weight:700}
+.projector-manager-list li:last-child{border-bottom:0}
+.projector-manager-list .projector-result{font-weight:800;font-size:clamp(16px,1.1vw,20px);color:#174c63}
+.projector-overview-side{display:grid;grid-template-rows:repeat(4,minmax(0,1fr)) auto;gap:9px;min-height:0}
+.projector-fact{padding:8px 16px;border-radius:13px;border:1px solid #cadce4;background:#fff;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.projector-fact strong{font-size:clamp(20px,1.85vw,29px);line-height:1.3}
+.projector-fact span{font-size:16px;color:#476479}
+.projector-note{font-size:15px;line-height:1.5;background:#e3edf3;border-radius:11px;padding:9px 12px}
+.projector-matrix-surface{display:flex;flex-direction:column;min-height:0;padding:10px 12px;overflow:hidden}
+.projector-matrix{width:100%;min-width:0;table-layout:fixed;border-collapse:separate;border-spacing:0;white-space:normal;font-size:clamp(17px,1.1vw,21px);flex:1 1 0}
+.projector-matrix th,.projector-matrix td{position:static!important;box-shadow:none!important;min-width:0!important;max-width:none;overflow-wrap:anywhere;text-align:center;vertical-align:middle;padding:4px 10px;line-height:1.4;border-bottom:1px solid #dfebef}
+.projector-matrix th{height:75px;background:#e7f0f4;color:#163b52;font-weight:850;font-size:clamp(16px,1.04vw,20px)}
+.projector-matrix tbody tr{height:clamp(39px,calc((100vh - 305px)/9),75px)}
+.projector-matrix tbody tr:nth-child(even){background:#f3f7f9}
+.projector-matrix tbody td:first-child,.projector-matrix thead th:first-child{position:static!important;box-shadow:none!important;background:transparent;text-align:right;width:27%;font-weight:850;color:#173c52}
+.projector-matrix th:first-child{background:#e7f0f4!important}
+.projector-matrix .projector-cell{font-size:clamp(17px,1.16vw,22px);font-weight:800;white-space:nowrap;display:inline-block;min-width:70px}
+.projector-matrix .projector-blank{font-size:16px;font-weight:750}
+.projector-matrix .projector-cell.is-na{color:#634d8b}
+.projector-matrix .projector-cell.is-missing{color:#86582b}
+.projector-matrix th .projector-unit{display:block;font-size:14px;font-weight:600;color:#426274;line-height:1.3;margin-top:4px}
+.projector-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:52px;background:#fff;border:1px solid #d3e0e8;border-radius:11px;padding:4px 12px;font-size:17px;font-weight:750}
+.projector-nav .projector-page-context{color:#295167;text-align:center;flex:1;min-width:0}
+.projector-note-bottom{font-size:14px;color:#476479;line-height:1.4}
+@media(max-width:1350px) and (max-height:800px){
+ .projector-stage{gap:7px;padding:9px 12px}
+ .projector-head{min-height:56px;padding:6px 14px}
+ .projector-stage button{min-height:36px;padding:4px 10px;font-size:16px}
+ .projector-message{min-height:33px;padding:4px 12px;font-size:15px}
+ .projector-matrix th{height:64px}
+ .projector-matrix th,.projector-matrix td{padding:3px 7px}
+ .projector-nav{min-height:43px}
+ .projector-overview .projector-surface{padding:8px 11px}
+ .projector-surface h3{font-size:20px;margin-bottom:4px}
+ .projector-manager-list{height:calc(100% - 36px)}
+ .projector-note{font-size:14px;padding:5px 9px}
+}
+@media(max-width:800px){.projector-stage{padding:9px;gap:7px}.projector-head{flex-wrap:wrap}.projector-overview{grid-template-columns:1fr;overflow:auto}.projector-overview-side{grid-template-rows:repeat(4,auto) auto}.projector-manager-list{height:auto;gap:5px}.projector-manager-list li{min-height:42px}}
+
+/* Four-color performance classification is presentation-only; neutral is NOT a fifth rank. */
+.performance-badge{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:5px 9px;border:1px solid transparent;border-radius:9px;font-weight:800;white-space:nowrap;min-width:58px;line-height:1.4}
+.performance-badge b{font:inherit;font-weight:850;direction:ltr;unicode-bidi:isolate}
+.performance-badge small{font-size:.75em;font-weight:800}
+.perf-blue{background:#dbeafe;color:#164b85;border-color:#78a9e5}
+.perf-green{background:#d9f2e3;color:#145e40;border-color:#79b99b}
+.perf-yellow{background:#fff1bd;color:#684b05;border-color:#bd9a3c}
+.perf-red{background:#ffe0e4;color:#842438;border-color:#db8394}
+.perf-neutral{background:#e9eef2;color:#344c5d;border-color:#bacad4}
+.performance-legend{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 9px;margin-top:9px;line-height:1.25}
+.performance-legend-item,.performance-legend-neutral{display:inline-flex;align-items:center;gap:5px;border-radius:8px;padding:4px 9px;border:1px solid #adbfcd;font-weight:700;font-size:13px}
+.performance-legend-item b{width:13px;height:13px;display:inline-block;background:currentColor;border-radius:3px}
+.performance-legend-neutral{font-size:12px;color:#405b6e;background:#f1f4f7}
+.projector-matrix-surface .performance-legend{flex:none;margin:4px 0 0;gap:4px 8px}
+.projector-matrix-surface .performance-legend-item{font-size:clamp(12px,.86vw,16px);padding:2px 8px}
+.projector-matrix-surface .performance-legend-neutral{font-size:clamp(11px,.8vw,14px);padding:2px 7px}
+.projector-matrix .projector-cell-wrap{display:block;min-width:0}
+.projector-matrix .performance-badge{width:100%;min-width:0;min-height:35px;font-size:clamp(16px,1.15vw,22px);padding:4px 5px;white-space:normal}
+.projector-matrix .performance-badge small{font-size:clamp(11px,.8vw,14px);line-height:1.15}
+@media(max-width:1350px) and (max-height:800px){
+ .projector-matrix .performance-badge{min-height:31px;padding:2px 4px;gap:4px}
+ .projector-matrix-surface .performance-legend{margin-top:3px}
+ /* Reserve a real footer row; nine names and score badges retain their font sizes. */
+ .projector-matrix tbody tr{height:35px}
+ .projector-matrix th{height:57px}
+ .projector-matrix-surface .performance-legend{flex-wrap:nowrap;gap:3px 6px;min-height:32px;margin-top:5px}
+ .projector-matrix-surface .performance-legend-item{padding:2px 5px;font-size:13px}
+ .projector-matrix-surface .performance-legend-neutral{padding:2px 5px;font-size:12px}
+}
+/* REV5: only the Overview result cards and adjacent result controls change. */
+.overview-top3 .tie-podium{display:grid;grid-template-columns:1fr;gap:13px;align-items:stretch}
+.overview-top3 .tie-podium .pod{min-height:156px;padding:17px 22px;border-radius:17px;display:grid;grid-template-columns:56px minmax(0,1fr) auto;grid-template-rows:auto 1fr;gap:5px 15px;text-align:right;align-items:center;box-shadow:0 5px 16px #172e4210}
+.overview-top3 .pod .place{grid-row:1/3;grid-column:1;width:52px;height:52px;margin:0;font-size:23px;border-radius:14px}
+.overview-top3 .podname{grid-column:2;grid-row:1;min-height:0;font-size:20px;line-height:1.4}
+.overview-top3 .podmembers{grid-column:2;grid-row:2;max-height:none;display:flex;flex-wrap:wrap;flex-direction:row;align-items:center;gap:6px}
+.overview-top3 .podmembers .detail-btn{font-size:clamp(16px,1.2vw,21px);font-weight:800;padding:5px 12px;margin:0;line-height:1.5}
+.overview-top3 .podscore{grid-column:3;grid-row:1/3;font-size:clamp(24px,2vw,33px);margin:0;direction:ltr;white-space:nowrap}
+.overview-top3 .tie-podium .pod:has(.place:first-child){min-height:260px;align-content:center}
+.overview-top3 .pod.rank-1{border-color:#cf9d43;background:#fff8e9}
+.overview-top3 .pod.rank-1 .place{background:#a66a09;color:#fff}
+.overview-top3 .pod.rank-2{border-color:#b5c5d2;background:#f4f8fb}
+.overview-top3 .pod.rank-3{border-color:#d8b9a0;background:#fff9f3}
+.topbottom .actions{align-items:stretch;gap:9px}
+.topbottom .result-action-group{display:inline-flex;align-items:stretch;gap:9px;flex:none;white-space:nowrap}
+.topbottom .actions .topbtn{min-height:46px;padding:9px 15px;border-radius:11px;justify-content:center;text-align:center;line-height:1.5}
+.topbottom .actions .reveal-btn{font-size:16px}
+.topbottom .actions .reset-results-btn{font-size:15px;background:#ffffff12;border:1px solid #ffffff72;color:#fff}
+.topbottom .actions .reset-results-btn:hover:not(:disabled){background:#ffffff30}
+.topbottom .actions .reset-results-btn:disabled{opacity:.55;cursor:not-allowed}
+@media(max-width:900px){.overview-top3 .tie-podium .pod{grid-template-columns:45px minmax(0,1fr);min-height:0}.overview-top3 .pod .place{width:43px;height:43px;font-size:20px}.overview-top3 .podscore{grid-column:2;grid-row:3;font-size:25px}.overview-top3 .podname{font-size:18px}}
+
+/* Supporter drill-down: read-only, scoped to one manager and one metric. */
+body.projector-open .drawerback{z-index:7101}
+.supporter-drill-trigger{font:inherit;color:#145771;background:#edf8fc;border:1px solid #b9d6e3;border-radius:9px;padding:4px 12px;min-height:38px;min-width:80px;font-weight:850}
+.supporter-drill-trigger:hover{background:#d9f0f7}
+.supporter-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:15px}
+.supporter-context{font-size:clamp(17px,1.45vw,23px);margin:8px 0;color:#24475b}
+.supporter-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;max-height:min(64vh,670px);overflow-y:auto;overscroll-behavior:contain;padding:4px 7px 10px;scrollbar-gutter:stable}
+.supporter-item{border:1px solid #d2e0e7;background:#f7fafc;border-radius:13px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:13px;padding:12px 15px;min-height:93px}
+.supporter-name{font-size:clamp(17px,1.45vw,22px);font-weight:800;overflow-wrap:anywhere;color:#173c53}
+.supporter-source{font-size:13px;color:#51697b;line-height:1.5;grid-column:1/-1}
+.supporter-score{font-weight:850;font-size:clamp(20px,1.75vw,27px);border-radius:11px;min-width:132px;min-height:55px;padding:5px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.3}
+.supporter-score span{font-size:14px;font-weight:750}
+.supporter-score.perf-blue{background:#d4ebff;color:#124a8d}
+.supporter-score.perf-green{background:#d8f4e4;color:#176046}
+.supporter-score.perf-yellow{background:#fff0bf;color:#77520a}
+.supporter-score.perf-red{background:#ffe0e0;color:#9b232c}
+.supporter-score.perf-neutral{background:#e8edf1;color:#465b6a}
+.supporter-issue{border:1px solid #e9c98a;background:#fff8e6;border-radius:10px;padding:9px 12px;color:#72521b;font-size:14px;margin:10px 0}
+.projector-manager-open{background:transparent;border:0;font:inherit;color:inherit;font-weight:inherit;text-align:right;padding:2px 8px;border-radius:8px;cursor:pointer;width:100%}
+.projector-manager-open:hover{background:#d9edf4}
+.projector-matrix .projector-manager-open{font-size:inherit}
+.projector-stage .projector-manager-open{border:0;min-height:0;line-height:1.5;padding:1px 4px;font-size:inherit;text-align:right}
+@media(max-width:760px){.supporter-list{grid-template-columns:1fr;max-height:60vh}.supporter-item{min-height:82px}.supporter-score{min-width:105px}}
+body.projector-open .supporter-name{font-size:clamp(19px,1.55vw,24px)}
+
+/* Bounded read-only Top Supporters view. Existing manager scores/UI are unchanged. */
+.top-metric-tabs{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.top-metric-tab{border:1px solid #cbdde6;border-radius:10px;color:#23445b;background:#f2f7fa;font-size:14px;font-weight:750;padding:7px 12px;min-height:43px}
+.top-metric-tab.active{background:#d7f3ed;border:2px solid #19756d;color:#124e4b}
+.top-metric-tab.historical-tab{border:2px solid #25806e;background:#edf9f4;color:#15574e}
+.top-metric-tab.historical-tab.active{background:#d7f3ed;border-color:#166455}
+.top-metric-tab:focus-visible{outline:3px solid #bd8d25;outline-offset:2px}
+.top-supporters-panel{max-width:100%;min-width:0}
+.top-supporter-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:9px 0 15px}
+.top-supporter-head h3{font-size:clamp(19px,1.7vw,26px);font-weight:850}
+.top-supporter-lede{color:#436276;font-size:14px}
+.top-supporter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.top-supporter-card{border:1px solid #d1e1e9;border-radius:12px;background:#f7fafc;padding:10px 14px;min-height:97px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
+.top-supporter-name{font-size:clamp(17px,1.3vw,21px);font-weight:850;overflow-wrap:anywhere}
+.top-supporter-manager{font-size:14px;color:#37566a}
+.top-supporter-meta{font-size:11px;color:#4b6578}
+.top-supporter-card .supporter-score{font-size:clamp(20px,1.55vw,26px);min-width:114px;min-height:59px}
+.top-pager{display:flex;align-items:center;justify-content:center;gap:14px;margin:16px 0 0}
+.top-pager button{border:1px solid #abcbd6;border-radius:9px;background:#f2f8fa;color:#254e64;padding:7px 12px;font-size:14px;font-weight:750;min-height:42px}
+.top-pager button:disabled{opacity:.45;cursor:not-allowed}
+.top-projector{flex:1 1 auto;min-height:0;padding:10px 16px;overflow:hidden;display:flex;flex-direction:column}
+.top-projector .top-metric-tabs{flex:none;margin-bottom:6px;gap:5px}
+.top-projector .top-metric-tab{font-size:clamp(13px,1.1vw,17px);padding:3px 8px;min-height:35px}
+.top-projector .top-supporter-head{flex:none;margin:4px 0 6px}
+.top-projector .top-supporter-head h3{font-size:clamp(18px,1.6vw,26px)}
+.top-projector .top-supporter-grid{flex:1 1 auto;min-height:0;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:7px}
+.top-projector .top-supporter-card{min-height:0;padding:5px 12px}
+.top-projector .top-pager{flex:none;margin:6px 0 0}
+@media(max-width:760px){.top-supporter-grid{grid-template-columns:1fr}.top-supporter-head{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+  <div class="brand">
+   <div class="brandline"><div class="brandmark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 22l7-8 5 5 9-11" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 27h22" stroke="#a8e7e1" stroke-width="2.3" stroke-linecap="round"/></svg></div><div><div class="eyebrow">کانون فرهنگی آموزش · شیراز</div><h1>داشبورد عملکرد مدیران</h1><p class="topnote">ارزیابی دوره‌ای با داده‌های Excel و امتیازهای ثبت‌شده در SQLite</p></div></div>
+   <div class="tagrow"><span class="pill">دوره: <strong id="sheetTag">آبان ۱۴۰۵</strong></span><span class="pill">v1.6.0 TOP SUPPORTERS · جذب ۷ نفر فعال · کتاب: حدنصاب ۶۰ با استثنای خصوصی</span></div>
+  </div>
+  <div class="topbottom"><div class="source"><span class="status-dot" id="sourceDot"></span><span id="sourceStatus">در حال دریافت وضعیت SQLite…</span><span style="opacity:.5">•</span><span id="sourceDetails">آبان 1405(3).xlsx</span></div>
+   <div class="actions"><label class="font-picker no-print" for="fontSelector">فونت همه بخش‌ها <select id="fontSelector" aria-label="فونت یکپارچه داشبورد"><option value="vazir">وزیر</option><option value="titr">بی‌تیتر (B Titr)</option></select></label><button class="topbtn no-print" id="backupDbBtn" type="button" title="پشتیبان پایگاه داده">پشتیبان SQLite</button><button class="topbtn no-print" id="printBtn" type="button">چاپ گزارش</button><button class="topbtn no-print" id="csvBtn" type="button">خروجی CSV</button><span class="result-action-group" role="group" aria-label="مدیریت اعلام نتایج"><button class="topbtn reveal-btn no-print" id="revealBtn" type="button">اعلام نتایج</button><button class="topbtn reset-results-btn no-print" id="resetResultsBtn" type="button" disabled>بازنشانی نتایج</button></span><button class="topbtn no-print" id="presentBtn" type="button">حالت ارائه ↗</button></div>
+  </div>
+</header>
+<section id="readinessPanel" class="readiness-panel" aria-live="polite" aria-label="وضعیت آمادگی اعلام نتایج">
+  <div class="readiness-head"><div><strong id="readinessHeadline">در حال بررسی امکان اعلام نتایج…</strong><p id="readinessSubtitle">علت غیرفعال‌بودن دکمه و نمره‌های باقی‌مانده اینجا نمایش داده می‌شود.</p></div><button id="goToMissing" type="button" class="button readiness-goto" hidden>تکمیل نمره‌ها</button></div>
+  <details id="readinessDetails" hidden><summary id="readinessSummary">نمایش جزئیات موارد باقی‌مانده</summary><div id="readinessList" class="readiness-list"></div></details>
+</section>
+<div id="sourceIssues" class="consistency-banner status-incomplete" role="status" aria-live="polite" hidden></div><div id="saveBanner" class="consistency-banner status-incomplete" role="status" aria-live="polite" hidden></div><div id="saveActions" class="controls" hidden><button type="button" class="button" id="retrySave">تلاش دوباره برای ذخیره</button><button type="button" class="button" id="reloadSaved">بازخوانی دادهٔ ثبت‌شده</button><button type="button" class="button" id="saveLocalBackup">پشتیبان تغییرات JSON</button></div><div id="warningBanner" class="consistency-banner status-incomplete" role="status" hidden></div><div id="consistencyBanner" class="consistency-banner" role="status" aria-live="polite" hidden></div>
+<div id="updateBanner" class="update-banner no-print" role="status" aria-live="polite" hidden><span id="updateText">داده تازه‌ای در Excel وجود دارد؛ نتیجهٔ اعلام‌شده فعلاً ثابت مانده است.</span><button id="applyPending" type="button">اعمال داده‌های جدید</button></div>
+<div class="scenariobox" id="scenarioBanner">معیارها یا ضرایب در پایگاه داده محلی تغییر کرده‌اند. Excel دست‌نخورده است و نتیجه بر اساس ترکیب ثبت‌شده SQLite محاسبه می‌شود.</div>
+<nav class="nav no-print" role="tablist" aria-label="بخش‌های داشبورد"><button data-view="overview" class="active" role="tab">نمای مدیریتی</button><button data-view="matrix" role="tab">جدول کامل عملکرد</button><button data-view="weights" role="tab">آزمایش ضرایب</button><button data-view="metrics" role="tab">مدیریت معیارها</button><button data-view="supporters" role="tab">پشتیبانان برتر</button></nav>
+<main id="mainContent" aria-live="polite"></main>
+<section class="summary-bottom" aria-label="خلاصه دوره"><div class="sectiontop"><h2>نگاه کلی به این دوره</h2><span class="sectionhint">مبنای محاسبه: مجموع وزنی معیارهای مشمول ÷ مجموع ضرایب مشمول هر مدیر</span></div><div id="stats" class="stats"></div></section>
+<footer class="footer">Excel فقط خوانده می‌شود. نمره‌های دستی، شمول معیارها و تنظیمات در فایل SQLite این برنامه ذخیره می‌شوند. پس از اولین واردکردن موفق Excel، آخرین داده پذیرفته‌شده بدون خود Excel نیز قابل استفاده است.</footer>
+</div>
+<section id="projectorStage" class="projector-stage" role="region" aria-label="ارائهٔ نمای کلی و ماتریس عملکرد" hidden>
+ <header class="projector-head"><div><div class="projector-eyebrow">کانون فرهنگی آموزش · <span id="projectSheet"></span></div><h2 id="projectTitle">نمای مدیریتی</h2></div><div class="projector-actions"><button type="button" class="projector-tab" data-project-view="overview">نمای کلی</button><button type="button" class="projector-tab" data-project-view="matrix">ماتریس عملکرد</button><button type="button" class="projector-tab" data-project-view="supporters">پشتیبانان برتر</button><button id="projectExit" type="button">خروج از ارائه ×</button></div></header>
+ <div class="projector-message" id="projectStatus" role="status" aria-live="polite"></div>
+ <div class="projector-view" id="projectContent"></div>
+ <nav id="projectNavigation" class="projector-nav" aria-label="پیمایش صفحات ماتریس" hidden><button type="button" id="projectPrev">صفحه قبل</button><div class="projector-page-context" id="projectPageContext"></div><button type="button" id="projectNext">صفحه بعد</button></nav>
+ <div class="projector-note-bottom" id="projectFootnote">نمایش فقط خواندنی؛ هیچ‌یک از کنترل‌های ارائه داده‌های SQLite یا Excel را تغییر نمی‌دهند.</div>
+</section>
+<div id="ceremonyBack" class="ceremony-back" hidden>
+  <section id="ceremony" class="ceremony" role="dialog" aria-modal="true" aria-label="اعلام نتایج مدیران" tabindex="-1">
+    <div class="ceremony-head"><div><div class="ceremony-eyebrow">کانون فرهنگی آموزش | شیراز</div><h2>نتایج ارزیابی مدیران <span id="ceremonySheet"></span></h2><p id="ceremonySub">رتبه‌بندی بر پایه ضرایب شیت Excel</p></div><button id="closeCeremony" class="ceremony-close" type="button">بازگشت به داشبورد ×</button></div>
+    <div id="ceremonyStage" aria-live="polite"></div>
+    <div class="ceremony-actions"><button id="skipCeremony" class="ceremony-control" type="button">نمایش همه رتبه‌ها</button><button id="replayCeremony" class="ceremony-control secondary" type="button">تکرار معرفی</button><button id="hideResults" class="ceremony-control secondary" type="button">پنهان‌کردن دوباره نتایج</button></div>
+  </section>
+</div>
+<div id="drawerBack" class="drawerback" role="presentation"><aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="جزئیات مدیر"></aside></div>
+<script>
+const SNAPSHOT = __DATA_JSON__;
+const fmt = new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2,minimumFractionDigits:0});
+const fmtTwo = new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2,minimumFractionDigits:2});
+const safe = v => String(v??'').replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
+const percent = v => v==null?'—':fmtTwo.format(v);
+const sum = arr => arr.reduce((a,b)=>a+b,0);
+const avg = arr => arr.length?sum(arr)/arr.length:null;
+let sourceData=SNAPSHOT;
+const FONT_STORAGE='kanoon-dashboard-font-v15';
+const ENTRY_MODE_STORAGE='kanoon-entry-mode-v160';
+const sourceId=m=>'xlsname:'+m.name.trim();
+const newCustomId=()=> 'local:'+Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+function isFixedNA(m,manager){return m?._kind==='excel' && Array.isArray(sourceData.applicability?.[m.name]) && !sourceData.applicability[m.name].includes(manager);}
+function tieGroups(rows){const groups=[];for(const r of rows.filter(x=>x.score!==null&&x.rank!==null&&x.rank<=3)){let g=groups.find(x=>x.rank===r.rank);if(!g){g={rank:r.rank,members:[]};groups.push(g);}g.members.push(r);}return groups.sort((a,b)=>a.rank-b.rank);}
+function rankLabel(rank,count){const labels={1:'اول',2:'دوم',3:'سوم'};return 'رتبه '+(count>1?'مشترک ':'')+(labels[rank]||fmt.format(rank));}
+function blankLocal(){return {version:1,excluded:[],added:[],weights:{},cells:{}};}
+let local=blankLocal();
+let fontChoice='vazir';
+let serverReady=false,dbRevision=0,dbSourceHash=null,serverFrozen=false,saveError='',savesPending=0;
+let connectionHealthy=false,serverReadiness=null,serverReadinessRevision=null,serverReadinessHash=null;
+// Readiness is current only after a period/revision-validated response has been
+// installed into canonical UI state, not merely received over HTTP.
+let authorityPhase=location.protocol==='file:'?'preview':'loading';
+let appliedPeriodId=null,appliedRevision=null,appliedSourceHash=null,authorityIssue='';
+let stateRequestTicket=0,lastAppliedTicket=0;
+function authoritativeCurrent(){
+ return authorityPhase==='live'&&serverReady&&connectionHealthy&&
+   appliedPeriodId===sourceData.fileName+' | '+sourceData.sheet&&
+   appliedRevision===dbRevision&&appliedSourceHash===dbSourceHash&&
+   !!serverReadiness&&serverReadinessRevision===dbRevision&&serverReadinessHash===dbSourceHash&&
+   !saveError&&savesPending===0&&!dirtyDrafts.size;
+}
+function readinessPhaseText(){
+ if(saveError)return 'ذخیره‌سازی ناموفق است؛ وضعیت فعلی هنوز تأیید مجدد نشده است.';
+ if(savesPending||dirtyDrafts.size||saveWorkerActive)return 'تغییرات در حال ثبت یا تأیید هستند؛ آمادگی نهایی هنوز معتبر نیست.';
+ if(authorityPhase==='loading')return 'در حال دریافت نخستین وضعیت عملیاتی از SQLite…';
+ if(authorityPhase==='applying'||authorityPhase==='syncing')return 'پاسخ سرور دریافت شده و در حال تطبیق و اعمال در صفحه است…';
+ if(authorityPhase==='preview')return 'فقط پیش‌نمایش داده‌های Excel است؛ وضعیت عملیاتی SQLite تأیید نشده است.';
+ if(authorityPhase==='stale')return 'اتصال قطع یا وضعیت داده تغییر کرده است؛ اطلاعات فقط آخرین وضعیت شناخته‌شده‌اند، نه تأیید زنده.';
+ if(authorityPhase==='error')return 'وضعیت دریافتی از سرور معتبر نیست: '+authorityIssue;
+ return 'وضعیت عملیاتی در انتظار تأیید است.';
+}
+let savedVersion=0,editVersion=0,saveWorkerActive=false,showSaved=false,saveConflict=false;
+const dirtyDrafts=new Map();
+let entryMode='cards';try{entryMode=localStorage.getItem(ENTRY_MODE_STORAGE)==='compact'?'compact':'cards';}catch(e){}
+let ceremonyRows=null, revealedRevision=null, revealedSourceHash=null, resultsInvalidated=false;
+let projectorPage=0,projectorSignature=null;
+const PROJECT_METRICS_PER_PAGE=3;
+let saveQueue=Promise.resolve();
+function saveStatus(){
+ const el=byId('saveBanner');if(!el)return;
+ const actions=byId('saveActions');
+ const unsaved=dirtyDrafts.size>0||editVersion>savedVersion;
+ actions.hidden=!saveError;
+ byId('retrySave').hidden=saveConflict;
+ if(saveError){el.hidden=false;el.className='consistency-banner status-mismatch';el.textContent=(saveConflict?'تعارض نسخه (409): ':'ذخیره در SQLite ناموفق بود: ')+saveError+' · تغییرات این صفحه هنوز ثبت نشده‌اند. برای جلوگیری از حذف داده، ابتدا پشتیبان JSON بگیرید؛ سپس تلاش مجدد یا بازخوانی آگاهانه را انتخاب کنید.';}
+ else if(!serverReady||!connectionHealthy){el.hidden=false;el.className='consistency-banner status-incomplete';el.textContent='اتصال فعلی به SQLite تأیید نشده است؛ هر ذخیرهٔ قبلی فقط آخرین ثبت تأییدشده است.';}
+ else if(unsaved||savesPending>0){el.hidden=false;el.className='consistency-banner status-incomplete';el.textContent=dirtyDrafts.size?'ویرایش در حال انجام است؛ مقدار پس از تأیید ذخیره می‌شود.':'تغییرات در صف یا در حال ثبت در SQLite هستند…';}
+ else if(showSaved){el.hidden=false;el.className='consistency-banner status-saved';el.textContent='ذخیره شد · نسخه '+fmt.format(dbRevision)+' · پاسخ موفق پس از ثبت در SQLite دریافت شد.';}
+ else el.hidden=true;
+}
+function saveLocal(intent='settings'){
+ if(serverFrozen&&intent!=='weights'){saveError='ارزیابی قفل است؛ فقط ضرایب قابل ویرایش هستند.';saveStatus();return Promise.resolve(false);}
+ if(!serverReady){saveError='سرویس محلی در دسترس نیست.';saveStatus();return Promise.resolve(false);}
+ if(saveError){saveStatus();return Promise.resolve(false);}
+ try{validateLocal(structuredClone(local));}catch(e){saveError=e.message;saveStatus();return Promise.resolve(false);}
+ editVersion++;showSaved=false;serverReadinessRevision=null;authorityPhase='syncing';
+ savesPending=1;saveStatus();
+ if(!saveWorkerActive)saveQueue=processSaveQueue();
+ return saveQueue;
+}
+async function processSaveQueue(){
+ saveWorkerActive=true;
+ while(savedVersion<editVersion&&!saveError){
+   const requestVersion=editVersion;
+   let payload;
+   try{payload=validateLocal(structuredClone(local));}catch(e){saveError=e.message;break;}
+   try{
+     const response=await fetch('/api/settings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:dbRevision,settings:payload,weightsOnly:serverFrozen})});
+     const result=await response.json();
+     if(!response.ok){saveConflict=response.status===409;throw Error(result.error||'خطا در ثبت اطلاعات');}
+     if(result.saved!==true||!Number.isInteger(result.revision)||result.revision!==dbRevision+1||!result.settings)throw Error('تأیید معتبر ذخیره از سرور دریافت نشد. وضعیت SQLite باید بررسی شود.');
+     dbRevision=result.revision;serverReadiness=result.readiness||null;serverReadinessRevision=result.revision;serverReadinessHash=dbSourceHash;appliedRevision=result.revision;appliedSourceHash=dbSourceHash;
+     savedVersion=requestVersion;
+     if(requestVersion===editVersion){local=result.settings;rebuildData();showSaved=true;}
+   }catch(e){saveError=e.message||'خطای نامشخص';showSaved=false;break;}
+ }
+ saveWorkerActive=false;savesPending=0;
+ if(!saveError&&savedVersion===editVersion&&connectionHealthy&&serverReadiness){authorityPhase='live';}
+ else if(saveError){authorityPhase='stale';}
+ saveStatus();renderIntegrity(calculate());renderStats(calculate());renderProjector();
+ return !saveError&&savedVersion===editVersion;
+}
+function retrySave(){
+ if(!saveError||saveConflict||saveWorkerActive||!serverReady)return;
+ saveError='';connectionHealthy=true;showSaved=false;
+ if(savedVersion<editVersion){savesPending=1;saveQueue=processSaveQueue();}else saveStatus();
+}
+async function reloadSaved(){
+ if(saveWorkerActive)return;
+ if(!confirm('تغییرات ثبت‌نشده این صفحه کنار گذاشته می‌شوند. آیا ابتدا پشتیبان JSON تهیه کرده‌اید و می‌خواهید نسخه ثبت‌شده SQLite را بازخوانی کنید؟'))return;
+ try{
+   const response=await fetch('/api/state',{cache:'no-store'});
+   if(!response.ok)throw Error('خواندن SQLite ناموفق بود.');
+   const remote=await response.json();
+   dirtyDrafts.clear();saveError='';saveConflict=false;showSaved=false;
+   editVersion=0;savedVersion=0;serverReady=false;
+   if(!handleState(remote,true))throw Error(authorityIssue||'وضعیت دریافتی قابل اعمال نیست.');saveStatus();
+ }catch(e){saveError=e.message;saveStatus();}
+}
+function mayEdit(allowFrozenWeights=false){
+ if(!serverReady){alert('برای ویرایش اطلاعات، داشبورد را از سرور محلی اجرا کنید.');return false;}
+ if(serverFrozen&&!allowFrozenWeights){alert('نمرات این دوره قفل هستند؛ فقط ضرایب در بخش مدیریت ضرایب قابل تغییرند.');return false;}
+ if(saveError){alert('ابتدا خطای ذخیره را از بخش وضعیت ذخیره رفع کنید؛ داده محلی هنوز حفظ شده است.');return false;}
+ return true;
+}
+function updateEditorLock(){
+ const selectors=['#resetWeights','#newMetricForm input','#newMetricForm select','#newMetricForm button',
+ '[data-weight]','[data-weight-number]','[data-criterion-weight]','[data-toggle-criterion]',
+ '[data-cell-value]','[data-cell-status]','[data-restore-cell]','#importLocalBtn','#importLocalInput'];
+ document.querySelectorAll(selectors.join(',')).forEach(el=>{
+   const fixedNA=el.dataset.fixedNa==='true';
+   const blockedStatus=el.matches('[data-cell-value]')&&['na','missing'].includes(el.dataset.cellMode);
+   const noOverride=el.matches('[data-restore-cell]')&&el.dataset.hasOverride!=='true';
+   const weightControl=el.matches('#resetWeights,[data-weight],[data-weight-number],[data-criterion-weight]');
+   const excludedMetric=el.matches('[data-criterion-weight]')&&!!el.closest('.criterion-excluded');
+   el.disabled=(serverFrozen&&!weightControl)||excludedMetric||fixedNA||blockedStatus||noOverride;
+   if(serverFrozen&&!weightControl)el.title='نمرات در دوره قفل‌شده قابل تغییر نیستند';
+   else if(serverFrozen&&weightControl)el.title='ویرایش ضریب در دوره قفل‌شده مجاز است و ممکن است رتبه‌ها را تغییر دهد';
+   else if(fixedNA)el.title='این معیار طبق تصمیم دوره برای این مدیر نامشمول است';
+   else if(noOverride)el.title='این خانه اکنون مطابق منبع است';
+   else el.removeAttribute('title');
+ });
+}
+function loadLocal(){local=blankLocal();}
+function validateLocal(value){
+ if(!value||value.version!==1||!Array.isArray(value.excluded)||!Array.isArray(value.added)||!value.weights||typeof value.weights!=='object'||Array.isArray(value.weights))throw Error('ساختار تنظیمات محلی معتبر نیست.');
+ if(value.added.length>50)throw Error('تعداد معیارهای جدید بیش از حد مجاز است.');
+ const ids=new Set();
+ const excluded=value.excluded.filter(x=>typeof x==='string'&&x.length<150);
+ const added=value.added.map(m=>{
+   if(!m||typeof m.id!=='string'||!m.id.startsWith('local:')||ids.has(m.id)||typeof m.name!=='string'||m.name.trim().length<2||m.name.length>80||!['percent','count','score'].includes(m.type)||!Number.isFinite(m.weight)||m.weight<0||m.weight>1000||!m.valuesByManager||typeof m.valuesByManager!=='object'||Array.isArray(m.valuesByManager))throw Error('مشخصات یک معیار جدید معتبر نیست.');
+   ids.add(m.id);
+   const values={};for(const [name,val] of Object.entries(m.valuesByManager)){
+     if(typeof name!=='string'||name.length>120)continue;
+     if(val===null)continue;
+     if(typeof val!=='number'||!Number.isFinite(val)||val<0||(['percent','score'].includes(m.type)&&val>100)||(m.type==='count'&&!Number.isSafeInteger(val)))throw Error('مقدار نامعتبر برای '+m.name);
+     values[name]=val;
+   }
+   return {id:m.id,name:m.name.trim(),type:m.type,weight:m.weight,valuesByManager:values};
+ });
+ const weights={};for(const [id,w] of Object.entries(value.weights))if(typeof id==='string'&&id.length<150&&typeof w==='number'&&Number.isFinite(w)&&w>=0&&w<=1000)weights[id]=w;
+ const cells={};
+ for(const [id,people] of Object.entries(value.cells||{})){
+   if(typeof id!=='string'||!people||typeof people!=='object'||Array.isArray(people))throw Error('وضعیت معیار معتبر نیست.');
+   const group={};
+   for(const [manager,c] of Object.entries(people)){
+     if(typeof manager!=='string'||!c||!['scored','missing','na'].includes(c.status))throw Error('وضعیت نمره معتبر نیست.');
+     if(c.status==='scored'){
+       if(c.value!==null&&(!Number.isFinite(c.value)||c.value<0||c.value>Number.MAX_SAFE_INTEGER))throw Error('نمره نامعتبر است.');
+       group[manager]={status:'scored',value:c.value??null};
+     }else group[manager]={status:c.status};
+   }
+   if(Object.keys(group).length)cells[id]=group;
+ }
+ return {version:1,excluded:[...new Set(excluded)],added,weights,cells};
+}
+function resolveCell(m,manager,index){
+ if(isFixedNA(m,manager))return {status:'na',value:null,forced:true};
+ const c=local.cells?.[m._id]?.[manager];
+ if(c){if(c.status==='na')return {status:'na',value:null};
+   if(c.status==='missing'||c.value===null||c.value===undefined)return {status:'missing',value:null};
+   return {status:'scored',value:c.value};}
+ const val=m.values[index];
+ return val===null||val===undefined?{status:'missing',value:null}:{status:'scored',value:val};
+}
+function rebuildData(){
+ const metrics=allMetrics().filter(m=>!local.excluded.includes(m._id));
+ data={...sourceData,metrics};
+ state.weights=metrics.map(m=>Object.prototype.hasOwnProperty.call(local.weights,m._id)?local.weights[m._id]:m.weight);
+ state.modified=local.excluded.length>0||local.added.length>0||Object.keys(local.weights).length>0||Object.keys(local.cells||{}).length>0;
+ if(state.sort!=='overall'&&(!Number.isInteger(Number(state.sort))||Number(state.sort)>=metrics.length))state.sort='overall';
+ if(!allMetrics().find(m=>m._id===state.editMetricId))state.editMetricId=metrics[0]?._id||null;
+}
+let data=sourceData;
+const state={view:'overview',sort:'overall',query:'',selectedIndex:null,weights:data.metrics.map(m=>m.weight),modified:false,connected:false,lastHash:null,checkedAt:null,revealed:false,editMetricId:null};
+loadLocal();rebuildData();
+const byId = id=>document.getElementById(id);
+function calculate(){
+ const rows=data.managers.map((name,index)=>{
+   let numerator=0,denominator=0,missing=[];
+   data.metrics.forEach((m,j)=>{
+     const weight=state.weights[j];if(weight<=0)return;
+     const c=resolveCell(m,name,index);
+     if(c.status==='na')return;
+     denominator+=weight;
+     if(c.status!=='scored'||c.value===null||!Number.isFinite(c.value)){missing.push(m.name);return;}
+     numerator+=weight*c.value;
+   });
+   const incomplete=missing.length>0||!Number.isFinite(numerator)||!Number.isFinite(denominator)||denominator<=0;
+   const score=incomplete?null:numerator/denominator;
+   return {name,index,score:Number.isFinite(score)?score:null,denominator,missing,incomplete,sourceScore:data.sourceScores?.[index]??null,sourceRank:data.sourceRanks?.[index]??null};
+ });
+ for(const r of rows)r.rank=r.score===null?null:1+rows.filter(other=>other.score!==null&&other.score>r.score+1e-9).length;
+ rows.sort((a,b)=>a.score===null?1:b.score===null?-1:b.score-a.score||a.index-b.index);
+ return rows;
+}
+function verifyReference(rows){
+ if(!data.metrics.some((m,i)=>state.weights[i]>0))return {kind:'incomplete',message:'حداقل یک معیار با ضریب مثبت لازم است.'};
+ if(rows.some(r=>r.score===null||!Number.isFinite(r.score)))return {kind:'incomplete',message:'برخی نمره‌ها ثبت نشده‌اند یا برای یک مدیر هیچ ضریب قابل اعمالی وجود ندارد. نمره را وارد کنید یا وضعیت «نامشمول» را انتخاب کنید.'};
+ const src=sourceData;
+ const rawReady=src.metrics.every(m=>m.weight<=0||m.values.every(v=>typeof v==='number'&&Number.isFinite(v)));
+ if(rawReady&&Array.isArray(src.sourceScores)&&Array.isArray(src.sourceRanks)&&src.sourceScores.length===src.managers.length&&src.sourceRanks.length===src.managers.length){
+   const weightTotal=sum(src.metrics.map(m=>m.weight));
+   if(weightTotal>0){
+    const orig=src.managers.map((name,i)=>({name,index:i,score:sum(src.metrics.map(m=>m.weight*(m.values[i]??0)))/weightTotal}));
+    for(const r of orig)r.rank=1+orig.filter(o=>o.score>r.score+1e-9).length;
+    if(orig.some(r=>typeof src.sourceScores[r.index]!=='number'||Math.abs(src.sourceScores[r.index]-r.score)>.021||src.sourceRanks[r.index]!==r.rank))return {kind:'mismatch',message:'مغایرت امتیاز یا رتبه در مقادیر اصلی Excel؛ پیش از اعلام نتیجه بررسی شود.'};
+   }
+ }
+ return {kind:'local',message:'نمره‌ها با اعمال وضعیت اختصاصی هر مدیر در SQLite محاسبه شده‌اند. معیار نامشمول در صورت و مخرج لحاظ نشده است.'};
+}
+function clientReadinessDetails(rows){
+  const groups=[];let missingCount=0;
+  const incompletePeople=new Set();
+  const zeroDenom=rows.filter(r=>!Number.isFinite(r.denominator)||r.denominator<=0).map(r=>r.name);
+  zeroDenom.forEach(x=>incompletePeople.add(x));
+  data.metrics.forEach((m,j)=>{
+    if(state.weights[j]<=0)return;
+    const names=[];
+    for(const row of rows){
+      const c=resolveCell(m,row.name,row.index);
+      if(c.status==='na')continue;
+      if(c.status!=='scored'||c.value===null||!Number.isFinite(c.value)){
+        names.push(row.name);incompletePeople.add(row.name);missingCount++;
+      }
+    }
+    if(names.length)groups.push({metricId:m._id,metric:m.name,weight:state.weights[j],managers:names,count:names.length});
+  });
+  return {missingCount,incompleteManagers:incompletePeople.size,groups,noDenominator:zeroDenom};
+}
+function renderReadiness(rows,check){
+  const panel=byId('readinessPanel');if(!panel)return;
+  const canUseBackend=authoritativeCurrent();
+  const diag=canUseBackend?serverReadiness:clientReadinessDetails(rows);
+  const blocked=byId('revealBtn').disabled;
+  const reasons=[];
+  if(!serverReady)reasons.push('برنامه در حالت پیش‌نمایش است؛ برای استفاده کامل start_with_uv.bat را اجرا کن.');
+  else if(!connectionHealthy)reasons.push('اتصال به سرویس محلی قطع شده است؛ پنجره اجرای uv را بررسی کن.');
+  if(savesPending>0)reasons.push('ثبت تغییرات در SQLite هنوز تمام نشده است.');
+  if(saveError)reasons.push('آخرین ذخیره‌سازی ناموفق بود: '+saveError);
+  if(check.kind==='mismatch')reasons.push(check.message);
+  if(check.kind==='unknown')reasons.push(check.message);
+  if(!diag.missingCount&&!diag.noDenominator?.length&&check.kind==='incomplete')reasons.push(check.message);
+  // Backend is authoritative when up to date; do not silently hide an independent guard.
+  if(canUseBackend&&!serverReadiness.ready&&!diag.missingCount&&!diag.noDenominator?.length){
+     if(!reasons.includes(serverReadiness.reason))reasons.push(serverReadiness.reason||'ارزیابی توسط سرور معتبر تشخیص داده نشد.');
+  }
+  panel.classList.toggle('is-ready',!blocked);
+  const missing=diag.missingCount||0;
+  const incomplete=diag.incompleteManagers||0;
+  const title=!blocked?'آماده اعلام نتایج':missing>0?`${fmt.format(missing)} نمره ثبت‌نشده برای ${fmt.format(incomplete)} مدیر`:
+      (reasons[0]||'اعلام نتایج فعلاً امکان‌پذیر نیست');
+  byId('readinessHeadline').textContent=title;
+  const explanation=blocked?(missing>0?'دکمه «اعلام نتایج» تا تکمیل نمره‌های معیارهای مشمول و دارای ضریب مثبت غیرفعال است. نمره صفر معتبر است؛ نامشمول از مخرج حذف می‌شود.'+(reasons.length?' همچنین: '+reasons.join(' · '):''):reasons.join(' · ')):
+     'تمام نمره‌های الزامی ثبت شده‌اند و ارتباط با SQLite برقرار است. اکنون می‌توانی نتایج را اعلام کنی.';
+  byId('readinessSubtitle').textContent=explanation;
+  const details=byId('readinessDetails');const keepOpen=details.open;
+  const groups=diag.groups||[];
+  const zero=diag.noDenominator||[];
+  const list=[];
+  for(const item of groups){
+    const people=item.managers.map(name=>`<button type="button" data-fix-metric="${safe(item.metricId)}" data-fix-manager="${safe(name)}" title="رفتن به ثبت نمره ${safe(name)}">${safe(name)}</button>`).join('');
+    list.push(`<div class="readiness-group"><strong>${safe(item.metric)}</strong><span class="readiness-pill">ضریب ${fmt.format(item.weight)} · ${fmt.format(item.count)} نمره ناقص</span><div class="readiness-people">${people}</div></div>`);
+  }
+  if(zero.length)list.push(`<div class="readiness-group"><strong>مدیر بدون ضریب قابل اعمال</strong><p>${zero.map(safe).join('، ')}</p><p>برای این مدیر باید حداقل یک معیار مشمول با ضریب مثبت تعریف شود.</p></div>`);
+  if(reasons.length)list.push(...reasons.map(msg=>`<div class="readiness-group">${safe(msg)}</div>`));
+  if(!list.length&&blocked)list.push(`<div class="readiness-group">${safe(check.message||'وضعیت داده‌ها در حال بررسی است.')}</div>`);
+  details.hidden=!blocked||!list.length;
+  details.open=!details.hidden&&keepOpen;
+  byId('readinessSummary').textContent=missing>0?`مشاهده همه ${fmt.format(missing)} نمره ناقص به تفکیک معیار و مدیر`:'مشاهده علت دقیق و راه رفع مشکل';
+  byId('readinessList').innerHTML=list.join('');
+  byId('goToMissing').hidden=!groups.length;
+}
+function renderIntegrity(rows){
+  const check=verifyReference(rows),box=byId('consistencyBanner');
+  if(!authoritativeCurrent()){
+    const msg=readinessPhaseText();
+    box.hidden=false;box.className='consistency-banner status-incomplete';box.textContent=msg;
+    const reveal=byId('revealBtn');reveal.disabled=true;reveal.title=msg;
+    byId('readinessPanel').classList.remove('is-ready');
+    byId('readinessHeadline').textContent=authorityPhase==='stale'?'آخرین وضعیت شناخته‌شده · تأیید نشده':msg;
+    byId('readinessSubtitle').textContent='تا دریافت و اعمال پاسخ معتبر دوره و revision، شمارش‌های پیش‌نمایش یا اطلاعات قدیمی به‌عنوان آمادگی فعلی اعلام نمی‌شوند.';
+    byId('readinessDetails').hidden=true;byId('goToMissing').hidden=true;
+    return {kind:'unknown',message:msg};
+  }
+  box.hidden=check.kind==='ok';
+  box.className='consistency-banner status-'+check.kind;
+  box.textContent=check.message;
+  byId('revealBtn').disabled=['mismatch','incomplete','unknown'].includes(check.kind)||!serverReady||!connectionHealthy||savesPending>0||!!saveError||(serverReadinessRevision===dbRevision&&serverReadinessHash===dbSourceHash&&serverReadiness&&!serverReadiness.ready);
+  byId('revealBtn').title=byId('revealBtn').disabled?'علت دقیق در بخش وضعیت آمادگی نمایش داده شده است.':'';
+  renderReadiness(rows,check);return check;
+}
+const getMetricVal=(row,idx)=>idx<0?row.score:(resolveCell(data.metrics[idx],row.name,row.index).status==='scored'?resolveCell(data.metrics[idx],row.name,row.index).value:null);
+function viewRanked(rows){
+ const idx=Number(state.sort);
+ if(state.sort==='overall')return rows;
+ return rows.slice().sort((a,b)=>(getMetricVal(b,idx)??-1)-(getMetricVal(a,idx)??-1)||a.index-b.index);
+}
+const n=v=>v===null?'—':fmt.format(v);
+function renderStats(rows){
+ const vals=rows.map(r=>r.score).filter(x=>x!==null);const best=rows.find(x=>x.score!==null),worst=rows.slice().reverse().find(x=>x.score!==null);
+ const qualifier=authoritativeCurrent()?'':authorityPhase==='stale'?' (آخرین وضعیت شناخته‌شده)':' (پیش‌نمایش غیرعملیاتی)';
+ const blocks=[
+  {label:'مدیران در دوره',value:fmt.format(rows.length),note:'تمام افراد ثبت‌شده در همین شیت',accent:'#008f91'},
+  {label:'میانگین امتیاز کل',value:state.revealed?percent(avg(vals)):'پنهان',note:state.revealed?'امتیاز ترکیبی معیارها':'پس از اعلام نتایج',accent:'#558db1'},
+  {label:state.revealed?'بالاترین امتیاز':'نتیجه نهایی',value:state.revealed?(best?percent(best.score):'—'):'پنهان',note:state.revealed?(best?.name||'داده ناقص'):'پس از اعلام نتایج نمایش داده می‌شود',accent:'#d8a64f'},
+  {label:'شاخص‌های فعال'+qualifier,value:fmt.format(state.weights.filter(w=>w>0).length),note:`مجموع ضرایب فعال: ${fmt.format(sum(state.weights))}؛ مخرج هر مدیر ممکن است کمتر باشد`,accent:'#ae7dc3'}
+ ];
+ byId('stats').innerHTML=blocks.map(b=>`<article class="stat" style="--accent:${b.accent}"><div class="statlabel">${safe(b.label)}</div><div class="statval">${safe(b.value)}</div><div class="statnote">${safe(b.note)}</div></article>`).join('');
+ byId('scenarioBanner').classList.toggle('show',state.modified);document.body.classList.toggle('results-revealed',state.revealed);byId('resetResultsBtn').disabled=!state.revealed&&byId('ceremonyBack').hidden;byId('revealBtn').textContent=state.revealed?'نمایش دوباره نتایج':'اعلام نتایج';byId('csvBtn').disabled=!state.revealed;
+}
+function display(){const rows=calculate();renderStats(rows);renderIntegrity(rows); const main=byId('mainContent'); if(state.view==='overview')main.innerHTML=overview(rows); else if(state.view==='matrix')main.innerHTML=matrix(rows);else if(state.view==='weights')main.innerHTML=weightsView(rows); else if(state.view==='supporters')main.innerHTML=renderTopSupporters(false); else main.innerHTML=metricsView(rows); document.querySelectorAll('[data-view]').forEach(x=>{x.classList.toggle('active',x.dataset.view===state.view);x.setAttribute('aria-selected',String(x.dataset.view===state.view));});updateEditorLock();renderProjector();}
+function optionList(){return `<option value="overall" ${state.sort==='overall'?'selected':''}>امتیاز نهایی</option>`+data.metrics.map((m,i)=>`<option value="${i}" ${state.sort===String(i)?'selected':''}>${safe(m.name)}</option>`).join('');}
+function topPodium(rows){
+ const groups=tieGroups(rows);
+ return `<div class="podium tie-podium">`+groups.map(g=>`<div class="pod rank-${g.rank}"><div class="place">${fmt.format(g.rank)}</div><div class="podname">${safe(rankLabel(g.rank,g.members.length))}</div><div class="podmembers">${g.members.map(r=>`<button class="detail-btn no-print" data-manager="${r.index}">${safe(r.name)}</button>`).join('')}</div><div class="podscore">${percent(g.members[0].score)}</div></div>`).join('')+`</div>`;
+}
+function leaderboard(rows){
+ if(!state.revealed){
+  const alphabetic=rows.slice().filter(r=>r.name.includes(state.query)).sort((a,b)=>a.name.localeCompare(b.name,'fa'));
+  return `<div class="unrevealed-note"><strong>مرحله بررسی عملکرد</strong><span>اسامی به ترتیب حروف الفبا هستند. امتیاز نهایی و رتبه‌ها پس از اعلام نتایج نمایش داده می‌شوند.</span></div><div class="leaderlist">${alphabetic.map(r=>`<button class="leadrow before-results" data-manager="${r.index}" title="جزئیات عملکرد ${safe(r.name)}"><span class="rankbubble">•</span><span class="leadname">${safe(r.name)}</span><span class="pending-text">مشاهده عملکرد</span><span class="leadval">—</span></button>`).join('')}</div>`;
+ }
+ const ordered=viewRanked(rows).filter(r=>r.name.includes(state.query));const metricIdx=state.sort==='overall'?-1:Number(state.sort);const title=metricIdx<0?'امتیاز نهایی':data.metrics[metricIdx].name;
+ return `<div class="leaderlist">${ordered.length?ordered.map((r,i)=>{let value=getMetricVal(r,metricIdx);let rank=metricIdx<0?r.rank:(value==null?null:1+rows.filter(x=>{let v=getMetricVal(x,metricIdx);return v!=null&&v>value+1e-9}).length);let pct=value===null?0:Math.max(0,Math.min(100,value));return `<button class="leadrow" data-manager="${r.index}" title="نمایش جزئیات ${safe(r.name)}"><span class="rankbubble ${rank===1?'first':rank===2?'second':rank===3?'third':''}">${rank===null?'—':fmt.format(rank)}</span><span class="leadname">${safe(r.name)}</span><span class="track"><span class="fill" style="width:${pct}%"></span></span><span class="leadval">${percent(value)}</span></button>`;}).join(''):`<div class="empty">مدیری با این نام پیدا نشد.</div>`}</div>`;
+}
+function overview(rows){return `<div class="layout"><section class="panel"><div class="panelhead"><div><h3>فهرست مدیران و بررسی عملکرد</h3><p>با انتخاب هر مدیر، عملکرد خام او را بررسی کنید. رتبه‌ها در پایان اعلام می‌شوند.</p></div><div class="controls private-tools"><input id="searchManager" class="search" placeholder="جست‌وجوی نام مدیر…" value="${safe(state.query)}" aria-label="جست‌وجوی مدیر"/><select class="select" id="sortMetric" aria-label="معیار مرتب‌سازی">${optionList()}</select></div></div><div id="leaderboard">${leaderboard(rows)}</div><div class="legend"><span class="subtle">${state.sort==='overall'?'رتبه محاسبه‌شده بر اساس ضرایب شیت':'نمایش مرتب‌شده بر اساس یک شاخص، مستقل از رتبه نهایی'}</span></div></section><aside class="panel overview-top3"><div class="panelhead"><div><h3>سه مدیر برتر این دوره</h3><p>بر اساس امتیاز نهایی وزن‌دار</p></div></div>${state.revealed?topPodium(rows):'<div class="result-placeholder"><span class="trophy-icon">✦</span><strong>رتبه‌ها هنوز اعلام نشده‌اند</strong><span>پس از پایان بررسی عملکرد مدیران، دکمه «اعلام نتایج» را بزنید.</span></div>'}<div class="panelhead" style="margin:12px 0"><div><h3>شاخص‌های این ارزیابی</h3><p>معیارهای فعال Excel و معیارهای محلی</p></div></div><div class="metricchips">${data.metrics.map((m,j)=>`<span class="chip">${safe(m.name)} <strong>× ${fmt.format(state.weights[j])}</strong></span>`).join('')}</div><div class="notice" style="margin-top:18px">ارزش امتیاز نهایی، مقایسه عملکرد در <b>همین دوره</b> است. تفسیر تغییر عملکرد بین دوره‌ها نیازمند توجه به تفاوت شاخص‌ها و ضرایب است.</div></aside></div>`;}
+// Shared presentation-only classifier. Does NOT affect scores, revision or persisted settings.
+// Owner-approved for the CURRENT period only; never inferred from raw storage type.
+// These exact 14 source metric IDs are intentionally frozen, not derived at runtime
+// from unknown future workbooks or periods.
+const APPROVED_EXCEL_GRADING=Object.freeze({"fileName": "آبان 1405(3).xlsx", "sheet": "آبان 1405", "metricIds": ["xlsname:درصد حضور کل", "xlsname:درصد حضور در حوزه", "xlsname:فیلم پیشرفت", "xlsname:مصاحبه", "xlsname:کلاس هوش", "xlsname:جلسات یکشنبه و پنج شنبه", "xlsname:نواقصی", "xlsname:عیار علمی", "xlsname:مشابه پارسال", "xlsname:جلسه شنبه مدیران", "xlsname:عکس روز جمعه", "xlsname:کتاب", "xlsname:جشن ها و مراسم", "xlsname:امتحان"]});
+const APPROVED_EXCEL_METRICS=new Set(APPROVED_EXCEL_GRADING.metricIds);
+// Only the two existing Owner-qualified custom score definitions are admitted.
+const APPROVED_LOCAL_METRICS=new Set(['local:mwkqb3aysdtlhm','local:mwkqfw7ozg1223']);
+const PERFORMANCE_LABELS={blue:'عالی',green:'خوب',yellow:'متوسط',red:'ضعیف'};
+function gradingApproved(metric){
+ if(!metric)return false;
+ const correctPeriod=sourceData.fileName===APPROVED_EXCEL_GRADING.fileName&&sourceData.sheet===APPROVED_EXCEL_GRADING.sheet;
+ if(!correctPeriod)return false;
+ if(metric._kind==='local')return APPROVED_LOCAL_METRICS.has(metric._id)&&['score','percent'].includes(metric.type);
+ return metric._kind==='excel'&&APPROVED_EXCEL_METRICS.has(metric._id);
+}
+function performanceBand(value){return typeof value==='number'&&Number.isFinite(value)&&value>=0&&value<=100?(value>90?'blue':value>=80?'green':value>=70?'yellow':'red'):null;}
+function classifyPerformance(metric,cell){
+ if(!metric||!cell||cell.status!=='scored'||typeof cell.value!=='number'||!Number.isFinite(cell.value))return null;
+ if(!gradingApproved(metric)||cell.value<0||cell.value>100)return null;
+ return performanceBand(cell.value);
+}
+function performanceLegend(){
+ return `<div class="performance-legend" aria-label="راهنمای چهار سطح عملکرد">${Object.entries(PERFORMANCE_LABELS).map(([code,label])=>`<span class="performance-legend-item perf-${code}"><b aria-hidden="true"></b>${label}</span>`).join('')}<span class="performance-legend-neutral">خاکستری: بدون طبقه‌بندی یا بدون نمره؛ سطح پنجم نیست</span></div>`;
+}
+function performanceBadge(m,cell,projector=false){
+ const level=classifyPerformance(m,cell);
+ const value=cell.status==='na'?'نامشمول':cell.status==='missing'?'ثبت‌نشده':cell.status!=='scored'||!Number.isFinite(cell.value)?'نامعتبر':fmt.format(cell.value);
+ const explanation=level?PERFORMANCE_LABELS[level]:cell.status==='na'?'نامشمول':cell.status==='missing'?'ثبت‌نشده':cell.status!=='scored'||!Number.isFinite(cell.value)?'مقدار نامعتبر':'بدون طبقه‌بندی';
+ const classes=`performance-badge ${level?'perf-'+level:'perf-neutral'} ${projector?'projector-cell':''}`;
+ return `<span class="${classes}" data-performance="${level||'unclassified'}" data-status="${safe(cell.status)}" title="${safe(m.name)} · ${safe(value)} · ${safe(explanation)}"><b>${safe(value)}</b>${level?`<small>${safe(explanation)}</small>`:projector?`<small>${safe(explanation)}</small>`:''}</span>`;
+}
+
+function matrix(rows){
+ let ordered=rows.filter(r=>r.name.includes(state.query));
+ if(!state.revealed)ordered=ordered.slice().sort((a,b)=>a.name.localeCompare(b.name,'fa'));
+ return `<section class="panel"><div class="panelhead"><div><h3>ماتریس عملکرد مدیران</h3><p>تمام امتیازهای ثبت‌شده؛ جدول قابل پیمایش افقی است و ستون نام ثابت می‌ماند.</p></div><div class="controls private-tools"><input id="searchManager" class="search" placeholder="جست‌وجوی مدیر…" value="${safe(state.query)}"/></div></div><div class="matrixscroll"><table><thead><tr><th>مدیر / رتبه</th><th>امتیاز نهایی</th>${data.metrics.map((m,j)=>`<th title="ضریب ${state.weights[j]}">${safe(m.name)}<div class="subtle">ضریب ${fmt.format(state.weights[j])}</div></th>`).join('')}</tr></thead><tbody>${ordered.map(r=>`<tr><td class="managercell" data-manager="${r.index}" tabindex="0" role="button"><span class="rank-inline">${!state.revealed||r.rank===null?'—':fmt.format(r.rank)}</span>${safe(r.name)}</td><td><strong>${state.revealed?percent(r.score):'پنهان'}</strong></td>${data.metrics.map(m=>{const cell=resolveCell(m,r.name,r.index);return `<td>${performanceBadge(m,cell)}</td>`;}).join('')}</tr>`).join('')}</tbody></table></div>${performanceLegend()}<div class="subtle" style="margin-top:9px">چهار سطح رنگ بر اساس نمرهٔ مؤثر ۰ تا ۱۰۰ برای ۱۴ معیار اصلی همین دوره و دو معیار سفارشی امتیازی است؛ رنگ نمره مستقل از ضریب و سهم در امتیاز نهایی است. «امتحان» با وجود رنگ معتبر، ضریب صفر دارد. صفر، ثبت‌نشده و نامشمول متفاوت‌اند.</div></section>`;
+}
+
+// Projection is a read-only rendering of the same canonical data and resolveCell state.
+// A separate hidden-score model is intentionally NOT created.
+function projectorMayShowFinal(rows){
+ return !!(state.revealed&&!resultsInvalidated&&authoritativeCurrent()&&serverFrozen&&!saveError&&
+   !savesPending&&!dirtyDrafts.size&&dbRevision===revealedRevision&&dbSourceHash===revealedSourceHash&&
+   ['ok','local'].includes(verifyReference(rows).kind));
+}
+function projectorMetricUnit(m){return m.type==='percent'?'درصدی':m.type==='score'?'امتیازی':m.type==='count'?'تعدادی':gradingApproved(m)?'نمرهٔ ۰ تا ۱۰۰':'مقدار خام';}
+function projectorCell(m,name,index){
+ const cell=resolveCell(m,name,index);
+ return `<span class="projector-cell-wrap" data-project-metric="${safe(m._id)}" data-project-manager="${safe(name)}" data-project-status="${safe(cell.status)}" data-project-value="${cell.status==='scored'?safe(String(cell.value)):''}">${performanceBadge(m,cell,true)}</span>`;
+}
+function renderProjector(){
+ const stage=byId('projectorStage');if(stage.hidden)return;
+ const signature=JSON.stringify([state.view,projectorPage,dbRevision,dbSourceHash,connectionHealthy,serverReady,serverFrozen,saveError,savesPending,dirtyDrafts.size,pendingData?.pending,state.revealed,resultsInvalidated,authorityPhase,appliedRevision,appliedPeriodId,local,topState.metric,topState.showAll,topState.ticket,topState.error,topState.projectorPage]);
+ if(signature===projectorSignature)return;
+ projectorSignature=signature;
+ const rows=calculate();const showFinal=projectorMayShowFinal(rows);
+ const metrics=data.metrics;
+ const pageCount=Math.max(1,Math.ceil(metrics.length/PROJECT_METRICS_PER_PAGE));
+ projectorPage=Math.max(0,Math.min(projectorPage,pageCount-1));
+ byId('projectSheet').textContent=data.sheet;
+ const topView=state.view==='supporters';
+ const overview=state.view==='overview';
+ byId('projectTitle').textContent=topView?'پشتیبانان برتر':overview?'نمای کلی عملکرد مدیران':'ماتریس عملکرد مدیران';
+ const message=byId('projectStatus');
+ const check=verifyReference(rows);const diag=clientReadinessDetails(rows);
+ let status,statusClass;
+ if(!authoritativeCurrent()){
+   status=readinessPhaseText()+' این نمایش نتیجه رسمی نیست.';statusClass='is-warning';
+ }else if(pendingData?.pending){
+   status='نسخهٔ تازه Excel در انتظار اعمال است؛ داده‌های پذیرفته‌شدهٔ قبلی نمایش داده می‌شوند.';statusClass='is-warning';
+ }else if(showFinal){
+   status='نتایج پس از اعلام مجاز نمایش داده می‌شوند؛ رتبه‌های مشترک حفظ شده‌اند.';statusClass='is-success';
+ }else if(check.kind==='incomplete'||diag.missingCount){
+   status=`در حال تکمیل ارزیابی · ${fmt.format(diag.missingCount)} نمره ثبت‌نشده · رتبه و امتیاز نهایی پنهان است.`;statusClass='is-warning';
+ }else if(check.kind==='mismatch'||check.kind==='unknown'){
+   status='داده‌ها برای اعلام رسمی تأیید نشده‌اند؛ رتبه و امتیاز نهایی پنهان است.';statusClass='is-warning';
+ }else{status='در انتظار اعلام مجاز نتایج · امتیاز نهایی و رتبه‌ها پنهان‌اند.';statusClass='';}
+ message.className='projector-message '+statusClass;message.textContent=status;
+ document.querySelectorAll('.projector-tab').forEach(b=>b.setAttribute('aria-current',b.dataset.projectView===state.view?'page':'false'));
+ const nav=byId('projectNavigation');nav.hidden=overview || topView;
+ const target=byId('projectContent');
+ if(topView){
+   target.innerHTML=renderTopSupporters(true);
+ }else if(overview){
+   const ordered=rows.slice().sort((a,b)=>showFinal?(a.rank-b.rank||a.index-b.index):a.name.localeCompare(b.name,'fa'));
+   const names=ordered.map(r=>`<li data-project-manager-name="${safe(r.name)}"><button type="button" class="projector-manager-open" data-project-manager-open="${r.index}" aria-label="جزئیات عملکرد ${safe(r.name)}">${safe(r.name)}</button><span class="projector-result">${showFinal?`${safe(rankLabel(r.rank,rows.filter(o=>o.rank===r.rank).length))} · ${safe(percent(r.score))}`:'بررسی عملکرد'}</span></li>`).join('');
+   target.innerHTML=`<div class="projector-overview"><section class="projector-surface"><h3>${showFinal?'نتایج اعلام‌شده مدیران':'مدیران دوره · بدون نمایش نتایج نهایی'}</h3><ol class="projector-manager-list">${names}</ol></section><aside class="projector-overview-side"><div class="projector-fact"><span>مدیران این دوره</span><strong>${fmt.format(data.managers.length)} نفر</strong></div><div class="projector-fact"><span>معیارهای ارزیابی</span><strong>${fmt.format(metrics.length)} معیار</strong></div><div class="projector-fact"><span>موارد ثبت‌نشده مشمول</span><strong>${fmt.format(diag.missingCount)} مورد</strong></div><div class="projector-fact"><span>وضعیت ثبت و اعلام</span><strong>${!serverReady||!connectionHealthy?'اتصال نامطمئن':showFinal?'اعلام شده':serverFrozen?'ارزیابی قفل است':'در حال بررسی'}</strong></div><p class="projector-note">${showFinal?'رتبه‌های مشترک براساس رتبه واقعی نمایش داده شده‌اند.':'چیدمان الفبایی است و حاوی رتبه یا امتیاز نهایی نیست.'}</p></aside></div>`;
+ }else{
+   const start=projectorPage*PROJECT_METRICS_PER_PAGE;const subset=metrics.slice(start,start+PROJECT_METRICS_PER_PAGE);
+   const managers=data.managers.map((name,index)=>({name,index}));
+   const headers=subset.map(m=>`<th scope="col" data-project-header="${safe(m._id)}">${safe(m.name)}<span class="projector-unit">${safe(projectorMetricUnit(m))}</span></th>`).join('');
+   const cells=managers.map(({name,index})=>`<tr><td><button type="button" class="projector-manager-open" data-project-manager-open="${index}" aria-label="جزئیات عملکرد ${safe(name)}">${safe(name)}</button></td>${subset.map(m=>`<td>${projectorCell(m,name,index)}</td>`).join('')}</tr>`).join('');
+   target.innerHTML=`<section class="projector-surface projector-matrix-surface"><table class="projector-matrix" aria-label="ماتریس عملکرد · صفحه ${projectorPage+1} از ${pageCount}"><thead><tr><th scope="col">مدیر</th>${headers}</tr></thead><tbody>${cells}</tbody></table>${performanceLegend()}</section>`;
+   byId('projectPageContext').textContent=`صفحه ${fmt.format(projectorPage+1)} از ${fmt.format(pageCount)} · معیارهای ${fmt.format(start+1)} تا ${fmt.format(start+subset.length)} از ${fmt.format(metrics.length)}`;
+   byId('projectPrev').disabled=projectorPage===0;byId('projectNext').disabled=projectorPage>=pageCount-1;
+ }
+}
+function openProjector(){
+ // Presentation is read-only: opening it never commits pending operator drafts.
+ if(!['overview','matrix','supporters'].includes(state.view)){
+  // Existing operator behavior remains available for tabs 3 and 4.
+  document.body.classList.toggle('presentation');byId('presentBtn').textContent=document.body.classList.contains('presentation')?'خروج از حالت ارائه':'حالت ارائه ↗';
+  if(document.body.classList.contains('presentation')&&document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().catch(()=>{});
+  else if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});
+  return;
+ }
+ projectorPage=0;projectorSignature=null;document.body.classList.add('presentation','projector-open');byId('projectorStage').hidden=false;
+ byId('presentBtn').textContent='خروج از حالت ارائه';renderProjector();byId('projectExit').focus();
+ if(document.documentElement.requestFullscreen&&!document.fullscreenElement)document.documentElement.requestFullscreen().catch(()=>{});
+}
+function closeProjector(){
+ if(byId('projectorStage').hidden){document.body.classList.remove('presentation');byId('presentBtn').textContent='حالت ارائه ↗';return;}
+ byId('projectorStage').hidden=true;projectorSignature=null;document.body.classList.remove('presentation','projector-open');byId('presentBtn').textContent='حالت ارائه ↗';
+ if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});
+ byId('presentBtn').focus();
+}
+function weightsView(rows){return `<div class="weights-layout"><section class="panel"><div class="panelhead"><div><h3>آزمایش سناریوهای وزن‌دهی</h3><p>ضرایب را تغییر دهید؛ تنظیمات در SQLite ذخیره می‌شوند و Excel تغییر نمی‌کند.</p></div><button class="button" id="resetWeights">بازنشانی ضرایب</button></div><div>${data.metrics.map((m,j)=>`<div class="weightrow"><label for="range-${j}">${safe(m.name)}</label><input aria-label="ضریب ${safe(m.name)}" type="range" id="range-${j}" data-weight="${j}" min="0" max="1000" step="1" value="${state.weights[j]}"><input aria-label="عدد ضریب ${safe(m.name)}" type="number" min="0" max="1000" step="1" data-weight-number="${j}" value="${state.weights[j]}"></div>`).join('')}</div><p class="notice" style="margin-bottom:12px">تغییر ضرایب حتی در دوره قفل‌شده مجاز است و می‌تواند امتیاز نهایی و رتبه‌ها را تغییر دهد؛ ویرایش نمرات همچنان قفل است.</p><div class="warningline" id="weightWarning">${sum(state.weights)<=0?'برای محاسبه امتیاز باید دست‌کم یک ضریب مثبت باشد.':''}</div></section><aside class="panel"><div class="panelhead"><div><h3>اثر تغییر ضرایب</h3><p>پیش‌نمایش نتایج با وزن‌های فعلی</p></div></div><div class="notice" style="margin-bottom:14px">تغییر ضرایب و معیارها در SQLite ذخیره می‌شود و فایل Excel تغییر نمی‌کند. برای اعلام نتایج، معیارهای فعال باید اطلاعات کامل داشته باشند و ترکیب آن‌ها باید توسط مسئول نمایندگی تأیید شود.</div><div id="weightPreview">${weightPreview(rows)}</div></aside></div>`;}
+function weightPreview(rows){if(!state.revealed)return '<div class="notice">نتایج سناریو پس از اعلام نتایج قابل نمایش‌اند. محاسبات در پشت صحنه انجام می‌شوند.</div>';return `<div class="metricchips" style="margin-bottom:13px"><span class="chip">مجموع وزن: <strong>${fmt.format(sum(state.weights))}</strong></span><span class="chip">تعداد شاخص فعال: <strong>${fmt.format(state.weights.filter(w=>w>0).length)}</strong></span></div><table class="smalltable"><thead><tr><th>مدیر</th><th>امتیاز آزمایشی</th></tr></thead><tbody>${rows.slice(0,7).map(r=>`<tr><td>${safe(r.name)}</td><td><strong>${percent(r.score)}</strong></td></tr>`).join('')}</tbody></table>`;}
+function detail(i){const rows=calculate();let r=rows.find(x=>x.index===i);if(!r)return;let overallMean=avg(rows.map(x=>x.score).filter(x=>x!==null));const t=sum(state.weights);const sourceMetricHtml=data.metrics.map((m,j)=>{const cell=resolveCell(m,r.name,i);const val=cell.value;
+ const teamMean=avg(data.managers.map((person,index)=>resolveCell(m,person,index)).filter(c=>c.status==='scored'&&c.value!==null).map(c=>c.value));
+ const contribution=r.denominator>0&&cell.status==='scored'&&val!=null?state.weights[j]*val/r.denominator:null;return `<div class="detailmetric"><div class="detailmetric-top"><span>${safe(m.name)} <small style="color:#90a0b0">· وزن ${fmt.format(state.weights[j])}</small></span>${SUPPORTER_METRIC_NAMES.has(m.name)&&r.name!==SUPPORTER_EXCLUDED_MANAGER?`<button type="button" class="supporter-drill-trigger" data-supporter-metric="${safe(m.name)}" data-supporter-manager="${i}" aria-label="جزئیات پشتیبانان ${safe(r.name)}، معیار ${safe(m.name)}">${cell.status==='na'?'نامشمول':val==null?'ثبت‌نشده':fmt.format(val)} <span aria-hidden="true">⌄</span></button>`:`<strong>${cell.status==='na'?'نامشمول':val==null?'ثبت‌نشده':fmt.format(val)}</strong>`}</div><div class="metric-type-note">${cell.status==='na'?'این معیار برای این مدیر اعمال نمی‌شود':cell.status!=='scored'?'نمره ثبت‌نشده':m.type==='raw'?(gradingApproved(m)?'نمرهٔ ۰ تا ۱۰۰ · بیشتر بهتر':'مقدار خام · مقیاس عملکرد تأییدنشده'):m.type==='count'?'تعداد · بدون حدنصاب عملکردی':m.type==='score'?'امتیازی · مقیاس ۰ تا ۱۰۰':'درصدی · مقیاس ۰ تا ۱۰۰'} · ${local.cells?.[m._id]?.[r.name]?'نمره/وضعیت دستی در SQLite':m._kind==='excel'?'مقدار اصلی Excel':'مقدار پیش‌فرض معیار محلی'}${classifyPerformance(m,cell)?' · عملکرد '+PERFORMANCE_LABELS[classifyPerformance(m,cell)]:''}</div><div class="detailmetric-bottom"><span>میانگین مدیران: ${percent(teamMean)}</span><span>${state.revealed?'سهم در امتیاز نهایی: '+percent(contribution):'سهم نهایی: پس از اعلام'}</span></div></div>`}).join('');
+ byId('drawer').innerHTML=`<button class="close" id="closeDrawer" aria-label="بستن">×</button><h2 class="drawername">${safe(r.name)}</h2><p class="drawerdesc">جزئیات عملکرد · ${safe(data.sheet)} · ${state.modified?'معیارها/ضرایب تنظیم‌شده در داشبورد':'ضرایب فایل Excel'}</p><div class="drawer-score"><div><strong>${state.revealed?percent(r.score):'—'}</strong><span>امتیاز وزن‌دار بر اساس مقادیر خام معیارهای فعال</span></div><div><strong style="font-size:24px">${!state.revealed||r.rank===null?'—':fmt.format(r.rank)}</strong><span>رتبه در این دوره</span></div><div><strong style="font-size:21px;color:#48768d">${!state.revealed||r.score==null||overallMean==null?'—':(r.score-overallMean>=0?'+':'')+percent(r.score-overallMean)}</strong><span>تفاوت با میانگین</span></div></div><h3 style="margin:23px 0 4px">عملکرد به تفکیک شاخص</h3><p class="notice" style="margin:8px 0">مجموع ضرایب مؤثر این مدیر: ${fmt.format(r.denominator)} از ${fmt.format(sum(state.weights))}. معیارهای نامشمول از مخرج حذف می‌شوند.</p><p class="subtle">${state.revealed?'سهم هر شاخص بر حسب واحد امتیاز نهایی است.':'مقادیر خام برای بررسی قابل مشاهده‌اند؛ سهم در امتیاز نهایی پس از اعلام نمایش داده می‌شود.'}</p><div class="detail-grid">${sourceMetricHtml}</div><button class="button" style="margin-top:20px" id="closeDrawer2">بستن جزئیات</button>`;
+ if(!byId('drawerBack').classList.contains('open'))window.__dashboardPrevFocus=document.activeElement;byId('drawerBack').classList.add('open');document.body.style.overflow='hidden';state.selectedIndex=i;byId('closeDrawer').focus();}
+// Read-only per-metric supporter highlights and independently approved historical recruitment data.
+const TOP_METRICS=['درصد حضور در حوزه','درصد حضور کل','کتاب','فیلم پیشرفت'];
+// Book-only list selection: the Owner requested more featured supporters;
+// a 60-point CANDIDATE cutoff includes four real records instead of two.
+// It is unrelated to score-color thresholds and is not a change to source data.
+const TOP_FEATURED_THRESHOLD=Object.freeze({'کتاب':60});
+function topFeaturedMin(metric){return TOP_FEATURED_THRESHOLD[metric]??80;}
+// Owner-approved exception for the Book featured list only: do not delete or alter
+// the supporter record, its source score, other-metric lists, or Show All.
+const TOP_BOOK_EXCLUSION=Object.freeze(__BOOK_EXCLUSION_JSON__);
+function topBookConfigured(){return typeof TOP_BOOK_EXCLUSION.manager==='string'&&!!TOP_BOOK_EXCLUSION.manager.trim()&&typeof TOP_BOOK_EXCLUSION.name==='string'&&!!TOP_BOOK_EXCLUSION.name.trim();}
+function topBookExcluded(metric,record){return metric==='کتاب'&&topBookConfigured()&&record.manager===TOP_BOOK_EXCLUSION.manager&&record.name===TOP_BOOK_EXCLUSION.name;}
+function topIsFeatured(metric,record){return (metric!=='کتاب'||topBookConfigured())&&!topBookExcluded(metric,record)&&topIsValidScore(record.value)&&record.value.effective>=topFeaturedMin(metric);}
+const TOP_HISTORICAL='historical-recruitment';
+// Exact seven historical records supplied and approved by the Owner on 2026-11-22.
+// These are a separate 1404–1405 dataset, not current-period supporter identities;
+// no manager association, >=80 cutoff, or calculation/write is permitted.
+const TOP_HISTORICAL_LABEL='پشتیبانان برتر جذب سال ۱۴۰۴–۱۴۰۵';
+const TOP_HISTORICAL_RECORDS=Object.freeze(__HISTORICAL_RECORDS_JSON__.map((r,row)=>Object.freeze({name:r.name,manager:'',row:row+1,value:Object.freeze({status:'scored',effective:r.score})})));
+
+const TOP_PAGE_SIZE_NORMAL=8,TOP_PAGE_SIZE_PROJECTOR=6;
+const topState={metric:TOP_METRICS[0],showAll:false,cache:new Map(),loading:null,error:'',ticket:0,normalPage:0,projectorPage:0};
+function topTabs(){
+ const names=[...TOP_METRICS,TOP_HISTORICAL_LABEL];
+ return `<div class="top-metric-tabs" role="tablist" aria-label="معیارهای پشتیبانان برتر">${names.map((name,i)=>{
+   const metric=i===4?TOP_HISTORICAL:name,active=topState.metric===metric;
+   return `<button type="button" role="tab" data-top-metric="${safe(metric)}" aria-selected="${active}" class="top-metric-tab ${active?'active':''} ${i===4?'historical-tab':''}"${i===4?' title="فهرست هفت‌نفرهٔ جذب فعال است"':''}>${safe(name)}${i===4?' · ۷ نفر':''}</button>`;
+ }).join('')}</div>`;
+}
+function topIsValidScore(value){
+ return value&&value.status==='scored'&&typeof value.effective==='number'&&Number.isFinite(value.effective)&&value.effective>=0&&value.effective<=100;
+}
+function topOrdering(a,b){
+ const av=topIsValidScore(a.value)?a.value.effective:-Infinity;
+ const bv=topIsValidScore(b.value)?b.value.effective:-Infinity;
+ return bv-av||a.name.localeCompare(b.name,'fa')||a.manager.localeCompare(b.manager,'fa')||a.row-b.row;
+}
+function topRows(metric){
+ if(metric===TOP_HISTORICAL)return TOP_HISTORICAL_RECORDS.slice().sort(topOrdering);
+ const records=topState.cache.get(metric)||[];
+ const sorted=records.slice().sort(topOrdering);
+ return topState.showAll?sorted:sorted.filter(r=>topIsFeatured(metric,r));
+}
+function topPageInfo(projector){
+ const list=topRows(topState.metric);
+ const size=topState.metric===TOP_HISTORICAL?TOP_PAGE_SIZE_NORMAL:(projector?TOP_PAGE_SIZE_PROJECTOR:TOP_PAGE_SIZE_NORMAL);
+ const count=Math.max(1,Math.ceil(list.length/size));
+ const kind=projector?'projectorPage':'normalPage';
+ const current=Math.max(0,Math.min(count-1,topState[kind]));topState[kind]=current;
+ return {list,page:list.slice(current*size,(current+1)*size),count,index:current};
+}
+function renderTopSupporters(projector=false){
+ const historical=topState.metric===TOP_HISTORICAL;
+ const loaded=historical||topState.cache.has(topState.metric);
+ if(!loaded&&topState.loading!==topState.metric&&!topState.error)loadTopMetric(topState.metric);
+ const blocked=!authoritativeCurrent();
+ const info=loaded?topPageInfo(projector):{list:[],page:[],count:1};
+ const featured=historical?TOP_HISTORICAL_RECORDS.length:loaded?topState.cache.get(topState.metric).filter(r=>topIsFeatured(topState.metric,r)).length:0;
+ const items=info.page.map(r=>{
+   if(historical){
+     const band=performanceBand(r.value.effective);
+     return `<article class="top-supporter-card" data-top-historical="true" data-top-name="${safe(r.name)}" data-top-value="${r.value.effective}" data-top-metric-name="${safe(TOP_HISTORICAL)}"><div><strong class="top-supporter-name">${safe(r.name)}</strong><p class="top-supporter-manager">جذب سال ۱۴۰۴–۱۴۰۵</p><p class="top-supporter-meta">فهرست تاریخی هفت‌نفرهٔ تأییدشدهٔ Owner · امتیاز جذب (بدون شرط ۸۰)</p></div><div class="supporter-score perf-${band}" data-performance="${band}"><b>${safe(fmtTwo.format(r.value.effective))}</b><span>${PERFORMANCE_LABELS[band]}</span></div></article>`;
+   }
+   const view=supporterCellPresentation(r.value);
+   const selected=topIsFeatured(topState.metric,r);
+   return `<article class="top-supporter-card" data-top-manager="${safe(r.manager)}" data-top-name="${safe(r.name)}" data-top-value="${r.value?.effective??''}" data-top-featured="${selected}" data-top-metric-name="${safe(topState.metric)}"><div><strong class="top-supporter-name">${safe(r.name)}</strong><p class="top-supporter-manager">مدیر: ${safe(r.manager)}</p><p class="top-supporter-meta">${selected?'منتخب همین معیار (حداقل '+fmt.format(topFeaturedMin(topState.metric))+')':topBookExcluded(topState.metric,r)?'استثنا از منتخبان کتاب به درخواست Owner':'سایر پشتیبانان'} · ${safe(r.managerSheet)}!${safe(r.value?.cell||'')}</p></div><div class="supporter-score ${view.band?'perf-'+view.band:'perf-neutral'}" data-performance="${view.band||'unclassified'}"><b>${safe(view.label)}</b><span>${view.band?PERFORMANCE_LABELS[view.band]:view.label}</span></div></article>`;
+ }).join('');
+ const empty=topState.error&&!historical?`<p class="notice" role="alert">${safe(topState.error)} <button type="button" class="button" data-top-retry="1">تلاش دوباره</button></p>`:!loaded?'<p class="notice" role="status">در حال دریافت و احراز اطلاعات پشتیبانان از Excel…</p>':!info.list.length?'<p class="notice">برای این معیار پشتیبان منتخب وجود ندارد؛ «نمایش همه» را انتخاب کنید.</p>':'';
+ const subtitle=historical?'هر هفت رکورد تاریخی مصوب، مرتب‌شده بر اساس امتیاز واقعی · مستقل از فهرست‌های دورهٔ جاری':loaded?`از ${fmt.format(featured)} پشتیبان منتخب (نمرهٔ ${fmt.format(topFeaturedMin(topState.metric))} یا بیشتر)${topState.showAll?' · نمایش تمام ۶۱ پشتیبان':''}${topState.metric==='کتاب'?(topBookConfigured()?' · '+safe(TOP_BOOK_EXCLUSION.name)+' از منتخبان کتاب استثنا شده است؛ رکورد اصلی محفوظ است · حدنصاب آزمایشی؛ رنگ عملکرد ثابت':' · تنظیم خصوصی استثنای کتاب موجود نیست؛ منتخب کتاب اعلام نمی‌شود'):''}`:'داده‌های تأییدشدهٔ Excel';
+ const title=`<div class="top-supporter-head"><div><h3>${historical?safe(TOP_HISTORICAL_LABEL):'پشتیبانان برتر · '+safe(topState.metric)}</h3><p class="top-supporter-lede">${subtitle} · بدون دخالت در امتیاز مدیران</p></div>${historical?'':`<button type="button" class="button top-all-btn" data-top-show-all="1" ${!loaded?'disabled':''} aria-pressed="${topState.showAll}">${topState.showAll?'فقط منتخب‌ها':'نمایش همه'}</button>`}</div>`;
+ const paging=loaded&&info.count>1?`<nav class="top-pager" aria-label="صفحه‌بندی پشتیبانان برتر"><button type="button" data-top-page="${info.index-1}" ${info.index===0?'disabled':''}>صفحهٔ قبل</button><span>صفحه ${fmt.format(info.index+1)} از ${fmt.format(info.count)} · ${fmt.format(info.list.length)} نفر</span><button type="button" data-top-page="${info.index+1}" ${info.index===info.count-1?'disabled':''}>صفحهٔ بعد</button></nav>`:'';
+ return `<section class="panel top-supporters-panel ${projector?'top-projector':''}" aria-label="پشتیبانان برتر">${topTabs()}${blocked?'<p class="notice">دادهٔ عملیاتی داشبورد هنوز به‌صورت معتبر اعمال نشده است؛ فهرست‌های پشتیبانان صرفاً خواندنی و جدا از امتیاز مدیران هستند.</p>':''}${title}<div class="top-supporter-grid" aria-live="polite">${items}</div>${empty}${paging}</section>`;
+}
+async function loadTopMetric(metric){
+ if(!TOP_METRICS.includes(metric))return;
+ const ticket=++topState.ticket;
+ topState.loading=metric;topState.error='';
+ try{
+  const managers=data.managers.filter(m=>m!==SUPPORTER_EXCLUDED_MANAGER);
+  // Preserve the scoped, manager-specific API: no all-manager endpoint is added.
+  const responses=await Promise.all(managers.map(m=>supporterSource(m,metric)));
+  if(ticket!==topState.ticket)return;
+  const records=responses.flatMap(response=>response.records);
+  const seen=new Set();
+  for(const r of records){
+   const key=r.manager+'\u0000'+r.row;
+   if(seen.has(key)||!managers.includes(r.manager)||!r.value||!Number.isInteger(r.row))throw new Error('ردیف یا مالکیت داده‌های پشتیبانان نامعتبر است.');
+   seen.add(key);
+  }
+  if(records.length!==61)throw new Error('تعداد رکوردهای منبع با ۶۱ پشتیبان مصوب مطابقت ندارد.');
+  topState.cache.set(metric,records);
+ }catch(err){if(ticket!==topState.ticket)return;topState.error=err.message||'خطا در خواندن داده‌های منبع';}
+ finally{
+  if(ticket===topState.ticket){topState.loading=null;projectorSignature=null;if(state.view==='supporters'){display();if(topState.focusScope!==undefined)focusTopMetric(topState.metric,topState.focusScope);}}
+ }
+}
+function focusTopMetric(metric,projector){
+ const parent=byId(projector?'projectContent':'mainContent');
+ [...parent.querySelectorAll('[data-top-metric]')].find(b=>b.dataset.topMetric===metric)?.focus({preventScroll:true});
+}
+function selectTopMetric(metric,projector=false){
+ if(metric!==TOP_HISTORICAL&&!TOP_METRICS.includes(metric))return;
+ ++topState.ticket; // Invalidate any in-flight response for the previously selected Excel metric.
+ topState.loading=null;
+ topState.metric=metric;topState.showAll=false;topState.error='';topState.normalPage=0;topState.projectorPage=0;projectorSignature=null;
+ topState.focusScope=projector;
+ display();focusTopMetric(metric,projector);
+}
+const SUPPORTER_METRIC_NAMES=new Set(['درصد حضور در حوزه','درصد حضور کل','کتاب','فیلم پیشرفت']);
+const SUPPORTER_EXCLUDED_MANAGER=__SUPPORTER_EXCLUSION_JSON__;
+const SUPPORTER_SOURCE_SHA='db4167e8a4966a8dd1a4728bee217c4126c5cb7104feacca1663c61cb4f61dac';
+let supporterDetailActive=false,supporterContext=null,supporterViewTicket=0;
+async function supporterSource(manager,metric){
+ if(location.protocol==='file:')throw new Error('برای دیدن عملکرد پشتیبانان، برنامه را از سرور محلی اجرا کنید.');
+ const path='/api/supporters?manager='+encodeURIComponent(manager)+'&metric='+encodeURIComponent(metric);
+ const response=await fetch(path,{cache:'no-store'});
+ if(!response.ok)throw new Error('دریافت اطلاعات این مدیر و معیار ناموفق بود ('+response.status+').');
+ const payload=await response.json();
+ if(payload.sourceSha256!==SUPPORTER_SOURCE_SHA||payload.manager!==manager||payload.metric!==metric||!Array.isArray(payload.records)){
+  throw new Error('هویت دادهٔ پشتیبانان یا محدودهٔ پاسخ تأیید نشد.');
+ }
+ if(payload.records.some(r=>r.manager!==manager))throw new Error('پشتیبان خارج از گروه مدیر در پاسخ وجود دارد.');
+ return payload;
+}
+function supporterCellPresentation(value){
+ if(!value || value.status==='missing')return {label:'ثبت‌نشده',band:null,explanation:'در فایل منبع مقدار ثبت نشده است'};
+ if(value.status==='na')return {label:'نامشمول',band:null,explanation:'برای این پشتیبان کاربرد ندارد'};
+ const band=performanceBand(value.effective);
+ if(!band)return {label:'نامعتبر',band:null,explanation:'مقدار خارج از دامنهٔ تأییدشده'};
+ return {label:fmtTwo.format(value.effective)+'٪',band,explanation:value.status==='blank_g_zero'?'خانهٔ Excel خالی است؛ صفر صرفاً مقدار نمایشی طبق مصوبه است':value.raw===0?'صفر واقعی در Excel ثبت شده است':'مقدار خام Excel: '+String(value.raw)+' (کسری)'};
+}
+async function openSupporterDetail(index,metric){
+ if(!SUPPORTER_METRIC_NAMES.has(metric)||!Number.isInteger(index)||index<0||index>=data.managers.length)return;
+ const manager=data.managers[index];if(manager===SUPPORTER_EXCLUDED_MANAGER)return;
+ const ticket=++supporterViewTicket;
+ supporterContext={index,metric};supporterDetailActive=true;
+ const drawer=byId('drawer');
+ drawer.innerHTML=`<button type="button" class="button supporter-back" id="backSupporterDetail">بازگشت به جزئیات مدیر</button><h2 class="drawername">${safe(manager)}</h2><p class="supporter-context">عملکرد پشتیبانان · ${safe(metric)}</p><p class="notice" role="status">در حال خواندن اطلاعات پشتیبانان از Excel…</p>`;
+ drawer.querySelector('#backSupporterDetail').focus();
+ try{
+  const payload=await supporterSource(manager,metric);
+  if(ticket!==supporterViewTicket||!supporterDetailActive||!byId('drawerBack').classList.contains('open'))return;
+  const members=payload.records.filter(r=>r.manager===manager);
+  const notices=(metric==='فیلم پیشرفت'?payload.issues.filter(x=>x.manager===manager):[]);
+  const cells=members.map(record=>{
+   const value=record.value;const view=supporterCellPresentation(value);
+   return `<article class="supporter-item" data-supporter-name="${safe(record.name)}" data-supporter-manager="${safe(manager)}" data-supporter-metric="${safe(metric)}"><strong class="supporter-name">${safe(record.name)}</strong><div class="supporter-score ${view.band?'perf-'+view.band:'perf-neutral'}" data-performance="${view.band||'unclassified'}" data-value="${value?.effective??''}"><b>${safe(view.label)}</b><span>${view.band?PERFORMANCE_LABELS[view.band]:view.label}</span></div><div class="supporter-source">${safe(view.explanation)} · منبع: ${safe(record.managerSheet)}!${safe(value?.cell||'')}</div></article>`;
+  });
+  drawer.innerHTML=`<button type="button" class="button supporter-back" id="backSupporterDetail">بازگشت به جزئیات مدیر</button><h2 class="drawername">${safe(manager)}</h2><p class="supporter-context">معیار: <strong>${safe(metric)}</strong> · ${fmt.format(members.length)} پشتیبان · درصد عملکرد</p><p class="subtle">مقادیر فقط از Excel پشتیبانان خوانده می‌شوند و در امتیاز مدیران محاسبه نمی‌شوند.</p>${notices.map(x=>`<div class="supporter-issue">اختلاف ثبت‌شده در منبع برای ${safe(x.supporter)}: ${safe(x.reason)}. مقدار مرجع بدون ترکیب یا تغییر نمایش داده می‌شود.</div>`).join('')}<div class="supporter-list" role="list" aria-label="پشتیبانان ${safe(manager)} در معیار ${safe(metric)}">${cells.map(c=>`<div role="listitem">${c}</div>`).join('')||'<p class="notice">پشتیبانی برای این مدیر ثبت نشده است.</p>'}</div>`;
+  drawer.querySelector('#backSupporterDetail').focus();
+ }catch(error){
+  if(ticket!==supporterViewTicket||!supporterDetailActive)return;
+  drawer.innerHTML=`<button type="button" class="button supporter-back" id="backSupporterDetail">بازگشت به جزئیات مدیر</button><h2 class="drawername">${safe(manager)}</h2><p role="alert" class="notice">${safe(error.message)} هیچ مقدار حدسی نمایش داده نشد.</p>`;
+  drawer.querySelector('#backSupporterDetail').focus();
+ }
+}
+function backSupporterDetail(){
+ if(!supporterDetailActive||!supporterContext)return;
+ const {index,metric}=supporterContext;supporterDetailActive=false;++supporterViewTicket;
+ detail(index);
+ const button=[...byId('drawer').querySelectorAll('[data-supporter-metric]')].find(x=>x.dataset.supporterMetric===metric);
+ button?.focus();
+}
+function closeDrawer(){supporterDetailActive=false;supporterContext=null;++supporterViewTicket;const open=byId('drawerBack').classList.contains('open');byId('drawerBack').classList.remove('open');document.body.style.overflow='';state.selectedIndex=null;if(open&&window.__dashboardPrevFocus?.isConnected)window.__dashboardPrevFocus.focus();}
+const pendingWeightEdits=new Set();
+function updateWeights(j,newValue,persist=true){if(!mayEdit(true))return;let val=Number(newValue);if(!Number.isFinite(val))return;val=Math.min(1000,Math.max(0,Math.round(val)));
+ const changed=state.weights[j]!==val; if(!changed&&!pendingWeightEdits.has(j))return;
+ if(!persist&&changed)pendingWeightEdits.add(j);
+ state.weights[j]=val;const id=data.metrics[j]._id;const baseline=data.metrics[j].weight;if(val===baseline)delete local.weights[id];else local.weights[id]=val;
+ if(persist){pendingWeightEdits.delete(j);saveLocal('weights');}state.modified=local.excluded.length>0||local.added.length>0||Object.keys(local.weights).length>0;state.revealed=false;let range=document.querySelector(`[data-weight="${j}"]`);let number=document.querySelector(`[data-weight-number="${j}"]`);if(range)range.value=val;if(number)number.value=val;const rows=calculate();renderStats(rows);let preview=byId('weightPreview');if(preview)preview.innerHTML=weightPreview(rows);let warning=byId('weightWarning');if(warning)warning.textContent=sum(state.weights)<=0?'برای محاسبه امتیاز باید دست‌کم یک ضریب مثبت باشد.':'';renderIntegrity(rows);}
+function resetWeights(){if(!mayEdit(true))return;local.weights={};saveLocal('weights');state.revealed=false;rebuildData();display();}
+function makeCsv(){if(!state.revealed){alert('پس از اعلام نتایج می‌توان خروجی رتبه‌بندی گرفت.');return;}const rows=calculate().slice().sort((a,b)=>a.index-b.index);let header=['منبع','دوره','نام مدیر','رتبه محاسبه‌شده','امتیاز محاسبه‌شده','جمع ضرایب مؤثر',...data.metrics.map(m=>m.name)];let records=[header,...rows.map(r=>['SQLite+Excel',data.sheet,r.name,r.rank,r.score===null?'':r.score.toFixed(8),r.denominator,...data.metrics.map(m=>{const c=resolveCell(m,r.name,r.index);return c.status==='na'?'نامشمول':(c.value??'');})])];const cell=x=>'"'+String(x??'').replace(/"/g,'""')+'"';const csv='\uFEFF'+records.map(row=>row.map(cell).join(',')).join('\r\n');let url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));let a=document.createElement('a');a.href=url;a.download='داشبورد_عملکرد_'+data.sheet.replaceAll(' ','_')+'_SQLite.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);}
+function setSource(status,detail,live=false){byId('sourceStatus').textContent=status;byId('sourceDetails').textContent=detail;byId('sourceDot').classList.toggle('live',live)}
+
+function allMetrics(){return [...sourceData.metrics.map(m=>({...m,_id:sourceId(m),_kind:'excel',type:m.type||'raw'})),...local.added.map(m=>({...m,_id:m.id,_kind:'local',values:sourceData.managers.map(name=>Object.prototype.hasOwnProperty.call(m.valuesByManager,name)?m.valuesByManager[name]:null)}))];}
+function metricRow(m){
+ const excluded=local.excluded.includes(m._id),weight=Object.prototype.hasOwnProperty.call(local.weights,m._id)?local.weights[m._id]:m.weight;
+ return `<div class="criterion-row ${excluded?'criterion-excluded':''}"><div><strong>${safe(m.name)}</strong><div class="criterion-meta">${m._kind==='excel'?'از Excel':'افزوده‌شده در داشبورد'} · ${m.weightMissing?'ضریب Excel خالی؛ فعلاً غیرفعال · ':''}${m.type==='count'?'تعدادی':m.type==='raw'?'مقدار خام · مقیاس نامشخص':m.type==='score'?'امتیازی':'درصدی'}</div></div><label class="criterion-weight">ضریب <input aria-label="ضریب ${safe(m.name)}" type="number" data-criterion-weight="${safe(m._id)}" min="0" max="1000" step="1" value="${weight}" ${excluded?'disabled':''}></label><button class="button ${excluded?'':'muted-danger'}" type="button" data-toggle-criterion="${safe(m._id)}">${excluded?'بازگردانی به ارزیابی':'حذف از ارزیابی'}</button></div>`;
+}
+function entryCellInfo(m,manager,index){
+ const base=m._kind==='local'?m.valuesByManager?.[manager]??null:m.values[index];
+ const over=local.cells?.[m._id]?.[manager];
+ const forced=isFixedNA(m,manager),cell=resolveCell(m,manager,index);
+ const mode=forced?'na':over?.status||'source';
+ const origin=forced?'نامشمول ثابت':mode==='source'?(m._kind==='excel'?'Excel':'مقدار پیش‌فرض'):'Override در SQLite';
+ const effective=cell.status==='na'?'نامشمول':cell.status==='missing'?'ثبت‌نشده':String(cell.value);
+ return {base,over,forced,cell,mode,origin,effective};
+}
+function entryParts(m,manager,index){
+ const info=entryCellInfo(m,manager,index),key=safe(m._id),name=safe(manager);
+ const sourceText=info.base===null?'ثبت‌نشده':String(info.base);
+ const max=m._kind==='local'&&m.type!=='count'?'max="100"':'';
+ const mode=info.mode;
+ return {
+  status:`<select class="select entry-status" aria-label="وضعیت ${name}، ${safe(m.name)}" data-cell-status="${key}" data-manager-name="${name}" data-fixed-na="${info.forced}" ${info.forced?'disabled':''}><option value="source" ${mode==='source'?'selected':''}>${m._kind==='excel'?'مطابق Excel':'مقدار پیش‌فرض'}</option><option value="scored" ${mode==='scored'?'selected':''}>نمره دستی</option><option value="missing" ${mode==='missing'?'selected':''}>ثبت‌نشده</option><option value="na" ${mode==='na'?'selected':''}>نامشمول (N/A)</option></select>`,
+  value:`<input type="number" class="entry-number" inputmode="decimal" aria-label="نمره ${name}، ${safe(m.name)}" data-cell-value="${key}" data-manager-name="${name}" data-cell-mode="${mode}" data-fixed-na="${info.forced}" min="0" ${max} step="${m.type==='count'?'1':'any'}" placeholder="نمره" value="${info.cell.status==='scored'?safe(info.cell.value):''}" ${info.forced||mode==='missing'||mode==='na'?'disabled':''}/>`,
+  restore:`<button type="button" class="button restore-cell" data-restore-cell="${key}" data-manager-name="${name}" data-fixed-na="${info.forced}" data-has-override="${!!info.over}" ${info.forced||!info.over?'disabled':''}>بازگردانی به ${m._kind==='excel'?'Excel':'پیش‌فرض'}</button>`,
+  provenance:`<div class="entry-provenance"><span class="entry-origin">منبع: ${safe(sourceText)} (${m._kind==='excel'?'Excel':'محلی'})</span><span class="entry-effective">مؤثر: ${safe(info.effective)} · ${safe(info.origin)}</span></div>`
+ };
+}
+function entryControls(m,manager,index){
+ const p=entryParts(m,manager,index);
+ return `<div class="cell-controls">${p.status}${p.value}${p.restore}</div>${p.provenance}`;
+}
+function entryCard(m,manager,index){return `<div class="entry-card entry-edit" data-entry-manager="${safe(manager)}" data-entry-index="${index}"><strong>${safe(manager)}</strong>${entryControls(m,manager,index)}</div>`;}
+function entryRow(m,manager,index){
+ const p=entryParts(m,manager,index);
+ return `<tr class="entry-edit entry-row" data-entry-manager="${safe(manager)}" data-entry-index="${index}"><th scope="row">${safe(manager)}</th><td class="entry-col-status">${p.status}</td><td class="entry-col-score">${p.value}</td><td class="entry-col-origin">${p.provenance}</td><td class="entry-col-restore">${p.restore}</td></tr>`;
+}
+function refreshEntryCell(id,manager){
+ const m=data.metrics.find(x=>x._id===id)||allMetrics().find(x=>x._id===id),i=data.managers.indexOf(manager);
+ if(!m||i<0)return;
+ const info=entryCellInfo(m,manager,i);
+ const row=[...document.querySelectorAll('[data-entry-manager]')].find(e=>e.dataset.entryManager===manager);
+ if(!row)return;
+ const select=row.querySelector('[data-cell-status]'),input=row.querySelector('[data-cell-value]'),restore=row.querySelector('[data-restore-cell]');
+ if(select)select.value=info.mode;
+ if(input){input.dataset.cellMode=info.mode;input.value=info.cell.status==='scored'?String(info.cell.value):'';input.removeAttribute('aria-invalid');}
+ if(restore)restore.dataset.hasOverride=String(!!info.over);
+ const from=row.querySelector('.entry-origin'),to=row.querySelector('.entry-effective');
+ if(from)from.textContent='منبع: '+(info.base===null?'ثبت‌نشده':String(info.base))+' ('+(m._kind==='excel'?'Excel':'محلی')+')';
+ if(to)to.textContent='مؤثر: '+info.effective+' · '+info.origin;
+ updateEditorLock();
+}
+function metricsView(rows){
+ const all=allMetrics(),selected=all.find(m=>m._id===state.editMetricId)||all[0];
+ const entry=selected?data.metrics.find(m=>m._id===selected._id)||selected:null;
+ const controls=`<div class="controls"><button type="button" id="entryCards" class="button ${entryMode==='cards'?'primary':''}" aria-pressed="${entryMode==='cards'}">کارت‌ها</button><button type="button" id="entryCompact" class="button ${entryMode==='compact'?'primary':''}" aria-pressed="${entryMode==='compact'}">ورود ردیفی فشرده</button><select id="editCustomMetric" class="select" aria-label="انتخاب معیار">${all.map(m=>`<option value="${safe(m._id)}" ${selected?._id===m._id?'selected':''}>${safe(m.name)}</option>`).join('')}</select></div>`;
+ const editor=entryMode==='cards'?`<div class="entry-grid">${data.managers.map((name,i)=>entryCard(entry,name,i)).join('')}</div>`:`<div class="entry-table-scroll"><table class="entry-table"><thead><tr><th scope="col">مدیر</th><th scope="col">وضعیت</th><th scope="col">نمره</th><th scope="col">منبع و مقدار مؤثر</th><th scope="col">بازگردانی</th></tr></thead><tbody>${data.managers.map((name,i)=>entryRow(entry,name,i)).join('')}</tbody></table></div>`;
+ return `<div class="metric-admin"><section class="panel"><div class="panelhead"><div><h3>معیارهای ارزیابی</h3><p>افزودن، کنارگذاشتن و تعیین ضریب؛ اطلاعات در SQLite ذخیره می‌شوند.</p></div><div class="controls"><button class="button" type="button" id="exportLocal">پشتیبان تنظیمات JSON</button><button class="button" type="button" id="importLocalBtn">بازیابی JSON</button><input hidden type="file" accept="application/json,.json" id="importLocalInput"/></div></div><div class="metric-summary"><span>${fmt.format(all.length-local.excluded.length)} معیار فعال</span><span>${fmt.format(local.added.length)} معیار افزوده‌شده</span><span data-incomplete-counter>${fmt.format(rows.filter(r=>r.score===null).length)} مدیر با نمره ناقص</span></div><div class="criterion-list">${all.map(metricRow).join('')}</div><div class="notice">کنارگذاشتن معیار اصلی، ردیف Excel را پاک نمی‌کند. معیار با ضریب صفر در نمره اثر ندارد.</div></section><section class="panel"><div class="panelhead"><div><h3>معیار جدید</h3><p>برای معیار دلخواه ضریب تعیین کن؛ می‌توانی مشمولان آن را جدا مشخص کنی.</p></div></div><form id="newMetricForm" class="metric-form"><label>عنوان<input name="name" class="search" required minlength="2" maxlength="80" placeholder="مثلاً پیگیری غایبان"/></label><div class="metric-form-grid"><label>نوع<select name="type" class="select"><option value="score">امتیازی ۰ تا ۱۰۰</option><option value="percent">درصدی ۰ تا ۱۰۰</option><option value="count">تعدادی (عدد صحیح)</option></select></label><label>ضریب<input name="weight" class="search" type="number" min="0" max="1000" step="1" value="0" required/></label></div><p class="metric-type-note">نمره صفر با نمره ثبت‌نشده تفاوت دارد؛ برای فرد نامشمول، گزینه «نامشمول» را انتخاب کن. ضریب آن فرد از مخرج حذف می‌شود.</p><button class="button primary" type="submit">+ افزودن معیار</button></form></section></div><section class="panel entry-panel" style="margin-top:18px"><div class="panelhead"><div><h3>ورود نمره و تعیین شمول برای هر مدیر</h3><p>برای نمره Excel مستقیماً در خانه بنویسید؛ مقدار اصلی تغییر نمی‌کند و Override در SQLite ثبت می‌شود. در حالت ردیفی، Enter به مدیر بعدی می‌رود.</p></div>${controls}</div>${selected?`<div class="notice" style="margin-bottom:16px">معیار انتخابی: <strong>${safe(selected.name)}</strong> · ${selected._kind==='excel'?'اطلاعات اولیه از Excel':'معیار سفارشی'} · مقادیر اصلی و مؤثر جدا نشان داده می‌شوند.</div>${editor}<div class="notice">«ثبت شد» تنها بعد از پاسخ موفق سرور و ثبت SQLite نمایش داده می‌شود. در صورت خطا تغییرات را با پشتیبان JSON حفظ کنید.</div>`:'<div class="empty">ابتدا معیاری انتخاب کن.</div>'}</section>`;
+}
+function refreshMetricSummary(rows){
+ const counter=document.querySelector('[data-incomplete-counter]');
+ if(counter)counter.textContent=fmt.format(rows.filter(r=>r.score===null).length)+' مدیر با نمره ناقص';
+}
+function commitLocal(preserveInputs=false,intent='settings'){
+ saveLocal(intent);rebuildData();state.revealed=false;state.sort='overall';resultsInvalidated=false;
+ if(!byId('ceremonyBack').hidden)closeCeremony();closeDrawer();
+ if(preserveInputs){const rows=calculate();renderStats(rows);renderIntegrity(rows);refreshMetricSummary(rows);}
+ else display();
+}
+function toggleCriterion(id){
+ if(!mayEdit())return;
+ const exists=allMetrics().some(m=>m._id===id);if(!exists)return;
+ if(local.excluded.includes(id))local.excluded=local.excluded.filter(x=>x!==id);else local.excluded.push(id);
+ commitLocal();
+}
+function addCriterion(form){
+ if(!mayEdit())return;
+ const fields=new FormData(form),name=String(fields.get('name')||'').trim(),type=String(fields.get('type')||''),weight=Number(fields.get('weight'));
+ if(name.length<2||name.length>80||!['percent','score','count'].includes(type)||!Number.isInteger(weight)||weight<0||weight>1000){alert('عنوان، نوع یا ضریب معیار معتبر نیست.');return;}
+ if(allMetrics().some(m=>m.name.trim()===name)){alert('معیاری با این نام وجود دارد؛ ابتدا آن را بازگردانی یا از نام دیگری استفاده کنید.');return;}
+ if(local.added.length>=50){alert('حداکثر ۵۰ معیار سفارشی قابل افزودن است.');return;}
+ if(!serverReady){alert('برای افزودن معیار، ابتدا سرویس محلی را اجرا کنید.');return;}
+ const metric={id:newCustomId(),name,type,weight,valuesByManager:{}};
+ local.added.push(metric);state.editMetricId=metric.id;state.view='metrics';commitLocal();
+}
+function commitCriterionWeight(id,raw){if(!mayEdit(true))return;
+ const metric=allMetrics().find(m=>m._id===id);if(!metric)return;
+ const n=Number(raw);if(raw===''||!Number.isFinite(n)||!Number.isInteger(n)||n<0||n>1000){alert('ضریب باید عدد صحیح بین صفر و ۱۰۰۰ باشد.');display();return;}
+ const effective=Object.prototype.hasOwnProperty.call(local.weights,id)?local.weights[id]:metric.weight;
+ if(n===effective)return; // A blur/change after a completed edit must not write twice.
+ if(n===metric.weight)delete local.weights[id];else local.weights[id]=n;
+ commitLocal(false,'weights');
+}
+function pruneCellGroup(id){if(local.cells?.[id]&&!Object.keys(local.cells[id]).length)delete local.cells[id];}
+function setCellStatus(id,manager,status){
+ if(!mayEdit())return false;
+ const metric=allMetrics().find(m=>m._id===id);
+ if(!metric||!data.managers.includes(manager)||isFixedNA(metric,manager))return false;
+ if(!['source','na','missing','scored'].includes(status))return false;
+ local.cells=local.cells||{};local.cells[id]=local.cells[id]||{};
+ const old=local.cells[id][manager];
+ if(status==='source')delete local.cells[id][manager];
+ else if(status==='na'||status==='missing')local.cells[id][manager]={status};
+ else if(status==='scored')local.cells[id][manager]={status:'scored',value:old?.status==='scored'?(old.value??null):null};
+ pruneCellGroup(id);
+ const changed=JSON.stringify(old??null)!==JSON.stringify(local.cells[id]?.[manager]??null);
+ dirtyDrafts.delete(id+'\0'+manager);
+ if(changed)commitLocal(true);
+ refreshEntryCell(id,manager);
+ if(status==='scored'){
+  const inp=[...document.querySelectorAll('[data-cell-value]')].find(x=>x.dataset.cellValue===id&&x.dataset.managerName===manager);
+  if(inp&&!inp.disabled)inp.focus();
+ }
+ saveStatus();return true;
+}
+function restoreSavedCellInput(m,manager){
+ const id=m._id,index=data.managers.indexOf(manager),cell=resolveCell(m,manager,index);
+ const input=[...document.querySelectorAll('[data-cell-value]')].find(x=>x.dataset.cellValue===id&&x.dataset.managerName===manager);
+ if(input){input.value=cell.status==='scored'?String(cell.value):'';input.setAttribute('aria-invalid','true');
+ const label=input.closest('[data-entry-manager]')?.querySelector('.entry-effective');if(label)label.textContent='مقدار نامعتبر است؛ اصلاح کنید یا مقدار قبلی را بازگردانید.';
+ input.focus();}
+}
+function setCellValue(id,manager,raw){
+ if(!mayEdit())return false;
+ const m=allMetrics().find(x=>x._id===id);
+ if(!m||!data.managers.includes(manager)||isFixedNA(m,manager))return false;
+ const trimmed=String(raw).trim();const val=trimmed===''?null:Number(trimmed);
+ if(val!==null&&(!Number.isFinite(val)||val<0||val>Number.MAX_SAFE_INTEGER||(m._kind==='local'&&m.type!=='count'&&val>100)||(m.type==='count'&&!Number.isSafeInteger(val)))){
+   restoreSavedCellInput(m,manager);saveStatus();return false;
+ }
+ const index=data.managers.indexOf(manager);
+ const sourceValue=m._kind==='local'?(m.valuesByManager?.[manager]??null):m.values[index];
+ const previous=local.cells?.[id]?.[manager];
+ if(!previous&&(val===sourceValue)){
+   dirtyDrafts.delete(id+'\0'+manager);refreshEntryCell(id,manager);saveStatus();return true;
+ }
+ local.cells=local.cells||{};local.cells[id]=local.cells[id]||{};
+ const old=local.cells[id][manager];
+ const next=val===null?{status:'missing'}:{status:'scored',value:val};
+ if(JSON.stringify(old??null)!==JSON.stringify(next)){
+   local.cells[id][manager]=next;commitLocal(true);
+ }
+ dirtyDrafts.delete(id+'\0'+manager);refreshEntryCell(id,manager);saveStatus();return true;
+}
+function restoreCell(id,manager){
+ if(!mayEdit())return false;
+ const metric=allMetrics().find(m=>m._id===id);
+ if(!metric||!data.managers.includes(manager)||isFixedNA(metric,manager)||!local.cells?.[id]?.[manager])return false;
+ delete local.cells[id][manager];pruneCellGroup(id);
+ dirtyDrafts.delete(id+'\0'+manager);commitLocal(true);refreshEntryCell(id,manager);return true;
+}
+function flushDrafts(){
+ for(const [key,raw] of [...dirtyDrafts]){
+  const [id,manager]=key.split('\0');
+  if(!setCellValue(id,manager,raw))return false;
+ }
+ return true;
+}
+function changeEntryMode(mode){
+ if(!['cards','compact'].includes(mode)||!flushDrafts())return;
+ if(entryMode===mode)return;
+ entryMode=mode;try{localStorage.setItem(ENTRY_MODE_STORAGE,entryMode);}catch(e){}
+ display();
+ // The mode button is replaced by render; keep keyboard focus on the selected view.
+ byId(mode==='compact'?'entryCompact':'entryCards')?.focus({preventScroll:true});
+}
+function focusNextEntry(t){
+ const items=[...document.querySelectorAll('.entry-panel [data-cell-value]:not(:disabled)')];
+ const i=items.indexOf(t);if(i>=0&&i+1<items.length)items[i+1].focus();
+}
+function downloadLocal(){
+ const payload={version:1,fileName:sourceData.fileName,sheet:sourceData.sheet,savedAt:new Date().toISOString(),settings:local};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'});
+ const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='پشتیبان_معیارهای_داشبورد.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),5000);
+}
+async function importLocalFile(file){
+ if(!file)return;
+ if(!mayEdit())return;
+ try{if(file.size>500000)throw Error('فایل پشتیبان بیش از حد بزرگ است.');const p=JSON.parse(await file.text());if(p.sheet!==sourceData.sheet||p.fileName!==sourceData.fileName)throw Error('این پشتیبان برای فایل یا شیت دیگری است.');const restored=validateLocal(p.settings);if(!confirm('تغییرات محلی فعلی با پشتیبان انتخاب‌شده جایگزین شوند؟'))return;local=restored;state.view='metrics';commitLocal();}
+ catch(e){alert('بازیابی انجام نشد: '+e.message);}
+ finally{byId('importLocalInput').value='';}
+}
+function downloadDatabase(){if(!serverReady){alert('برای پشتیبان SQLite سرویس محلی را اجرا کنید.');return;}window.location.href='/api/backup';}
+function applyFont(choice){
+ fontChoice=choice==='titr'?'titr':'vazir';document.documentElement.dataset.font=fontChoice;
+ const select=byId('fontSelector');if(select)select.value=fontChoice;
+ try{localStorage.setItem(FONT_STORAGE,fontChoice);}catch(e){}
+}
+
+let pendingData=null;
+function showPending(visible,frozen=false){
+ const banner=byId('updateBanner');banner.hidden=!(visible||frozen);
+ byId('updateText').textContent=visible?'Excel تغییر کرده است؛ نسخه قبلی تا تأیید مجری ثابت می‌ماند.': 'نتایج روی نسخه ثابت قرار دارند؛ برای ادامه همگام‌سازی Excel دکمه را بزنید.';
+ byId('applyPending').textContent=visible?'اعمال داده‌های جدید':'ادامه همگام‌سازی Excel';
+}
+async function apiPost(path,payload={}){
+ const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+ const result=await r.json();if(!r.ok)throw Error(result.error||'خطا در ارتباط با SQLite');return result;
+}
+async function applyPending(){
+ if(!serverReady||!flushDrafts())return;
+ if(!byId('ceremonyBack').hidden)closeCeremony();
+ try{await saveQueue;if(saveError||savesPending||dirtyDrafts.size){alert('تغییرات ثبت‌نشده وجود دارد؛ ابتدا وضعیت ذخیره را تعیین کنید.');return;}if(!confirm('قفل ارزیابی باز شود و تغییرات جدید Excel در صورت وجود اعمال شوند؟'))return;state.revealed=false;const remote=await apiPost('/api/apply',{revision:dbRevision,sourceHash:dbSourceHash});handleState(remote,true);state.sort='overall';state.query='';display();}
+ catch(e){alert('اعمال به‌روزرسانی انجام نشد: '+e.message);}
+}
+function validateRemoteState(remote){
+ const expected=SNAPSHOT.fileName+' | '+SNAPSHOT.sheet;
+ if(!remote||!remote.data||!Array.isArray(remote.data.managers)||!Array.isArray(remote.data.metrics))return 'پاسخ سرور ساختار معتبر ندارد.';
+ if(remote.settingsInvalid)return 'تنظیمات ذخیره‌شده SQLite معتبر نیستند: '+remote.settingsInvalid;
+ if(remote.periodId!==expected||remote.data.fileName!==SNAPSHOT.fileName||remote.data.sheet!==SNAPSHOT.sheet||
+    (appliedPeriodId&&remote.periodId!==appliedPeriodId))return 'پاسخ مربوط به دورهٔ ارزیابی دیگری است.';
+ if(!Number.isSafeInteger(remote.revision)||remote.revision<0||typeof remote.sourceHash!=='string'||!/^[a-f0-9]{64}$/i.test(remote.sourceHash)||
+    typeof remote.frozen!=='boolean'||!remote.readiness||typeof remote.readiness.ready!=='boolean'||
+    !Number.isSafeInteger(remote.readiness.activeMetricCount)||!Number.isSafeInteger(remote.readiness.missingCount))return 'شناسه نسخه یا وضعیت آمادگی پاسخ معتبر نیست.';
+ try{validateLocal(structuredClone(remote.settings));}catch(e){return 'تنظیمات پاسخ معتبر نیست: '+e.message;}
+ return null;
+}
+function rejectRemoteState(message){
+ authorityIssue=message;authorityPhase=serverReady?'stale':'error';connectionHealthy=false;showSaved=false;
+ setSource('وضعیت دریافتی تأیید نشد',message,false);
+ saveStatus();renderIntegrity(calculate());renderStats(calculate());renderProjector();
+}
+function handleState(remote,force=false,ticket=++stateRequestTicket){
+ const invalid=validateRemoteState(remote);
+ if(invalid){rejectRemoteState(invalid);return false;}
+ if(ticket<lastAppliedTicket || (serverReady&&remote.revision<dbRevision)){
+   // Earlier response: never roll the canonical period/revision back.
+   return false;
+ }
+ if(!force&&(saveWorkerActive||savesPending>0||dirtyDrafts.size>0||saveError)){
+   authorityPhase='syncing';renderIntegrity(calculate());renderStats(calculate());renderProjector();return false;
+ }
+ // A ceremony remains on its frozen original rows; do not silently claim a new
+ // authoritative revision while its presented data are deliberately frozen.
+ if(!byId('ceremonyBack').hidden && (remote.revision!==dbRevision||remote.sourceHash!==dbSourceHash||!remote.frozen)){
+   byId('ceremonySub').textContent='نتایج نمایشی ثابت مانده‌اند؛ تغییر بیرونی شناسایی شد. پس از پایان مراسم وضعیت را تازه‌سازی کنید.';
+   authorityPhase='stale';renderIntegrity(calculate());renderProjector();return false;
+ }
+ authorityPhase='applying';renderIntegrity(calculate());
+ const first=!serverReady,revisionChanged=remote.revision!==dbRevision;
+ try{
+   if(state.revealed && (remote.revision!==revealedRevision||remote.sourceHash!==revealedSourceHash||!remote.frozen)){
+      state.revealed=false;ceremonyRows=null;resultsInvalidated=true;
+   }
+   const sourceChanged=JSON.stringify(remote.data)!==JSON.stringify(sourceData);
+   // Full /api/state is the authority for BOTH settings and source; apply together.
+   sourceData=remote.data;local=validateLocal(structuredClone(remote.settings));
+   dbRevision=remote.revision;dbSourceHash=remote.sourceHash;serverFrozen=remote.frozen;
+   serverReadiness=remote.readiness;serverReadinessRevision=remote.revision;serverReadinessHash=remote.sourceHash;
+   if(revisionChanged)showSaved=false;
+   rebuildData();
+   pendingData=remote.pending?{pending:true}:null;
+   showPending(!!remote.pending,remote.frozen);
+   const sourceIssues=remote.data.sourceIssues||[];
+   const issueBox=byId('sourceIssues');issueBox.hidden=!sourceIssues.length;
+   if(sourceIssues.length)issueBox.textContent=sourceIssues.join(' | ');
+   const warnings=[...(remote.settingsWarnings||[]),...((remote.readiness?.scaleWarnings)||[])];
+   const warn=byId('warningBanner');warn.hidden=!warnings.length&&!resultsInvalidated;
+   warn.textContent=[...warnings,...(resultsInvalidated?['اطلاعات پس از اعلام قبلی تغییر کرده‌اند. اعلام تازه لازم است.']:[])].join(' | ');
+   // Render current canonical state while the authority claim is still withheld.
+   if(first||sourceChanged||revisionChanged||force) {closeDrawer();display();}
+   serverReady=true;connectionHealthy=true;
+   appliedPeriodId=remote.periodId;appliedRevision=remote.revision;appliedSourceHash=remote.sourceHash;
+   lastAppliedTicket=ticket;authorityIssue='';authorityPhase='live';
+   const info=remote.excelStatus==='connected'?'متصل به Excel · وضعیت SQLite تأیید شد':'Excel در دسترس نیست · وضعیت ذخیره‌شده SQLite تأیید شد';
+   const detail=remote.pending?'داده جدید در انتظار تأیید است':remote.warning?remote.warning:remote.data.fileName+' · '+remote.data.sheet+' · نسخه '+fmt.format(remote.revision);
+   setSource(info,detail,remote.excelStatus==='connected');
+   renderStats(calculate());renderIntegrity(calculate());saveStatus();updateEditorLock();renderProjector();
+   return true;
+ }catch(e){rejectRemoteState('اعمال وضعیت سرور در رابط ناموفق بود: '+(e.message||e));return false;}
+}
+
+let fetching=false;
+async function sync(){
+ if(location.protocol==='file:'||fetching||savesPending>0||saveError||dirtyDrafts.size>0)return;
+ fetching=true;const ticket=++stateRequestTicket;
+ try{
+   const resp=await fetch('/api/state?ts='+Date.now(),{cache:'no-store'});
+   if(!resp.ok)throw Error('خطا در دریافت وضعیت SQLite');
+   const remote=await resp.json();
+   if(ticket>=lastAppliedTicket&&(!serverReady||remote.revision>=dbRevision)){
+     authorityPhase='applying';renderIntegrity(calculate());renderStats(calculate());renderProjector();
+   }
+   handleState(remote,false,ticket);
+ }catch(e){
+   if(ticket<lastAppliedTicket)return; // A later accepted response wins.
+   connectionHealthy=false;authorityPhase=serverReady?'stale':'error';authorityIssue=e.message||'قطع اتصال';showSaved=false;
+   setSource(serverReady?'اتصال قطع شد · آخرین وضعیت شناخته‌شده':'وضعیت عملیاتی در دسترس نیست',authorityIssue,false);
+   renderStats(calculate());renderIntegrity(calculate());saveStatus();renderProjector();
+ }finally{fetching=false;}
+}
+
+let ceremonyTimers=[];let ceremonyPhase=0;
+function cancelCeremonyTimers(){ceremonyTimers.forEach(clearTimeout);ceremonyTimers=[];}
+function announceStage(phase){
+ ceremonyPhase=phase;
+ const ordered=(ceremonyRows||calculate()).filter(r=>r.score!==null);
+ // Competition ranking (1,1,3): each distinct rank gets exactly one announcement.
+ const stages=tieGroups(ordered).slice().sort((a,b)=>b.rank-a.rank);
+ const completed=phase===4;
+ const visibleCount=completed?stages.length:Math.min(phase,stages.length);
+ const podium=stages.map((g,i)=>{
+  const show=i<visibleCount;
+  const people=show?g.members.map(r=>`<span>${safe(r.name)}</span>`).join(''):'<span>در انتظار اعلام</span>';
+  return `<article class="ceremony-pod rank-${g.rank} ${g.rank===1?'gold':''} ${show?'is-visible':'is-hidden'}"><span class="ceremony-place">${safe(rankLabel(g.rank,g.members.length))}</span><div class="ceremony-rank">${show?fmt.format(g.rank):'؟'}</div><div class="ceremony-person tie-names">${people}</div><div class="ceremony-score">${show?percent(g.members[0].score)+' امتیاز':'—'}</div></article>`;
+ }).join('');
+ const others=ordered.filter(r=>r.rank>3).map(r=>`<div class="ceremony-result"><span class="ceremony-pos">${fmt.format(r.rank)}</span><strong>${safe(r.name)}</strong><span>${percent(r.score)}</span></div>`).join('');
+ byId('ceremonyStage').innerHTML=`<div class="ceremony-info">${phase===0?'آماده معرفی رتبه‌های واقعی، با حفظ رتبه‌های مشترک…':!completed?'معرفی رتبه‌های برتر':'رتبه‌بندی کامل '+fmt.format(ordered.length)+' مدیر'}${pendingData?' · نسخه جدید Excel در انتظار اعمال است':''}</div><div class="ceremony-podium tie-ceremony">${podium}</div>${completed?`<div class="ceremony-others"><h3>${others?'ادامه رتبه‌بندی مدیران':'همه مدیران در گروه‌های رتبه بالا معرفی شده‌اند'}</h3>${others?`<div class="ceremony-results">${others}</div>`:''}</div>`:''}`;
+ byId('skipCeremony').hidden=completed;
+}
+function playCeremony(){
+ cancelCeremonyTimers();announceStage(0);
+ const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduce){announceStage(4);return;}
+ const count=tieGroups(ceremonyRows||calculate()).length;
+ for(let i=1;i<=count;i++)ceremonyTimers.push(setTimeout(()=>announceStage(i),500+i*1100));
+ ceremonyTimers.push(setTimeout(()=>announceStage(4),750+(count+1)*1100));
+}
+async function startCeremony(){
+  if(!flushDrafts())return;await saveQueue;if(saveError){alert('تغییرات در SQLite ذخیره نشده‌اند؛ اعلام نتایج متوقف شد.');return;}
+  if(!serverReady||saveError||savesPending||dirtyDrafts.size){alert('اتصال یا ثبت داده‌ها کامل نیست.');return;}
+  const check=verifyReference(calculate());
+  if(!['ok','local'].includes(check.kind)){alert('امکان اعلام نتایج وجود ندارد: '+check.message);return;}
+  let frozenState;
+  try{frozenState=await apiPost('/api/freeze',{revision:dbRevision,sourceHash:dbSourceHash});
+      handleState(frozenState,true);
+  }catch(e){alert('امکان تثبیت داده‌ها در SQLite وجود ندارد: '+e.message);await sync();return;}
+  const finalCheck=verifyReference(calculate());
+  if(!frozenState.frozen||!['ok','local'].includes(finalCheck.kind)||
+     dbRevision!==frozenState.revision||dbSourceHash!==frozenState.sourceHash){
+    alert('پس از دریافت نسخه تثبیت‌شده، ارزیابی معتبر نیست. اعلام نتایج متوقف شد: '+finalCheck.message);
+    return;
+  }
+  // Copy ranked results now; later background updates never change this ceremony.
+  ceremonyRows=calculate().map(r=>({...r}));revealedRevision=frozenState.revision;revealedSourceHash=frozenState.sourceHash;resultsInvalidated=false;
+  closeDrawer();state.revealed=true;state.sort='overall';display();
+  byId('ceremonySheet').textContent='· '+data.sheet;
+  byId('ceremonySub').textContent=data.label+(state.modified?' · نتیجه بر اساس تنظیمات محلی':' · نتیجه با ضرایب Excel')+' · ثابت تا اعمال آگاهانه داده جدید';
+  byId('ceremonyBack').hidden=false;document.body.classList.add('ceremony-open');byId('closeCeremony').focus();
+  if(document.documentElement.requestFullscreen&&!document.fullscreenElement){document.documentElement.requestFullscreen().catch(()=>{});}
+  playCeremony();
+}
+function closeCeremony(){if(byId('ceremonyBack').hidden)return;cancelCeremonyTimers();byId('ceremonyBack').hidden=true;ceremonyRows=null;document.body.classList.remove('ceremony-open');byId('revealBtn').focus();}
+function finishCeremony(){cancelCeremonyTimers();announceStage(4);}
+function hideResults(){closeCeremony();state.revealed=false;display();}
+function resetResults(){
+ if(!state.revealed&&byId('ceremonyBack').hidden)return;
+ if(!confirm('فقط اعلام و نمایش رتبه‌ها بازنشانی شود؟ نمرات، ضرایب و قفل دوره بدون تغییر باقی می‌مانند.'))return;
+ cancelCeremonyTimers();closeCeremony();ceremonyRows=null;ceremonyPhase=0;
+ revealedRevision=null;revealedSourceHash=null;state.revealed=false;state.sort='overall';resultsInvalidated=false;
+ // Reveal is session-only in this architecture: there is no persisted reveal flag.
+ display();byId('resetResultsBtn').focus();
+}
+function goToIncomplete(metricId,manager){
+ state.view='metrics';state.editMetricId=metricId;display();
+ const target=[...document.querySelectorAll('[data-entry-manager]')].find(x=>x.dataset.entryManager===manager);
+ const destination=target||document.querySelector('.entry-panel');
+ if(destination){destination.scrollIntoView({behavior:'smooth',block:'center'});if(target){target.classList.add('entry-target');setTimeout(()=>target.classList.remove('entry-target'),3200);const control=target.querySelector('.entry-status:not(:disabled)');if(control)control.focus({preventScroll:true});}}
+}
+document.addEventListener('click',e=>{let b=e.target.closest('button,[data-manager]');if(!b)return;
+ if(b.hasAttribute('data-top-retry')){topState.error='';topState.cache.delete(topState.metric);loadTopMetric(topState.metric);display();return;}
+ if(b.hasAttribute('data-top-metric')){selectTopMetric(b.dataset.topMetric,!!b.closest('#projectorStage'));return;}
+ if(b.hasAttribute('data-top-show-all')){if(topState.metric===TOP_HISTORICAL)return;const projector=!!b.closest('#projectorStage');topState.showAll=!topState.showAll;topState.normalPage=0;topState.projectorPage=0;projectorSignature=null;display();(projector?byId('projectContent'):byId('mainContent')).querySelector('[data-top-show-all]')?.focus({preventScroll:true});return;}
+ if(b.hasAttribute('data-top-page')){const next=Number(b.dataset.topPage);if(Number.isInteger(next)&&next>=0){const projector=!!b.closest('.top-projector');const direction=next>topState[projector?'projectorPage':'normalPage']?'next':'prev';topState[projector?'projectorPage':'normalPage']=next;projectorSignature=null;display();const host=projector?byId('projectContent'):byId('mainContent');host.querySelector(direction==='next'?'.top-pager [data-top-page]:last-child':'.top-pager [data-top-page]:first-child')?.focus({preventScroll:true});}return;}
+ if(b.hasAttribute('data-supporter-metric')){openSupporterDetail(Number(b.dataset.supporterManager),b.dataset.supporterMetric);return;}
+ if(b.id==='backSupporterDetail'){backSupporterDetail();return;}
+ if(b.hasAttribute('data-project-manager-open')){detail(Number(b.dataset.projectManagerOpen));return;}
+ if(b.id==='retrySave'){retrySave();return;}if(b.id==='reloadSaved'){reloadSaved();return;}if(b.id==='saveLocalBackup'){downloadLocal();return;}
+ if(b.id==='entryCards'){changeEntryMode('cards');return;}if(b.id==='entryCompact'){changeEntryMode('compact');return;}
+ if(b.hasAttribute('data-restore-cell')){if(flushDrafts())restoreCell(b.dataset.restoreCell,b.dataset.managerName);return;}
+ if(b.hasAttribute('data-fix-metric')){goToIncomplete(b.dataset.fixMetric,b.dataset.fixManager);return;}
+ if(b.id==='goToMissing'){const first=byId('readinessList').querySelector('[data-fix-metric]');if(first)goToIncomplete(first.dataset.fixMetric,first.dataset.fixManager);else{state.view='metrics';display();}return;}
+if(b.dataset.view){if(!flushDrafts())return;state.view=b.dataset.view;display();return;}if(b.hasAttribute('data-manager')){detail(Number(b.dataset.manager));return;}if(b.id==='closeDrawer'||b.id==='closeDrawer2'){closeDrawer();return;}if(b.id==='resetWeights'){resetWeights();return;}if(b.hasAttribute('data-toggle-criterion')){toggleCriterion(b.dataset.toggleCriterion);return;}if(b.id==='exportLocal'){downloadLocal();return;}if(b.id==='backupDbBtn'){downloadDatabase();return;}if(b.id==='importLocalBtn'){byId('importLocalInput')?.click();return;}if(b.id==='revealBtn'){startCeremony();return;}if(b.id==='resetResultsBtn'){resetResults();return;}if(b.id==='closeCeremony'){closeCeremony();return;}if(b.id==='skipCeremony'){finishCeremony();return;}if(b.id==='replayCeremony'){playCeremony();return;}if(b.id==='hideResults'){hideResults();return;}if(b.id==='applyPending'){applyPending();return;}if(b.id==='csvBtn'){makeCsv();return;}if(b.id==='printBtn'){window.print();return;}if(b.id==='presentBtn'){byId('projectorStage').hidden?openProjector():closeProjector();return;}if(b.id==='projectExit'){closeProjector();return;}if(b.hasAttribute('data-project-view')){if(!byId('projectorStage').hidden){state.view=b.dataset.projectView;projectorPage=0;display();}return;}if(b.id==='projectPrev'||b.id==='projectNext'){projectorPage+=b.id==='projectNext'?1:-1;renderProjector();return;}});
+document.addEventListener('input',e=>{const t=e.target;
+ if(t.hasAttribute('data-cell-value')){dirtyDrafts.set(t.dataset.cellValue+'\0'+t.dataset.managerName,t.value);showSaved=false;saveStatus();}if(t.id==='searchManager'){state.query=t.value; if(state.view==='overview')byId('leaderboard').innerHTML=leaderboard(calculate()); else if(state.view==='matrix'){const focus=t.selectionStart;display();const el=byId('searchManager');if(el){el.focus();el.setSelectionRange(focus,focus);}}}if(t.hasAttribute('data-weight'))updateWeights(Number(t.dataset.weight),t.value,false);});
+document.addEventListener('change',e=>{const t=e.target;if(t.id==='sortMetric'){state.sort=t.value;byId('leaderboard').innerHTML=leaderboard(calculate());}if(t.hasAttribute('data-weight-number'))updateWeights(Number(t.dataset.weightNumber),t.value,true);if(t.hasAttribute('data-weight'))updateWeights(Number(t.dataset.weight),t.value,true);if(t.id==='fontSelector')applyFont(t.value);if(t.id==='editCustomMetric'){if(!flushDrafts()){t.value=state.editMetricId;return;}state.editMetricId=t.value;display();}if(t.hasAttribute('data-criterion-weight'))commitCriterionWeight(t.dataset.criterionWeight,t.value);if(t.hasAttribute('data-cell-status'))setCellStatus(t.dataset.cellStatus,t.dataset.managerName,t.value);if(t.hasAttribute('data-cell-value'))setCellValue(t.dataset.cellValue,t.dataset.managerName,t.value);if(t.id==='importLocalInput')importLocalFile(t.files?.[0]);});
+document.addEventListener('submit',e=>{if(e.target.id==='newMetricForm'){e.preventDefault();addCriterion(e.target);}});
+byId('drawerBack').addEventListener('click',e=>{if(e.target===byId('drawerBack'))closeDrawer()});document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.entry-panel [data-cell-value]')){e.preventDefault();const t=e.target;if(setCellValue(t.dataset.cellValue,t.dataset.managerName,t.value))focusNextEntry(t);return;}if(e.key==='Escape'){if(!byId('ceremonyBack').hidden){closeCeremony();return;}if(byId('drawerBack').classList.contains('open')){e.preventDefault();if(supporterDetailActive)backSupporterDetail();else closeDrawer();return;}if(!byId('projectorStage').hidden){e.preventDefault();closeProjector();return;}closeDrawer();}if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-manager][role=button]')){e.preventDefault();detail(Number(e.target.dataset.manager));}if(!byId('ceremonyBack').hidden&&e.key==='Tab'){const nodes=[...byId('ceremony').querySelectorAll('button:not([hidden]):not([disabled])')];const first=nodes[0],last=nodes.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}if(byId('drawerBack').classList.contains('open')&&e.key==='Tab'){const controls=[...byId('drawer').querySelectorAll('button:not([disabled]),[href],input,select,[tabindex]:not([tabindex=\"-1\"])')].filter(x=>x.offsetParent!==null);if(controls.length){const first=controls[0],last=controls.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}}});
+window.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&document.body.classList.contains('presentation')){if(!byId('projectorStage').hidden)closeProjector();else{document.body.classList.remove('presentation');byId('presentBtn').textContent='حالت ارائه ↗';}}});
+try{fontChoice=localStorage.getItem(FONT_STORAGE)||'vazir';}catch(e){}applyFont(fontChoice);display();saveStatus();if(sourceData.sourceIssues?.length){const b=byId('sourceIssues');b.hidden=false;b.textContent=sourceData.sourceIssues.join(' | ');}if(location.protocol!=='file:'){sync();setInterval(sync,3000);}else {authorityPhase='preview';setSource('پیش‌نمایش HTML · بدون ذخیره','برای ثبت اطلاعات و نمایش متصل به SQLite از start_with_uv.bat استفاده کنید',false);renderIntegrity(calculate());}
+</script>
+</body>
+</html>
