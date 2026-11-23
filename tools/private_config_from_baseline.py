@@ -108,6 +108,15 @@ def _secure_new_file(path):
                                    ctypes.POINTER(SECURITY_ATTRIBUTES), wintypes.DWORD,
                                    wintypes.DWORD, HANDLE]
     kernel.CreateFileW.restype = HANDLE
+    advapi.GetSecurityDescriptorDacl.argtypes = [ctypes.c_void_p,
+                                                 ctypes.POINTER(wintypes.BOOL),
+                                                 ctypes.POINTER(ctypes.c_void_p),
+                                                 ctypes.POINTER(wintypes.BOOL)]
+    advapi.GetSecurityDescriptorDacl.restype = wintypes.BOOL
+    advapi.SetSecurityInfo.argtypes = [HANDLE, wintypes.DWORD, wintypes.DWORD,
+                                      ctypes.c_void_p, ctypes.c_void_p,
+                                      ctypes.c_void_p, ctypes.c_void_p]
+    advapi.SetSecurityInfo.restype = wintypes.DWORD
 
     token = HANDLE()
     if not advapi.OpenProcessToken(kernel.GetCurrentProcess(), 0x0008, ctypes.byref(token)):
@@ -140,16 +149,35 @@ def _secure_new_file(path):
             sddl, 1, ctypes.byref(security_descriptor), None):
         raise ctypes.WinError(ctypes.get_last_error())
     try:
+        present = wintypes.BOOL()
+        defaulted = wintypes.BOOL()
+        dacl = ctypes.c_void_p()
+        if not advapi.GetSecurityDescriptorDacl(security_descriptor,
+                                                ctypes.byref(present), ctypes.byref(dacl),
+                                                ctypes.byref(defaulted)) or not present.value or not dacl.value:
+            raise OSError('Explicit private DACL unavailable')
         attrs = SECURITY_ATTRIBUTES(ctypes.sizeof(SECURITY_ATTRIBUTES),
                                     security_descriptor, False)
-        handle = kernel.CreateFileW(str(path), 0x40000000, 0,
+        # CreateFileW applies the owner/SYSTEM-only DACL from the creation syscall.
+        # WRITE_DAC permits protection against any later inherited ACEs while
+        # the file is still EMPTY. No confidential bytes exist before this step.
+        handle = kernel.CreateFileW(str(path), 0x40040000, 0,
                                     ctypes.byref(attrs), 1, 0x80, None)
         if handle == HANDLE(-1).value:
             raise ctypes.WinError(ctypes.get_last_error())
         try:
+            # NTFS can leave a newly assigned DACL unprotected even when the
+            # supplied SDDL contains D:P. Reapply the SAME restrictive ACL and
+            # prohibit inheritance before writing the first private byte.
+            rc = advapi.SetSecurityInfo(handle, 1, 0x80000004,
+                                        None, None, dacl, None)
+            if rc:
+                raise OSError(rc, 'Private Windows ACL protection failed')
             return msvcrt.open_osfhandle(handle, os.O_WRONLY | os.O_BINARY)
         except BaseException:
             kernel.CloseHandle(handle)
+            # The file contains zero confidential bytes on every error here.
+            path.unlink()
             raise
     finally:
         kernel.LocalFree(security_descriptor)
