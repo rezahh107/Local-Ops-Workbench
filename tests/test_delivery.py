@@ -520,20 +520,33 @@ class PrivateConfigurationSecurityContract(unittest.TestCase):
                     with self.assertRaises(PermissionError):
                         attempt(lambda: migration.create_private_config(target, _synthetic_private_config()))
             else:
-                code=('import sys;from pathlib import Path;'
+                # GitHub-hosted runner home directories may not be traversable by
+                # nobody. Make only the *public module under test* accessible in
+                # this disposable tree; the private target directory stays 0700.
+                Path(d).chmod(0o711)
+                module_dir = Path(d)/'readable_module'
+                module_dir.mkdir(mode=0o755)
+                shutil.copyfile(ROOT/'tools'/'private_config_from_baseline.py',
+                                module_dir/'private_config_from_baseline.py')
+                (module_dir/'private_config_from_baseline.py').chmod(0o644)
+                code=('import os,sys;from pathlib import Path;'
                       'sys.path.insert(0,sys.argv[2]);'
                       'from private_config_from_baseline import create_private_config;'
+                      'assert os.geteuid()!=int(sys.argv[3]), "NOT_A_DIFFERENT_UID";'
                       '\ntry:create_private_config(Path(sys.argv[1]),{"x":"synthetic"})'
                       '\nexcept PermissionError:sys.exit(42)'
                       '\nexcept Exception:sys.exit(43)\nelse:sys.exit(0)')
-                # The other identity has no write access to the parent directory.
-                script=[sys.executable,'-c',code,str(target),str(ROOT/'tools')]
+                # The different real identity can import the exact code under
+                # test, but cannot write into the owner-only target directory.
+                script=[sys.executable,'-c',code,str(target),str(module_dir),
+                        str(os.geteuid())]
                 if os.geteuid()==0:
                     def drop():os.setgroups([]);os.setgid(65534);os.setuid(65534)
                     proc=subprocess.run(script,preexec_fn=drop,capture_output=True)
                 else:
                     proc=subprocess.run(['sudo','-n','-u','nobody',*script],capture_output=True)
-                self.assertEqual(proc.returncode, 42, 'PERMISSION_FAILURE_NOT_REJECTED')
+                self.assertEqual(proc.returncode, 42,
+                                 'PERMISSION_FAILURE_NOT_REJECTED (actual subprocess must reach configured target)')
             self.assertFalse(target.exists(), 'FALSE_SUCCESSFUL_FINAL_CONFIG')
 
     def test_t6_two_competing_processes_never_overwrite(self):
