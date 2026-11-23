@@ -291,34 +291,59 @@ def _run_as_unauthorized_posix(code, path):
 
 @contextmanager
 def _windows_unauthorized_user():
-    """Exercise real Windows token/ACL checks with a temporary local account."""
+    """Actual Windows access checks under a deny-only user SID (no admin needed).
+
+    CreateRestrictedToken removes this process user's Allow SID and privileges.
+    OS checks use the impersonation token; no fake path/access mock is used.
+    """
     import ctypes
     from ctypes import wintypes
-    name = 'localops_' + __import__('secrets').token_hex(4)
-    password = __import__('secrets').token_urlsafe(22) + 'aA9!'
-    result = subprocess.run(['net', 'user', name, password, '/add'],
-                            capture_output=True, text=True)
-    if result.returncode:
-        raise AssertionError('WINDOWS_ACCOUNT_SETUP_FAILED (not an ACL PASS)')
-    token = wintypes.HANDLE()
-    advapi = ctypes.WinDLL('advapi32', use_last_error=True)
+
+    class SID_AND_ATTRIBUTES(ctypes.Structure):
+        _fields_ = [('Sid', ctypes.c_void_p), ('Attributes', wintypes.DWORD)]
+
     kernel = ctypes.WinDLL('kernel32', use_last_error=True)
-    advapi.LogonUserW.argtypes = [wintypes.LPCWSTR, wintypes.LPCWSTR,
-                                 wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD,
-                                 ctypes.POINTER(wintypes.HANDLE)]
-    advapi.LogonUserW.restype = wintypes.BOOL
-    advapi.ImpersonateLoggedOnUser.argtypes = [wintypes.HANDLE]
+    advapi = ctypes.WinDLL('advapi32', use_last_error=True)
+    HANDLE = wintypes.HANDLE
+    kernel.GetCurrentProcess.restype = HANDLE
+    kernel.CloseHandle.argtypes = [HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    advapi.OpenProcessToken.argtypes = [HANDLE, wintypes.DWORD, ctypes.POINTER(HANDLE)]
+    advapi.OpenProcessToken.restype = wintypes.BOOL
+    advapi.GetTokenInformation.argtypes = [HANDLE, wintypes.DWORD, ctypes.c_void_p,
+                                          wintypes.DWORD, ctypes.POINTER(wintypes.DWORD)]
+    advapi.GetTokenInformation.restype = wintypes.BOOL
+    advapi.CreateRestrictedToken.argtypes = [HANDLE, wintypes.DWORD, wintypes.DWORD,
+                                             ctypes.POINTER(SID_AND_ATTRIBUTES), wintypes.DWORD,
+                                             ctypes.c_void_p, wintypes.DWORD, ctypes.c_void_p,
+                                             ctypes.POINTER(HANDLE)]
+    advapi.CreateRestrictedToken.restype = wintypes.BOOL
+    advapi.ImpersonateLoggedOnUser.argtypes = [HANDLE]
     advapi.ImpersonateLoggedOnUser.restype = wintypes.BOOL
     advapi.RevertToSelf.restype = wintypes.BOOL
-    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
-    kernel.CloseHandle.restype = wintypes.BOOL
+
+    token = HANDLE()
+    if not advapi.OpenProcessToken(kernel.GetCurrentProcess(), 0x000E, ctypes.byref(token)):
+        raise AssertionError('WINDOWS_TOKEN_SETUP_FAILED')
+    restricted = HANDLE()
     try:
-        if not advapi.LogonUserW(name, '.', password, 2, 0, ctypes.byref(token)):
-            raise AssertionError('WINDOWS_LOGON_FAILED (not an ACL PASS)')
+        count = wintypes.DWORD()
+        advapi.GetTokenInformation(token, 1, None, 0, ctypes.byref(count))
+        if ctypes.get_last_error() != 122 or not count.value:
+            raise AssertionError('WINDOWS_TOKEN_USER_QUERY_FAILED')
+        buf = ctypes.create_string_buffer(count.value)
+        if not advapi.GetTokenInformation(token, 1, buf, count, ctypes.byref(count)):
+            raise AssertionError('WINDOWS_TOKEN_USER_READ_FAILED')
+        sid = ctypes.cast(buf, ctypes.POINTER(SID_AND_ATTRIBUTES)).contents.Sid
+        disabled_sid = SID_AND_ATTRIBUTES(sid, 0)
+        if not advapi.CreateRestrictedToken(token, 0x0001, 1,
+                                            ctypes.byref(disabled_sid), 0, None, 0, None,
+                                            ctypes.byref(restricted)):
+            raise AssertionError('WINDOWS_RESTRICTED_TOKEN_CREATE_FAILED')
         try:
             def attempt(action):
-                if not advapi.ImpersonateLoggedOnUser(token):
-                    raise AssertionError('WINDOWS_IMPERSONATION_FAILED (not an ACL PASS)')
+                if not advapi.ImpersonateLoggedOnUser(restricted):
+                    raise AssertionError('WINDOWS_IMPERSONATION_FAILED')
                 try:
                     return action()
                 finally:
@@ -326,11 +351,9 @@ def _windows_unauthorized_user():
                         raise AssertionError('WINDOWS_REVERT_FAILED')
             yield attempt
         finally:
-            kernel.CloseHandle(token)
+            kernel.CloseHandle(restricted)
     finally:
-        deleted = subprocess.run(['net', 'user', name, '/delete'], capture_output=True)
-        if deleted.returncode:
-            raise AssertionError('WINDOWS_TEST_ACCOUNT_CLEANUP_FAILED')
+        kernel.CloseHandle(token)
 
 
 class PrivateConfigurationSecurityContract(unittest.TestCase):
@@ -347,10 +370,11 @@ class PrivateConfigurationSecurityContract(unittest.TestCase):
                 acl = subprocess.run(['powershell', '-NoProfile', '-NonInteractive',
                                       '-Command', '$a=Get-Acl -LiteralPath $env:LOCALOPS_TEST_PATH;'
                                       'if(-not $a.AreAccessRulesProtected){exit 8};'
+                                      'Write-Output ("PROTECTED="+$a.AreAccessRulesProtected+";INHERITED="+@($a.Access|Where-Object IsInherited).Count);'
                                       'if(@($a.Access|Where-Object IsInherited).Count){exit 9}'],
                                      env={**os.environ, 'LOCALOPS_TEST_PATH':str(target)},
                                      capture_output=True)
-                self.assertEqual(acl.returncode, 0, 'WINDOWS_DACL_NOT_PROTECTED')
+                self.assertEqual(acl.returncode, 0, 'WINDOWS_DACL_NOT_PROTECTED: '+acl.stdout.decode('utf-8', errors='replace').strip())
             else:
                 self.assertEqual(target.stat().st_mode & 0o777, 0o600)
             env = {**os.environ, 'LOCAL_OPS_DATA_DIR':str(directory)}
@@ -371,10 +395,11 @@ class PrivateConfigurationSecurityContract(unittest.TestCase):
                     acl = subprocess.run(['powershell', '-NoProfile', '-NonInteractive',
                                           '-Command', '$a=Get-Acl -LiteralPath $env:LOCALOPS_TEST_PATH;'
                                           'if(-not $a.AreAccessRulesProtected){exit 8};'
-                                          'if(@($a.Access|Where-Object IsInherited).Count){exit 9}'],
+                                          'Write-Output ("PROTECTED="+$a.AreAccessRulesProtected+";INHERITED="+@($a.Access|Where-Object IsInherited).Count);'
+                                      'if(@($a.Access|Where-Object IsInherited).Count){exit 9}'],
                                          env={**os.environ, 'LOCALOPS_TEST_PATH':str(temporary)},
                                          capture_output=True)
-                    self.assertEqual(acl.returncode, 0, 'INTERMEDIATE_WINDOWS_DACL_NOT_PROTECTED')
+                    self.assertEqual(acl.returncode, 0, 'INTERMEDIATE_WINDOWS_DACL_NOT_PROTECTED: '+acl.stdout.decode('utf-8', errors='replace').strip())
                 else:
                     self.assertEqual(temporary.stat().st_mode & 0o777, 0o600,
                                      'INTERMEDIATE_FILE_NOT_PRIVATE')
