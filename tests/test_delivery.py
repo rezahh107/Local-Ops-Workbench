@@ -244,11 +244,216 @@ class DeliveryContract(unittest.TestCase):
             self.assertEqual(originals,{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in [excel,database]})
             self.assertEqual(verify(extracted)['working'],'PASS')
 
-    def test_private_config_migration_is_nonoverwriting(self):
-        tool=ROOT/'tools/private_config_from_baseline.py'
-        text=tool.read_text(encoding='utf8')
-        self.assertIn("destination.open('x'",text)
-        self.assertIn("EXPECTED_SHA256",text)
 
 
 if __name__=='__main__':unittest.main()
+
+# Security regression tests use only synthetic config; the baseline ZIP is never
+# required by CI, and no contents of private config are printed.
+import os
+import multiprocessing
+from unittest import mock
+from contextlib import contextmanager
+
+sys.path.insert(0, str(ROOT/'tools'))
+import private_config_from_baseline as migration
+
+
+def _synthetic_private_config(value='synthetic-A'):
+    return {'top_book_exclusion': {'manager': value, 'name': 'fixture'},
+            'historical_supporters': [], 'supporters': {}, 'intelligence_eligible': []}
+
+
+def _racing_config_worker(path, value, event, queue):
+    event.wait()
+    try:
+        migration.create_private_config(path, _synthetic_private_config(value))
+        queue.put('CREATED')
+    except FileExistsError:
+        queue.put('EXISTS')
+    except BaseException:
+        queue.put('UNEXPECTED_FAILURE')
+
+
+def _run_as_unauthorized_posix(code, path):
+    script = [sys.executable, '-c', code, str(path)]
+    if os.geteuid() == 0:
+        def drop():
+            os.setgroups([])
+            os.setgid(65534)
+            os.setuid(65534)
+        proc = subprocess.run(script, preexec_fn=drop, capture_output=True)
+    else:
+        # Standard public Ubuntu hosted runners allow non-interactive sudo.
+        proc = subprocess.run(['sudo', '-n', '-u', 'nobody', *script], capture_output=True)
+    return proc.returncode
+
+
+@contextmanager
+def _windows_unauthorized_user():
+    """Exercise real Windows token/ACL checks with a temporary local account."""
+    import ctypes
+    from ctypes import wintypes
+    name = 'localops_' + __import__('secrets').token_hex(4)
+    password = __import__('secrets').token_urlsafe(22) + 'aA9!'
+    result = subprocess.run(['net', 'user', name, password, '/add'],
+                            capture_output=True, text=True)
+    if result.returncode:
+        raise AssertionError('WINDOWS_ACCOUNT_SETUP_FAILED (not an ACL PASS)')
+    token = wintypes.HANDLE()
+    advapi = ctypes.WinDLL('advapi32', use_last_error=True)
+    kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+    advapi.LogonUserW.argtypes = [wintypes.LPCWSTR, wintypes.LPCWSTR,
+                                 wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD,
+                                 ctypes.POINTER(wintypes.HANDLE)]
+    advapi.LogonUserW.restype = wintypes.BOOL
+    advapi.ImpersonateLoggedOnUser.argtypes = [wintypes.HANDLE]
+    advapi.ImpersonateLoggedOnUser.restype = wintypes.BOOL
+    advapi.RevertToSelf.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    try:
+        if not advapi.LogonUserW(name, '.', password, 2, 0, ctypes.byref(token)):
+            raise AssertionError('WINDOWS_LOGON_FAILED (not an ACL PASS)')
+        try:
+            def attempt(action):
+                if not advapi.ImpersonateLoggedOnUser(token):
+                    raise AssertionError('WINDOWS_IMPERSONATION_FAILED (not an ACL PASS)')
+                try:
+                    return action()
+                finally:
+                    if not advapi.RevertToSelf():
+                        raise AssertionError('WINDOWS_REVERT_FAILED')
+            yield attempt
+        finally:
+            kernel.CloseHandle(token)
+    finally:
+        deleted = subprocess.run(['net', 'user', name, '/delete'], capture_output=True)
+        if deleted.returncode:
+            raise AssertionError('WINDOWS_TEST_ACCOUNT_CLEANUP_FAILED')
+
+
+class PrivateConfigurationSecurityContract(unittest.TestCase):
+    def test_t1_create_then_initialize_application(self):
+        with tempfile.TemporaryDirectory() as d:
+            directory = Path(d)/'private'
+            target = directory/'config.private.json'
+            cfg = _synthetic_private_config()
+            migration.create_private_config(target, cfg)
+            self.assertEqual(json.loads(target.read_text(encoding='utf-8')), cfg)
+            self.assertFalse(list(directory.glob('.config.private.*.tmp')))
+            if os.name == 'nt':
+                # No inherited ACE is accepted on the actual file's DACL.
+                acl = subprocess.run(['powershell', '-NoProfile', '-NonInteractive',
+                                      '-Command', '$a=Get-Acl -LiteralPath $env:LOCALOPS_TEST_PATH;'
+                                      'if(-not $a.AreAccessRulesProtected){exit 8};'
+                                      'if(@($a.Access|Where-Object IsInherited).Count){exit 9}'],
+                                     env={**os.environ, 'LOCALOPS_TEST_PATH':str(target)},
+                                     capture_output=True)
+                self.assertEqual(acl.returncode, 0, 'WINDOWS_DACL_NOT_PROTECTED')
+            else:
+                self.assertEqual(target.stat().st_mode & 0o777, 0o600)
+            env = {**os.environ, 'LOCAL_OPS_DATA_DIR':str(directory)}
+            proc = subprocess.run([sys.executable, '-c',
+                                   'import server; assert server.PRIVATE_CONFIG["top_book_exclusion"]["name"] == "fixture"'],
+                                  cwd=ROOT, env=env, capture_output=True)
+            self.assertEqual(proc.returncode, 0, 'APPLICATION_CONFIG_INITIALIZATION_FAILED')
+
+    def test_t2_interrupted_write_leaves_no_final_and_retry_works(self):
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)/'private'/'config.private.json'
+            cfg=_synthetic_private_config()
+            def interrupt(fd, content):
+                with os.fdopen(fd, 'wb') as stream:
+                    stream.write(content[:8]); stream.flush()
+                temporary = next(target.parent.glob('.config.private.*.tmp'))
+                if os.name == 'nt':
+                    acl = subprocess.run(['powershell', '-NoProfile', '-NonInteractive',
+                                          '-Command', '$a=Get-Acl -LiteralPath $env:LOCALOPS_TEST_PATH;'
+                                          'if(-not $a.AreAccessRulesProtected){exit 8};'
+                                          'if(@($a.Access|Where-Object IsInherited).Count){exit 9}'],
+                                         env={**os.environ, 'LOCALOPS_TEST_PATH':str(temporary)},
+                                         capture_output=True)
+                    self.assertEqual(acl.returncode, 0, 'INTERMEDIATE_WINDOWS_DACL_NOT_PROTECTED')
+                else:
+                    self.assertEqual(temporary.stat().st_mode & 0o777, 0o600,
+                                     'INTERMEDIATE_FILE_NOT_PRIVATE')
+                raise InterruptedError('injected interruption (no private data)')
+            with mock.patch.object(migration, '_write_and_check', side_effect=interrupt):
+                with self.assertRaises(InterruptedError):
+                    migration.create_private_config(target, cfg)
+            self.assertFalse(target.exists(), 'INCOMPLETE_FINAL_CONFIG_PRESENT')
+            self.assertEqual(list(target.parent.glob('.config.private.*.tmp')), [])
+            migration.create_private_config(target, cfg)
+            self.assertEqual(json.loads(target.read_text(encoding='utf-8')), cfg)
+
+    def test_t3_existing_valid_configuration_is_untouched(self):
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)/'config.private.json'
+            migration.create_private_config(target, _synthetic_private_config('first'))
+            before=target.read_bytes()
+            with self.assertRaises(FileExistsError):
+                migration.create_private_config(target, _synthetic_private_config('different'))
+            self.assertEqual(target.read_bytes(), before)
+            self.assertFalse(list(target.parent.glob('.config.private.*.tmp')))
+
+    def test_t4_real_unauthorized_identity_cannot_read(self):
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)/'config.private.json'
+            migration.create_private_config(target, _synthetic_private_config())
+            if os.name == 'nt':
+                with _windows_unauthorized_user() as attempt:
+                    # Use actual OS ACL enforcement, not an access-check mock.
+                    with self.assertRaises(PermissionError):
+                        attempt(lambda: target.read_bytes())
+            else:
+                Path(d).chmod(0o711)  # Permit traversal; isolate file's 0600 mode.
+                code=('from pathlib import Path;import sys;'
+                      'p=Path(sys.argv[1]);'
+                      '\ntry:p.read_bytes()\nexcept PermissionError:sys.exit(42)'
+                      '\nexcept Exception:sys.exit(43)\nelse:sys.exit(0)')
+                self.assertEqual(_run_as_unauthorized_posix(code,target), 42,
+                                 'UNAUTHORIZED_READ_NOT_DENIED_AT_FILE')
+
+    def test_t5_real_permission_failure_cannot_publish(self):
+        with tempfile.TemporaryDirectory() as d:
+            directory=Path(d)/'private'
+            directory.mkdir(mode=0o700)
+            target=directory/'config.private.json'
+            if os.name == 'nt':
+                with _windows_unauthorized_user() as attempt:
+                    with self.assertRaises(PermissionError):
+                        attempt(lambda: migration.create_private_config(target, _synthetic_private_config()))
+            else:
+                code=('import sys;from pathlib import Path;'
+                      'sys.path.insert(0,sys.argv[2]);'
+                      'from private_config_from_baseline import create_private_config;'
+                      '\ntry:create_private_config(Path(sys.argv[1]),{"x":"synthetic"})'
+                      '\nexcept PermissionError:sys.exit(42)'
+                      '\nexcept Exception:sys.exit(43)\nelse:sys.exit(0)')
+                # The other identity has no write access to the parent directory.
+                script=[sys.executable,'-c',code,str(target),str(ROOT/'tools')]
+                if os.geteuid()==0:
+                    def drop():os.setgroups([]);os.setgid(65534);os.setuid(65534)
+                    proc=subprocess.run(script,preexec_fn=drop,capture_output=True)
+                else:
+                    proc=subprocess.run(['sudo','-n','-u','nobody',*script],capture_output=True)
+                self.assertEqual(proc.returncode, 42, 'PERMISSION_FAILURE_NOT_REJECTED')
+            self.assertFalse(target.exists(), 'FALSE_SUCCESSFUL_FINAL_CONFIG')
+
+    def test_t6_two_competing_processes_never_overwrite(self):
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)/'config.private.json'
+            ctx=multiprocessing.get_context('spawn')
+            event=ctx.Event(); queue=ctx.Queue()
+            processes=[ctx.Process(target=_racing_config_worker,
+                                   args=(str(target),v,event,queue)) for v in ('A','B')]
+            for p in processes:p.start()
+            event.set()
+            for p in processes:
+                p.join(timeout=15)
+                if p.is_alive():p.terminate();p.join();self.fail('CREATION_PROCESS_HUNG')
+                self.assertEqual(p.exitcode, 0, 'CREATION_PROCESS_CRASHED')
+            self.assertEqual(sorted([queue.get(timeout=3) for _ in processes]), ['CREATED','EXISTS'])
+            self.assertIn(json.loads(target.read_text('utf-8'))['top_book_exclusion']['manager'], ('A','B'))
+            self.assertFalse(list(target.parent.glob('.config.private.*.tmp')))
