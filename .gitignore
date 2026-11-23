@@ -1,0 +1,27 @@
+# Never track original, private or generated data.
+*.xlsx
+*.xls
+*.sqlite
+*.sqlite3
+*.db
+*.db-*
+*.zip
+*.log
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.pdf
+snapshot.json
+index.html
+config.private.json
+*.private.json
+TEST_EVIDENCE*/
+BACKUP*/
+__pycache__/
+.pytest_cache/
+.venv/
+.env
+.env.*
+dist/
+build/
