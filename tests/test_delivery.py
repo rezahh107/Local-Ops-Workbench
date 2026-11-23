@@ -369,6 +369,7 @@ class PrivateConfigurationSecurityContract(unittest.TestCase):
                 # No inherited ACE is accepted on the actual file's DACL.
                 acl = subprocess.run(['powershell', '-NoProfile', '-NonInteractive',
                                       '-Command', '$a=Get-Acl -LiteralPath $env:LOCALOPS_TEST_PATH;'
+                                      'Write-Output ("ACL_PROTECTED="+$a.AreAccessRulesProtected+";INHERITED_COUNT="+@($a.Access|Where-Object IsInherited).Count+";ACE_COUNT="+@($a.Access).Count);'
                                       'if(-not $a.AreAccessRulesProtected){exit 8};'
                                       'Write-Output ("PROTECTED="+$a.AreAccessRulesProtected+";INHERITED="+@($a.Access|Where-Object IsInherited).Count);'
                                       'if(@($a.Access|Where-Object IsInherited).Count){exit 9}'],
@@ -394,7 +395,8 @@ class PrivateConfigurationSecurityContract(unittest.TestCase):
                 if os.name == 'nt':
                     acl = subprocess.run(['powershell', '-NoProfile', '-NonInteractive',
                                           '-Command', '$a=Get-Acl -LiteralPath $env:LOCALOPS_TEST_PATH;'
-                                          'if(-not $a.AreAccessRulesProtected){exit 8};'
+                                          'Write-Output ("ACL_PROTECTED="+$a.AreAccessRulesProtected+";INHERITED_COUNT="+@($a.Access|Where-Object IsInherited).Count+";ACE_COUNT="+@($a.Access).Count);'
+                                      'if(-not $a.AreAccessRulesProtected){exit 8};'
                                           'Write-Output ("PROTECTED="+$a.AreAccessRulesProtected+";INHERITED="+@($a.Access|Where-Object IsInherited).Count);'
                                       'if(@($a.Access|Where-Object IsInherited).Count){exit 9}'],
                                          env={**os.environ, 'LOCALOPS_TEST_PATH':str(temporary)},
