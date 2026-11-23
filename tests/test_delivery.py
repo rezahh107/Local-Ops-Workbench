@@ -355,6 +355,85 @@ def _windows_unauthorized_user():
     finally:
         kernel.CloseHandle(token)
 
+def _windows_file_acl_info(path):
+    """Read actual NTFS security descriptor and inherited ACE flags via Win32."""
+    import ctypes
+    from ctypes import wintypes
+
+    kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+    advapi = ctypes.WinDLL('advapi32', use_last_error=True)
+
+    class ACE_HEADER(ctypes.Structure):
+        _fields_ = [('AceType', wintypes.BYTE), ('AceFlags', wintypes.BYTE),
+                    ('AceSize', wintypes.WORD)]
+
+    class ACL_SIZE_INFORMATION(ctypes.Structure):
+        _fields_ = [('AceCount', wintypes.DWORD), ('AclBytesInUse', wintypes.DWORD),
+                    ('AclBytesFree', wintypes.DWORD)]
+
+    kernel.GetVolumeInformationW.argtypes = [wintypes.LPCWSTR, wintypes.LPWSTR,
+                                              wintypes.DWORD, ctypes.c_void_p,
+                                              ctypes.c_void_p, ctypes.c_void_p,
+                                              wintypes.LPWSTR, wintypes.DWORD]
+    kernel.GetVolumeInformationW.restype = wintypes.BOOL
+    fs_name = ctypes.create_unicode_buffer(64)
+    volume = str(Path(path).anchor)
+    if not kernel.GetVolumeInformationW(volume, None, 0, None, None, None,
+                                        fs_name, len(fs_name)):
+        raise AssertionError('WINDOWS_FILESYSTEM_CHECK_FAILED')
+    if fs_name.value != 'NTFS':
+        raise AssertionError('WINDOWS_NOT_NTFS')
+
+    advapi.GetNamedSecurityInfoW.argtypes = [wintypes.LPWSTR, wintypes.DWORD,
+                                             wintypes.DWORD, ctypes.c_void_p,
+                                             ctypes.c_void_p, ctypes.POINTER(ctypes.c_void_p),
+                                             ctypes.c_void_p, ctypes.POINTER(ctypes.c_void_p)]
+    advapi.GetNamedSecurityInfoW.restype = wintypes.DWORD
+    advapi.GetSecurityDescriptorControl.argtypes = [ctypes.c_void_p,
+                                                    ctypes.POINTER(wintypes.WORD),
+                                                    ctypes.POINTER(wintypes.DWORD)]
+    advapi.GetSecurityDescriptorControl.restype = wintypes.BOOL
+    advapi.GetAclInformation.argtypes = [ctypes.c_void_p, ctypes.c_void_p,
+                                         wintypes.DWORD, wintypes.DWORD]
+    advapi.GetAclInformation.restype = wintypes.BOOL
+    advapi.GetAce.argtypes = [ctypes.c_void_p, wintypes.DWORD,
+                              ctypes.POINTER(ctypes.c_void_p)]
+    advapi.GetAce.restype = wintypes.BOOL
+    kernel.LocalFree.argtypes = [ctypes.c_void_p]
+    kernel.LocalFree.restype = ctypes.c_void_p
+
+    descriptor = ctypes.c_void_p()
+    dacl = ctypes.c_void_p()
+    name_buffer = ctypes.create_unicode_buffer(str(path))
+    code = advapi.GetNamedSecurityInfoW(name_buffer, 1, 0x4, None, None,
+                                        ctypes.byref(dacl), None,
+                                        ctypes.byref(descriptor))
+    if code:
+        raise AssertionError(f'WINDOWS_ACL_READ_FAILED_{code}')
+    try:
+        control = wintypes.WORD()
+        revision = wintypes.DWORD()
+        if not advapi.GetSecurityDescriptorControl(descriptor,
+                                                  ctypes.byref(control),
+                                                  ctypes.byref(revision)):
+            raise AssertionError('WINDOWS_ACL_CONTROL_READ_FAILED')
+        if not dacl.value:
+            raise AssertionError('WINDOWS_NULL_DACL')
+        info = ACL_SIZE_INFORMATION()
+        if not advapi.GetAclInformation(dacl, ctypes.byref(info),
+                                        ctypes.sizeof(info), 2):
+            raise AssertionError('WINDOWS_DACL_ACE_COUNT_FAILED')
+        inherited = 0
+        for idx in range(info.AceCount):
+            ace = ctypes.c_void_p()
+            if not advapi.GetAce(dacl, idx, ctypes.byref(ace)):
+                raise AssertionError('WINDOWS_DACL_ACE_READ_FAILED')
+            inherited += int(bool(ctypes.cast(ace, ctypes.POINTER(ACE_HEADER)).contents.AceFlags & 0x10))
+        return {'protected': bool(control.value & 0x1000),
+                'inherited_count': inherited, 'ace_count': info.AceCount}
+    finally:
+        kernel.LocalFree(descriptor)
+
 
 class PrivateConfigurationSecurityContract(unittest.TestCase):
     def test_t1_create_then_initialize_application(self):
@@ -366,16 +445,10 @@ class PrivateConfigurationSecurityContract(unittest.TestCase):
             self.assertEqual(json.loads(target.read_text(encoding='utf-8')), cfg)
             self.assertFalse(list(directory.glob('.config.private.*.tmp')))
             if os.name == 'nt':
-                # No inherited ACE is accepted on the actual file's DACL.
-                acl = subprocess.run(['powershell', '-NoProfile', '-NonInteractive',
-                                      '-Command', '$a=Get-Acl -LiteralPath $env:LOCALOPS_TEST_PATH;'
-                                      'Write-Output ("ACL_PROTECTED="+$a.AreAccessRulesProtected+";INHERITED_COUNT="+@($a.Access|Where-Object IsInherited).Count+";ACE_COUNT="+@($a.Access).Count);'
-                                      'if(-not $a.AreAccessRulesProtected){exit 8};'
-                                      'Write-Output ("PROTECTED="+$a.AreAccessRulesProtected+";INHERITED="+@($a.Access|Where-Object IsInherited).Count);'
-                                      'if(@($a.Access|Where-Object IsInherited).Count){exit 9}'],
-                                     env={**os.environ, 'LOCALOPS_TEST_PATH':str(target)},
-                                     capture_output=True)
-                self.assertEqual(acl.returncode, 0, 'WINDOWS_DACL_NOT_PROTECTED: '+acl.stdout.decode('utf-8', errors='replace').strip())
+                acl = _windows_file_acl_info(target)
+                self.assertTrue(acl['protected'], 'WINDOWS_DACL_NOT_PROTECTED')
+                self.assertEqual(acl['inherited_count'], 0, 'WINDOWS_INHERITED_ACES')
+                self.assertGreater(acl['ace_count'], 0, 'WINDOWS_EMPTY_DACL')
             else:
                 self.assertEqual(target.stat().st_mode & 0o777, 0o600)
             env = {**os.environ, 'LOCAL_OPS_DATA_DIR':str(directory)}
@@ -393,15 +466,10 @@ class PrivateConfigurationSecurityContract(unittest.TestCase):
                     stream.write(content[:8]); stream.flush()
                 temporary = next(target.parent.glob('.config.private.*.tmp'))
                 if os.name == 'nt':
-                    acl = subprocess.run(['powershell', '-NoProfile', '-NonInteractive',
-                                          '-Command', '$a=Get-Acl -LiteralPath $env:LOCALOPS_TEST_PATH;'
-                                          'Write-Output ("ACL_PROTECTED="+$a.AreAccessRulesProtected+";INHERITED_COUNT="+@($a.Access|Where-Object IsInherited).Count+";ACE_COUNT="+@($a.Access).Count);'
-                                      'if(-not $a.AreAccessRulesProtected){exit 8};'
-                                          'Write-Output ("PROTECTED="+$a.AreAccessRulesProtected+";INHERITED="+@($a.Access|Where-Object IsInherited).Count);'
-                                      'if(@($a.Access|Where-Object IsInherited).Count){exit 9}'],
-                                         env={**os.environ, 'LOCALOPS_TEST_PATH':str(temporary)},
-                                         capture_output=True)
-                    self.assertEqual(acl.returncode, 0, 'INTERMEDIATE_WINDOWS_DACL_NOT_PROTECTED: '+acl.stdout.decode('utf-8', errors='replace').strip())
+                    acl = _windows_file_acl_info(temporary)
+                    self.assertTrue(acl['protected'], 'INTERMEDIATE_WINDOWS_DACL_NOT_PROTECTED')
+                    self.assertEqual(acl['inherited_count'], 0, 'INTERMEDIATE_WINDOWS_INHERITED_ACES')
+                    self.assertGreater(acl['ace_count'], 0, 'INTERMEDIATE_WINDOWS_EMPTY_DACL')
                 else:
                     self.assertEqual(temporary.stat().st_mode & 0o777, 0o600,
                                      'INTERMEDIATE_FILE_NOT_PRIVATE')
